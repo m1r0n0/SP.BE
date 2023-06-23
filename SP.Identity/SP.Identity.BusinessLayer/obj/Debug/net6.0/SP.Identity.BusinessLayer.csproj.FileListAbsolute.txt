@@ -1,0 +1,15 @@
+C:\Users\OMyroniuk\repos\SP.BE\SP.Identity\SP.Identity.BusinessLayer\bin\Debug\net6.0\SP.Identity.BusinessLayer.deps.json
+C:\Users\OMyroniuk\repos\SP.BE\SP.Identity\SP.Identity.BusinessLayer\bin\Debug\net6.0\SP.Identity.BusinessLayer.dll
+C:\Users\OMyroniuk\repos\SP.BE\SP.Identity\SP.Identity.BusinessLayer\bin\Debug\net6.0\SP.Identity.BusinessLayer.pdb
+C:\Users\OMyroniuk\repos\SP.BE\SP.Identity\SP.Identity.BusinessLayer\bin\Debug\net6.0\SP.Identity.DataAccessLayer.dll
+C:\Users\OMyroniuk\repos\SP.BE\SP.Identity\SP.Identity.BusinessLayer\bin\Debug\net6.0\SP.Identity.DataAccessLayer.pdb
+C:\Users\OMyroniuk\repos\SP.BE\SP.Identity\SP.Identity.BusinessLayer\obj\Debug\net6.0\SP.Identity.BusinessLayer.csproj.AssemblyReference.cache
+C:\Users\OMyroniuk\repos\SP.BE\SP.Identity\SP.Identity.BusinessLayer\obj\Debug\net6.0\SP.Identity.BusinessLayer.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\OMyroniuk\repos\SP.BE\SP.Identity\SP.Identity.BusinessLayer\obj\Debug\net6.0\SP.Identity.BusinessLayer.AssemblyInfoInputs.cache
+C:\Users\OMyroniuk\repos\SP.BE\SP.Identity\SP.Identity.BusinessLayer\obj\Debug\net6.0\SP.Identity.BusinessLayer.AssemblyInfo.cs
+C:\Users\OMyroniuk\repos\SP.BE\SP.Identity\SP.Identity.BusinessLayer\obj\Debug\net6.0\SP.Identity.BusinessLayer.csproj.CoreCompileInputs.cache
+C:\Users\OMyroniuk\repos\SP.BE\SP.Identity\SP.Identity.BusinessLayer\obj\Debug\net6.0\SP.Identity.BusinessLayer.csproj.CopyComplete
+C:\Users\OMyroniuk\repos\SP.BE\SP.Identity\SP.Identity.BusinessLayer\obj\Debug\net6.0\SP.Identity.BusinessLayer.dll
+C:\Users\OMyroniuk\repos\SP.BE\SP.Identity\SP.Identity.BusinessLayer\obj\Debug\net6.0\refint\SP.Identity.BusinessLayer.dll
+C:\Users\OMyroniuk\repos\SP.BE\SP.Identity\SP.Identity.BusinessLayer\obj\Debug\net6.0\SP.Identity.BusinessLayer.pdb
+C:\Users\OMyroniuk\repos\SP.BE\SP.Identity\SP.Identity.BusinessLayer\obj\Debug\net6.0\ref\SP.Identity.BusinessLayer.dll
