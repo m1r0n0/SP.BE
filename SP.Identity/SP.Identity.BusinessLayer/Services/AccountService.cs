@@ -9,9 +9,9 @@ namespace SP.Identity.BusinessLayer.Services
 {
     public class AccountService : IAccountService
     {
-        private readonly DataAccessLayer.Data.ApplicationContext _context;
+        private readonly DataAccessLayer.Data.IdentityContext _context;
         private readonly IMapper _mapper;
-        public AccountService(DataAccessLayer.Data.ApplicationContext context,IMapper mapper)
+        public AccountService(DataAccessLayer.Data.IdentityContext context,IMapper mapper)
         {
             _context = context;
             _mapper = mapper;
@@ -19,7 +19,7 @@ namespace SP.Identity.BusinessLayer.Services
         public UserEmailIdDTO GetUserIDFromUserEmail(string userEmail)
         {
             UserEmailIdDTO userEmailIdDTO = new();
-            userEmailIdDTO.NewEmail = userEmail;
+            userEmailIdDTO.Email = userEmail;
             var tempUserEmailToIdDTO = _context.UserList?.Where(item => item.Email == userEmail)?.FirstOrDefault();
             if (tempUserEmailToIdDTO == null)
             {
@@ -39,11 +39,11 @@ namespace SP.Identity.BusinessLayer.Services
             var tempUserEmailToIdDTO = _context.UserList?.Where(item => item.Id == userId)?.FirstOrDefault();
             if (tempUserEmailToIdDTO == null)
             {
-                userEmailIdDTO.NewEmail = "";
+                userEmailIdDTO.Email = "";
             }
             else
             {
-                userEmailIdDTO.NewEmail = tempUserEmailToIdDTO.Email;
+                userEmailIdDTO.Email = tempUserEmailToIdDTO.Email;
             }
             return userEmailIdDTO;
         }
@@ -69,11 +69,11 @@ namespace SP.Identity.BusinessLayer.Services
             if (probablyExistingUser == null)
             {
                 UpdateUserInDB();
-                userEmailIdDTO.NewEmail = newUserEmail;
+                userEmailIdDTO.Email = newUserEmail;
             }
             else
             {
-                userEmailIdDTO.NewEmail = null;
+                userEmailIdDTO.Email = null;
             }
             return userEmailIdDTO;
 

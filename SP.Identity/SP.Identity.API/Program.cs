@@ -14,10 +14,10 @@ builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
-builder.Services.AddDbContext<ApplicationContext>(options =>
+builder.Services.AddDbContext<IdentityContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 builder.Services.AddIdentity<User, IdentityRole>()
-    .AddEntityFrameworkStores<ApplicationContext>()
+    .AddEntityFrameworkStores<IdentityContext>()
     .AddDefaultTokenProviders();
 builder.Services.AddAutoMapper(typeof(AppUserMappingProfile));
 builder.Services.AddScoped<IAccountService, AccountService>();

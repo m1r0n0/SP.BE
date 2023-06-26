@@ -1,12 +1,13 @@
 ﻿using AutoMapper;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using SP.Identity.API.ViewModels;
 using SP.Identity.BusinessLayer.DTOs;
 using SP.Identity.BusinessLayer.Exceptions;
 using SP.Identity.BusinessLayer.Interfaces;
 using SP.Identity.DataAccessLayer.Models;
 
-namespace GoalTrackerAPI.Controllers
+namespace SP.Identity.API.Controllers
 {
     [ApiController]
     [Route("api/[controller]/[action]")]
@@ -31,7 +32,7 @@ namespace GoalTrackerAPI.Controllers
         }
 
         [HttpPut]
-        public async Task<IActionResult> Register(UserDTO model)
+        public async Task<IActionResult> Register(UserRegisterDTO model)
         {
             if (!ModelState.IsValid) return BadRequest(model);
             if (_accountService.CheckGivenEmailForExistingInDB(model.Email))
@@ -39,21 +40,23 @@ namespace GoalTrackerAPI.Controllers
             var user = _mapper.Map<User>(model);
             var result = await _userManager.CreateAsync(user, model.Password);
             if (!result.Succeeded) return BadRequest(model);
-            model.UserId = _accountService.GetUserIDFromUserEmail(model.Email).UserId;
             await _signInManager.SignInAsync(user, false);
-            return Ok(model);
+            var viewModel = _mapper.Map<UserAuthenticationVM>(model);
+            viewModel.UserId = _accountService.GetUserIDFromUserEmail(model.Email).UserId;
+            return Ok(viewModel);
         }
 
         [HttpPost]
         [Produces("application/json")]
-        public async Task<IActionResult> Login([FromBody] UserDTO model)
+        public async Task<IActionResult> Login([FromBody] UserLoginDTO model)
         {
             var result =
                 await _signInManager.PasswordSignInAsync(model.Email, model.Password, model.RememberMe, false);
             if (!result.Succeeded) return BadRequest(model);
             UserEmailIdDTO emailIdDTO = _accountService.GetUserIDFromUserEmail(model.Email);
-            model.UserId = emailIdDTO.UserId;
-            return Ok(model);
+            var viewModel = _mapper.Map<UserAuthenticationVM>(model);
+            viewModel.UserId = emailIdDTO.UserId;
+            return Ok(viewModel);
         }
 
         [HttpGet]
@@ -71,7 +74,7 @@ namespace GoalTrackerAPI.Controllers
         [HttpPatch]
         public UserEmailIdDTO ChangeUserEmail(UserEmailIdDTO model)
         {
-            return _accountService.SetNewUserEmail(model.NewEmail!, model.UserId);
+            return _accountService.SetNewUserEmail(model.Email!, model.UserId);
         }
 
         [HttpPatch]
@@ -103,11 +106,11 @@ namespace GoalTrackerAPI.Controllers
             try
             {
                 User user = await _accountService.GetUserById(id);
-                return Ok(_mapper.Map<UserToGetDTO>(user));
+                return Ok(_mapper.Map<UserBaseVM>(user));
             }
             catch (NotFoundException)
             {
-                UserToGetDTO user = new()
+                UserAuthenticationVM user = new()
                 {
                     UserId = id
                 };
