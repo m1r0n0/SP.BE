@@ -14,9 +14,15 @@ namespace SP.Identity.API.MappingProfiles
                 .ForMember(dest => dest.Id, opt => opt.Ignore())
                 .IncludeAllDerived()
                 .ReverseMap();
-            CreateMap<UserBaseDTO, UserBaseVM>()
+
+            CreateMap<UserBaseDTO, UserAuthenticationVM>()
                 .IncludeAllDerived()
-                //.ForMember(dest => dest.UserId, opt => opt.MapFrom(src => src.Id))
+                .ReverseMap();
+            CreateMap<UserLoginDTO, UserAuthenticationVM>().ReverseMap();
+            CreateMap<UserRegisterDTO, UserAuthenticationVM>().ReverseMap();
+
+            CreateMap<User, UserBaseVM>()
+                .ForMember(dest => dest.UserId, opt => opt.MapFrom(src => src.Id))
                 .ReverseMap();
         }
     }

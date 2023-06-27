@@ -14,13 +14,23 @@ builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+
 builder.Services.AddDbContext<IdentityContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
-builder.Services.AddIdentity<User, IdentityRole>()
+
+builder.Services.AddIdentity<User, IdentityRole>(cfg => { cfg.User.RequireUniqueEmail = true;})
     .AddEntityFrameworkStores<IdentityContext>()
     .AddDefaultTokenProviders();
+
 builder.Services.AddAutoMapper(typeof(AppUserMappingProfile));
+
 builder.Services.AddScoped<IAccountService, AccountService>();
+
+builder.Services.AddAuthentication(cfg =>
+{
+    cfg.DefaultAuthenticateScheme = IdentityConstants.ApplicationScheme;
+    cfg.DefaultChallengeScheme = IdentityConstants.ApplicationScheme;
+});
 
 
 var app = builder.Build();
@@ -34,6 +44,7 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 
+app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapControllers();

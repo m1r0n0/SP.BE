@@ -16,11 +16,11 @@ namespace SP.Identity.BusinessLayer.Services
             _context = context;
             _mapper = mapper;
         }
-        public UserEmailIdDTO GetUserIDFromUserEmail(string userEmail)
+        public async Task<UserEmailIdDTO> GetUserIDFromUserEmail(string userEmail)
         {
             UserEmailIdDTO userEmailIdDTO = new();
             userEmailIdDTO.Email = userEmail;
-            var tempUserEmailToIdDTO = _context.UserList?.Where(item => item.Email == userEmail)?.FirstOrDefault();
+            var tempUserEmailToIdDTO = await _context.UserList?.Where(item => item.Email == userEmail)?.FirstOrDefaultAsync();
             if (tempUserEmailToIdDTO == null)
             {
                 userEmailIdDTO.UserId = "";
@@ -32,11 +32,11 @@ namespace SP.Identity.BusinessLayer.Services
             return userEmailIdDTO;
         }
 
-        public UserEmailIdDTO GetUserEmailFromUserID(string userId)
+        public async Task<UserEmailIdDTO> GetUserEmailFromUserID(string userId)
         {
             UserEmailIdDTO userEmailIdDTO = new();
             userEmailIdDTO.UserId = userId;
-            var tempUserEmailToIdDTO = _context.UserList?.Where(item => item.Id == userId)?.FirstOrDefault();
+            var tempUserEmailToIdDTO = await _context.UserList?.Where(item => item.Id == userId)?.FirstOrDefaultAsync();
             if (tempUserEmailToIdDTO == null)
             {
                 userEmailIdDTO.Email = "";
@@ -48,9 +48,9 @@ namespace SP.Identity.BusinessLayer.Services
             return userEmailIdDTO;
         }
 
-        public bool CheckGivenEmailForExistingInDB(string email)
+        public async Task <bool> CheckGivenEmailForExistingInDB(string email)
         {
-            var tempModel = _context.UserList?.Where(item => item.Email == email).FirstOrDefault();
+            var tempModel = await _context.UserList?.Where(item => item.Email == email).FirstOrDefaultAsync();
             if (tempModel == null)
             {
                 return false;
@@ -61,11 +61,11 @@ namespace SP.Identity.BusinessLayer.Services
             }
         }
 
-        public UserEmailIdDTO SetNewUserEmail(string newUserEmail, string userID)
+        public async Task<UserEmailIdDTO> SetNewUserEmail(string newUserEmail, string userID)
         {
             UserEmailIdDTO userEmailIdDTO = new(userID);
-            User? userToPatch = _context.UserList?.Where(user => user.Id == userID).FirstOrDefault();
-            User? probablyExistingUser = _context.UserList?.Where(user => user.Email == newUserEmail).FirstOrDefault();
+            User? userToPatch = await _context.UserList?.Where(user => user.Id == userID).FirstOrDefaultAsync();
+            User? probablyExistingUser = await _context.UserList?.Where(user => user.Email == newUserEmail).FirstOrDefaultAsync();
             if (probablyExistingUser == null)
             {
                 UpdateUserInDB();
