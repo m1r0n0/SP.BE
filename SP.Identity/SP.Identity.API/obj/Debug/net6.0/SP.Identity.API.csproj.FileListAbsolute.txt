@@ -77,3 +77,4 @@ C:\Users\OMyroniuk\repos\SP.BE\SP.Identity\SP.Identity.API\obj\Debug\net6.0\SP.I
 C:\Users\OMyroniuk\repos\SP.BE\SP.Identity\SP.Identity.API\obj\Debug\net6.0\ref\SP.Identity.API.dll
 C:\Users\OMyroniuk\repos\SP.BE\SP.Identity\SP.Identity.API\bin\Debug\net6.0\Humanizer.dll
 C:\Users\OMyroniuk\repos\SP.BE\SP.Identity\SP.Identity.API\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Design.dll
+C:\Users\OMyroniuk\repos\SP.BE\SP.Identity\SP.Identity.API\bin\Debug\net6.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll

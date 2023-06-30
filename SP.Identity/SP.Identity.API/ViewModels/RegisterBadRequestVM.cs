@@ -3,9 +3,7 @@ using SP.Identity.BusinessLayer.DTOs;
 
 namespace SP.Identity.API.ViewModels
 {
-    public class RegisterBadRequestVM
+    public class RegisterBadRequestVM : RegisterBadRequestDTO
     {
-        public UserRegisterDTO Credentials { get; set; } = new();
-        public IdentityResultVM Result { get; set; } = new();
     }
 }

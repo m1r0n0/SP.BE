@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using SP.Identity.API.MappingProfiles;
@@ -26,11 +27,21 @@ builder.Services.AddAutoMapper(typeof(AppUserMappingProfile));
 
 builder.Services.AddScoped<IAccountService, AccountService>();
 
+builder.Services.AddAuthorization();
 builder.Services.AddAuthentication(cfg =>
 {
     cfg.DefaultAuthenticateScheme = IdentityConstants.ApplicationScheme;
     cfg.DefaultChallengeScheme = IdentityConstants.ApplicationScheme;
+    //cfg.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+    //cfg.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+    //cfg.DefaultScheme = JwtBearerDefaults.AuthenticationScheme;
 });
+    //.AddJwtBearer(options =>
+    //{
+    //    options.Audience = "http://localhost:5001/";
+    //    options.Authority = "http://localhost:7019/";
+    //});
+
 
 
 var app = builder.Build();

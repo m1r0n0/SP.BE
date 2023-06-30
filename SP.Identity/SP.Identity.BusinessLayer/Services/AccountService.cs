@@ -1,5 +1,7 @@
 ﻿using AutoMapper;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using SP.Identity.API.ViewModels;
 using SP.Identity.BusinessLayer.DTOs;
 using SP.Identity.BusinessLayer.Interfaces;
 using SP.Identity.DataAccessLayer.Models;
@@ -22,33 +24,55 @@ namespace SP.Identity.BusinessLayer.Services
             };
 
             var tempUserEmailToIdDTO = await _context.UserList.Where(item => item.Email == userEmail).FirstOrDefaultAsync();
-           
-            if (tempUserEmailToIdDTO == null)
-            {
-                throw new NotFoundException();
-            }
 
+            if (tempUserEmailToIdDTO == null) throw new NotFoundException();
+            
             userEmailIdDTO.UserId = tempUserEmailToIdDTO.Id;
 
             return userEmailIdDTO;
         }
 
-        public async Task <bool> CheckGivenEmailForExistingInDB(string email)
+        public async Task<bool> CheckGivenEmailForExistingInDB(string email)
         {
             var tempModel = await _context.UserList.Where(item => item.Email == email).FirstOrDefaultAsync();
 
-            if (tempModel == null) return false;
-            
-            return true;
+            return tempModel != null;
         }
 
         public async Task<User> GetUserById(string id)
         {
             User? user = await _context.UserList.Where(user => user.Id == id).FirstOrDefaultAsync();
 
-            if (user is null) throw new NotFoundException();
-
-            return user;
+            return user is null ? throw new NotFoundException() : user;
         }
+
+        public RegisterBadRequestDTO AssembleRegisterBadRequestVM(UserRegisterDTO model, IdentityResult result)
+        {
+            var errorList = result.Errors.Where(e =>
+                    e.Code != nameof(IdentityErrorDescriber.DuplicateUserName) &&
+                    e.Code != nameof(IdentityErrorDescriber.InvalidUserName))
+                .ToList();
+
+            var badRequestVM = new RegisterBadRequestDTO(model.Email!, new IdentityResultDTO(result.Succeeded, errorList));
+
+            return badRequestVM;
+        }
+
+        public LoginBadRequestDTO AssembleLoginBadRequestVM(UserLoginDTO model)
+        {
+            var errorList = new List<IdentityError>
+            {
+                new()
+                {
+                    Code = "InvalidCredentials",
+                    Description = "Invalid Email or Password!"
+                }
+            };
+
+            var badRequestVM = new LoginBadRequestDTO(model.Email!, new IdentityResultDTO(false, errorList));
+
+            return badRequestVM;
+        }
+
     }
 }
