@@ -7,9 +7,6 @@ using SP.Identity.BusinessLayer.DTOs;
 using SP.Identity.BusinessLayer.Exceptions;
 using SP.Identity.BusinessLayer.Interfaces;
 using SP.Identity.DataAccessLayer.Models;
-using System.Net;
-using Microsoft.AspNetCore.Authentication;
-using Microsoft.AspNetCore.Authentication.JwtBearer;
 
 namespace SP.Identity.API.Controllers
 {
