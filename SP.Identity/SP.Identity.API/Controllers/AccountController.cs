@@ -1,12 +1,14 @@
 ﻿using AutoMapper;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using SP.Identity.API.ViewModels;
 using SP.Identity.BusinessLayer.DTOs;
 using SP.Identity.BusinessLayer.Exceptions;
 using SP.Identity.BusinessLayer.Interfaces;
 using SP.Identity.DataAccessLayer.Models;
 
-namespace GoalTrackerAPI.Controllers
+namespace SP.Identity.API.Controllers
 {
     [ApiController]
     [Route("api/[controller]/[action]")]
@@ -30,90 +32,147 @@ namespace GoalTrackerAPI.Controllers
             _mapper = mapper;
         }
 
-        [HttpPut]
-        public async Task<IActionResult> Register(UserDTO model)
+        [HttpPost]
+        [ProducesResponseType(typeof(UserAuthenticationVM), 200)]
+        [ProducesResponseType(typeof(RegisterBadRequestVM), 400)]
+
+        public async Task<IActionResult> Register(UserRegisterDTO model)
         {
-            if (!ModelState.IsValid) return BadRequest(model);
-            if (_accountService.CheckGivenEmailForExistingInDB(model.Email))
-                return Conflict(model);
             var user = _mapper.Map<User>(model);
-            var result = await _userManager.CreateAsync(user, model.Password);
-            if (!result.Succeeded) return BadRequest(model);
-            model.UserId = _accountService.GetUserIDFromUserEmail(model.Email).UserId;
+            IdentityResult result = await _userManager.CreateAsync(user, model.Password);
+
+            if (!result.Succeeded) return BadRequest(_accountService.AssembleRegisterBadRequestVM(model, result));
+            
             await _signInManager.SignInAsync(user, false);
-            return Ok(model);
+
+            var viewModel = new UserAuthenticationVM(
+                model.Email!, 
+                _accountService.GetUserIDFromUserEmail(model.Email!).Result.UserId,
+                true);
+
+            return Ok(viewModel);
         }
 
         [HttpPost]
-        [Produces("application/json")]
-        public async Task<IActionResult> Login([FromBody] UserDTO model)
+        [ProducesResponseType(typeof(UserAuthenticationVM), 200)]
+        [ProducesResponseType(typeof(LoginBadRequestVM), 400)]
+        public async Task<IActionResult> Login(UserLoginDTO model)
         {
-            var result =
-                await _signInManager.PasswordSignInAsync(model.Email, model.Password, model.RememberMe, false);
-            if (!result.Succeeded) return BadRequest(model);
-            UserEmailIdDTO emailIdDTO = _accountService.GetUserIDFromUserEmail(model.Email);
-            model.UserId = emailIdDTO.UserId;
-            return Ok(model);
+            if (model.Email is null) return BadRequest(_accountService.AssembleLoginBadRequestVM(model));
+            
+            var result = await _signInManager.PasswordSignInAsync(
+                    model.Email, model.Password, model.RememberMe, false);
+
+            if (!result.Succeeded) return BadRequest(_accountService.AssembleLoginBadRequestVM(model));
+
+            var viewModel = _mapper.Map<UserAuthenticationVM>(model);
+            viewModel.UserId = _accountService.GetUserIDFromUserEmail(model.Email).Result.UserId;
+
+            return Ok(viewModel);
         }
 
+        [Authorize]
         [HttpGet]
-        public UserEmailIdDTO GetUserIdByEmail(string userEmail)
+        [ProducesResponseType(typeof(UserEmailIdVM), 200)]
+        [ProducesResponseType(typeof(UserEmailVM), 404)]
+        public async Task<IActionResult> GetUserIdByEmail(string userEmail)
         {
-            return _accountService.GetUserIDFromUserEmail(userEmail);
+            try
+            {
+                return Ok(await _accountService.GetUserIDFromUserEmail(userEmail));
+            }
+            catch (NotFoundException)
+            {
+                return NotFound(new UserEmailVM( userEmail ));
+            }
         }
 
-        [HttpGet]
-        public UserEmailIdDTO GetUserEmailById(string userId)
+        [Authorize]
+        [HttpPatch]
+        [ProducesResponseType(typeof(UserEmailIdVM), 200)]
+        [ProducesResponseType(typeof(UserEmailIdVM), 400)]
+        [ProducesResponseType(typeof(UserIdVM), 404)]
+        public async Task<IActionResult> ChangeUserEmail(UserEmailIdDTO model)
         {
-            return _accountService.GetUserEmailFromUserID(userId);
+            try
+            {
+                User user = await _accountService.GetUserById(model.UserId);
+                var token = await _userManager.GenerateChangeEmailTokenAsync(user, model.Email);
+                var result = await _userManager.ChangeEmailAsync(user, model.Email, token);
+
+                if (!result.Succeeded) return BadRequest(model);
+
+                await _userManager.SetUserNameAsync(user, model.Email);
+
+                return Ok(model);
+            }
+            catch (NotFoundException)
+            {
+                return NotFound(new UserIdVM(model.UserId));
+            }
         }
 
         [HttpPatch]
-        public UserEmailIdDTO ChangeUserEmail(UserEmailIdDTO model)
-        {
-            return _accountService.SetNewUserEmail(model.NewEmail!, model.UserId);
-        }
-
-        [HttpPatch]
+        [ProducesResponseType(typeof(UserPasswordIdDTO), 200)]
+        [ProducesResponseType(typeof(UserPasswordIdDTO), 400)]
+        [ProducesResponseType(typeof(UserIdVM), 404)]
         public async Task<IActionResult> ChangeUserPassword(UserPasswordIdDTO model)
         {
             try
             {
-                User? user = await _accountService.GetUserById(model.UserId);
-                if (user is null) throw new NotFoundException();
+                User user = await _accountService.GetUserById(model.UserId);
                 var token = await _userManager.GeneratePasswordResetTokenAsync(user);
                 var result = await _userManager.ResetPasswordAsync(user, token, model.NewPassword);
-                if (result.Succeeded)
-                {
-                    return Ok(model);
-                }
 
+                if (result.Succeeded) return Ok(model);
+                
                 return BadRequest(model);
             }
             catch (NotFoundException)
             {
-                return NotFound(model);
+                return NotFound(new UserIdVM(model.UserId));
             }
 
         }
 
+        [Authorize]
         [HttpGet]
+        [ProducesResponseType(typeof(UserEmailIdVM), 200)]
+        [ProducesResponseType(typeof(UserIdVM), 404)]
         public async Task<IActionResult> GetUserById(string id)
         {
             try
             {
                 User user = await _accountService.GetUserById(id);
-                return Ok(_mapper.Map<UserToGetDTO>(user));
+
+                return Ok(_mapper.Map<UserEmailIdVM>(user));
             }
             catch (NotFoundException)
             {
-                UserToGetDTO user = new()
-                {
-                    UserId = id
-                };
-                return BadRequest(user);
+                return NotFound(new UserIdVM(id));
             }
-            
+        }
+
+        [Authorize]
+        [HttpDelete]
+        [ProducesResponseType(200)]
+        [ProducesResponseType(typeof(UserIdVM), 400)]
+        [ProducesResponseType(typeof(UserIdVM), 404)]
+        public async Task<IActionResult> DeleteUser(string userId)
+        {
+            try
+            {
+                User user = await _accountService.GetUserById(userId);
+                var result = await _userManager.DeleteAsync(user);
+
+                if (result.Succeeded) return Ok();
+                
+                return BadRequest(new UserIdVM(userId));
+            }
+            catch (NotFoundException)
+            {
+                return NotFound(new UserIdVM(userId));
+            }
         }
     }
 }

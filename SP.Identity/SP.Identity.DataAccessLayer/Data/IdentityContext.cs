@@ -4,9 +4,9 @@ using SP.Identity.DataAccessLayer.Models;
 
 namespace SP.Identity.DataAccessLayer.Data
 {
-    public class ApplicationContext : IdentityDbContext<User>
+    public class IdentityContext : IdentityDbContext<User>
     {
-        public ApplicationContext(DbContextOptions<ApplicationContext> options)
+        public IdentityContext(DbContextOptions<IdentityContext> options)
                     : base(options)
         {
             Database.EnsureCreated();

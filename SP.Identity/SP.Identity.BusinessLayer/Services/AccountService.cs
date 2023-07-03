@@ -1,5 +1,7 @@
 ﻿using AutoMapper;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using SP.Identity.API.ViewModels;
 using SP.Identity.BusinessLayer.DTOs;
 using SP.Identity.BusinessLayer.Interfaces;
 using SP.Identity.DataAccessLayer.Models;
@@ -9,92 +11,68 @@ namespace SP.Identity.BusinessLayer.Services
 {
     public class AccountService : IAccountService
     {
-        private readonly DataAccessLayer.Data.ApplicationContext _context;
-        private readonly IMapper _mapper;
-        public AccountService(DataAccessLayer.Data.ApplicationContext context,IMapper mapper)
+        private readonly DataAccessLayer.Data.IdentityContext _context;
+        public AccountService(DataAccessLayer.Data.IdentityContext context)
         {
             _context = context;
-            _mapper = mapper;
         }
-        public UserEmailIdDTO GetUserIDFromUserEmail(string userEmail)
+        public async Task<UserEmailIdDTO> GetUserIDFromUserEmail(string userEmail)
         {
-            UserEmailIdDTO userEmailIdDTO = new();
-            userEmailIdDTO.NewEmail = userEmail;
-            var tempUserEmailToIdDTO = _context.UserList?.Where(item => item.Email == userEmail)?.FirstOrDefault();
-            if (tempUserEmailToIdDTO == null)
+            UserEmailIdDTO userEmailIdDTO = new()
             {
-                userEmailIdDTO.UserId = "";
-            }
-            else
-            {
-                userEmailIdDTO.UserId = tempUserEmailToIdDTO.Id;
-            }
+                Email = userEmail
+            };
+
+            var tempUserEmailToIdDTO = await _context.UserList.Where(item => item.Email == userEmail).FirstOrDefaultAsync();
+
+            if (tempUserEmailToIdDTO == null) throw new NotFoundException();
+            
+            userEmailIdDTO.UserId = tempUserEmailToIdDTO.Id;
+
             return userEmailIdDTO;
         }
 
-        public UserEmailIdDTO GetUserEmailFromUserID(string userId)
+        public async Task<bool> CheckGivenEmailForExistingInDB(string email)
         {
-            UserEmailIdDTO userEmailIdDTO = new();
-            userEmailIdDTO.UserId = userId;
-            var tempUserEmailToIdDTO = _context.UserList?.Where(item => item.Id == userId)?.FirstOrDefault();
-            if (tempUserEmailToIdDTO == null)
-            {
-                userEmailIdDTO.NewEmail = "";
-            }
-            else
-            {
-                userEmailIdDTO.NewEmail = tempUserEmailToIdDTO.Email;
-            }
-            return userEmailIdDTO;
+            var tempModel = await _context.UserList.Where(item => item.Email == email).FirstOrDefaultAsync();
+
+            return tempModel != null;
         }
 
-        public bool CheckGivenEmailForExistingInDB(string email)
+        public async Task<User> GetUserById(string id)
         {
-            var tempModel = _context.UserList?.Where(item => item.Email == email).FirstOrDefault();
-            if (tempModel == null)
-            {
-                return false;
-            }
-            else
-            {
-                return true;
-            }
+            User? user = await _context.UserList.Where(user => user.Id == id).FirstOrDefaultAsync();
+
+            return user is null ? throw new NotFoundException() : user;
         }
 
-        public UserEmailIdDTO SetNewUserEmail(string newUserEmail, string userID)
+        public RegisterBadRequestDTO AssembleRegisterBadRequestVM(UserRegisterDTO model, IdentityResult result)
         {
-            UserEmailIdDTO userEmailIdDTO = new(userID);
-            User? userToPatch = _context.UserList?.Where(user => user.Id == userID).FirstOrDefault();
-            User? probablyExistingUser = _context.UserList?.Where(user => user.Email == newUserEmail).FirstOrDefault();
-            if (probablyExistingUser == null)
-            {
-                UpdateUserInDB();
-                userEmailIdDTO.NewEmail = newUserEmail;
-            }
-            else
-            {
-                userEmailIdDTO.NewEmail = null;
-            }
-            return userEmailIdDTO;
+            var errorList = result.Errors.Where(e =>
+                    e.Code != nameof(IdentityErrorDescriber.DuplicateUserName) &&
+                    e.Code != nameof(IdentityErrorDescriber.InvalidUserName))
+                .ToList();
 
-            void UpdateUserInDB()
-            {
-                userToPatch!.Email = newUserEmail;
-                userToPatch.NormalizedEmail = newUserEmail.ToUpper();
-                userToPatch.UserName = newUserEmail;
-                userToPatch.NormalizedUserName = newUserEmail.ToUpper();
+            var badRequestVM = new RegisterBadRequestDTO(model.Email!, new IdentityResultDTO(result.Succeeded, errorList));
 
-                userToPatch = null;
-
-                _context.SaveChanges();
-            }
+            return badRequestVM;
         }
 
-        public async Task<User> GetUserById(string Id)
+        public LoginBadRequestDTO AssembleLoginBadRequestVM(UserLoginDTO model)
         {
-            User? user = await _context.UserList?.Where(user => user.Id == Id).FirstOrDefaultAsync();
-            if (user is null) throw new NotFoundException();
-            return user;
+            var errorList = new List<IdentityError>
+            {
+                new()
+                {
+                    Code = "InvalidCredentials",
+                    Description = "Invalid Email or Password!"
+                }
+            };
+
+            var badRequestVM = new LoginBadRequestDTO(model.Email!, new IdentityResultDTO(false, errorList));
+
+            return badRequestVM;
         }
+
     }
 }

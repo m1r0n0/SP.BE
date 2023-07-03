@@ -75,3 +75,6 @@ C:\Users\OMyroniuk\repos\SP.BE\SP.Identity\SP.Identity.API\obj\Debug\net6.0\refi
 C:\Users\OMyroniuk\repos\SP.BE\SP.Identity\SP.Identity.API\obj\Debug\net6.0\SP.Identity.API.pdb
 C:\Users\OMyroniuk\repos\SP.BE\SP.Identity\SP.Identity.API\obj\Debug\net6.0\SP.Identity.API.genruntimeconfig.cache
 C:\Users\OMyroniuk\repos\SP.BE\SP.Identity\SP.Identity.API\obj\Debug\net6.0\ref\SP.Identity.API.dll
+C:\Users\OMyroniuk\repos\SP.BE\SP.Identity\SP.Identity.API\bin\Debug\net6.0\Humanizer.dll
+C:\Users\OMyroniuk\repos\SP.BE\SP.Identity\SP.Identity.API\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Design.dll
+C:\Users\OMyroniuk\repos\SP.BE\SP.Identity\SP.Identity.API\bin\Debug\net6.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll

@@ -1,10 +1,8 @@
 ﻿namespace SP.Identity.BusinessLayer.DTOs
 {
-    public class UserEmailIdDTO
+    public class UserEmailIdDTO : UserEmailDTO
     {
-        public string? NewEmail { get; set; } = string.Empty;
         public string UserId { get; set; } = string.Empty;
-
         public UserEmailIdDTO(string userId)
         {
             UserId = userId;
