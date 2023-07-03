@@ -19,7 +19,7 @@ builder.Services.AddIdentity<User, IdentityRole>(cfg => { cfg.User.RequireUnique
     .AddEntityFrameworkStores<IdentityContext>()
     .AddDefaultTokenProviders();
 
-builder.Services.AddAutoMapper(typeof(AppUserMappingProfile));
+builder.Services.AddAutoMapper(typeof(UserMappingProfile));
 
 builder.Services.AddScoped<IAccountService, AccountService>();
 

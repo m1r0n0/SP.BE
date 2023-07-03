@@ -12,10 +12,12 @@ namespace SP.Identity.BusinessLayer.Services
     public class AccountService : IAccountService
     {
         private readonly DataAccessLayer.Data.IdentityContext _context;
+
         public AccountService(DataAccessLayer.Data.IdentityContext context)
         {
             _context = context;
         }
+
         public async Task<UserEmailIdDTO> GetUserIDFromUserEmail(string userEmail)
         {
             UserEmailIdDTO userEmailIdDTO = new()
@@ -23,7 +25,7 @@ namespace SP.Identity.BusinessLayer.Services
                 Email = userEmail
             };
 
-            var tempUserEmailToIdDTO = await _context.UserList.Where(item => item.Email == userEmail).FirstOrDefaultAsync();
+            var tempUserEmailToIdDTO = await _context.Users.Where(item => item.Email == userEmail).FirstOrDefaultAsync();
 
             if (tempUserEmailToIdDTO == null) throw new NotFoundException();
             
@@ -34,14 +36,14 @@ namespace SP.Identity.BusinessLayer.Services
 
         public async Task<bool> CheckGivenEmailForExistingInDB(string email)
         {
-            var tempModel = await _context.UserList.Where(item => item.Email == email).FirstOrDefaultAsync();
+            var tempModel = await _context.Users.Where(item => item.Email == email).FirstOrDefaultAsync();
 
             return tempModel != null;
         }
 
         public async Task<User> GetUserById(string id)
         {
-            User? user = await _context.UserList.Where(user => user.Id == id).FirstOrDefaultAsync();
+            User? user = await _context.Users.Where(user => user.Id == id).FirstOrDefaultAsync();
 
             return user is null ? throw new NotFoundException() : user;
         }

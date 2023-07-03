@@ -12,6 +12,6 @@ namespace SP.Identity.DataAccessLayer.Data
             Database.EnsureCreated();
         }
 
-        public DbSet<User> UserList { get; set; } = default!;
+        public new DbSet<User> Users { get; set; } = default!;
     }
 }

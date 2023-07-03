@@ -5,9 +5,9 @@ using SP.Identity.DataAccessLayer.Models;
 
 namespace SP.Identity.API.MappingProfiles
 {
-    public class AppUserMappingProfile : Profile
+    public class UserMappingProfile : Profile
     {
-        public AppUserMappingProfile()
+        public UserMappingProfile()
         {
             CreateMap<UserEmailDTO, User>()
                 .ForMember(dest => dest.UserName, opt => opt.MapFrom((src => src.Email)))
