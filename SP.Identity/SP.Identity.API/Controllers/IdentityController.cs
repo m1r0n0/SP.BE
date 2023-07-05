@@ -7,22 +7,23 @@ using SP.Identity.BusinessLayer.DTOs;
 using SP.Identity.BusinessLayer.Exceptions;
 using SP.Identity.BusinessLayer.Interfaces;
 using SP.Identity.DataAccessLayer.Models;
+using Swashbuckle.AspNetCore.Annotations;
 
 namespace SP.Identity.API.Controllers
 {
     [ApiController]
-    [Route("api/[controller]/[action]")]
-    public class AccountController : ControllerBase
+    [Route("api/v1/identity/")]
+    public class IdentityController : ControllerBase
     {
         private readonly UserManager<User?> _userManager;
         private readonly SignInManager<User> _signInManager;
-        private readonly IAccountService _accountService;
+        private readonly IIdentityService _accountService;
         private readonly IMapper _mapper;
 
-        public AccountController(
+        public IdentityController(
             UserManager<User?> userManager,
             SignInManager<User> signInManager,
-            IAccountService accountService,
+            IIdentityService accountService,
             IMapper mapper
             )
         {
@@ -33,9 +34,9 @@ namespace SP.Identity.API.Controllers
         }
 
         [HttpPost]
+        [Route("register")]
         [ProducesResponseType(typeof(UserAuthenticationVM), 200)]
         [ProducesResponseType(typeof(RegisterBadRequestVM), 400)]
-
         public async Task<IActionResult> Register(UserRegisterDTO model)
         {
             var user = _mapper.Map<User>(model);
@@ -47,13 +48,14 @@ namespace SP.Identity.API.Controllers
 
             var viewModel = new UserAuthenticationVM(
                 model.Email!, 
-                _accountService.GetUserIDFromUserEmail(model.Email!).Result.UserId,
+                _accountService.GetUserIDFromUserEmail(model.Email!).Result,
                 true);
 
             return Ok(viewModel);
         }
 
         [HttpPost]
+        [Route("login")]
         [ProducesResponseType(typeof(UserAuthenticationVM), 200)]
         [ProducesResponseType(typeof(LoginBadRequestVM), 400)]
         public async Task<IActionResult> Login(UserLoginDTO model)
@@ -66,15 +68,17 @@ namespace SP.Identity.API.Controllers
             if (!result.Succeeded) return BadRequest(_accountService.AssembleLoginBadRequestVM(model));
 
             var viewModel = _mapper.Map<UserAuthenticationVM>(model);
-            viewModel.UserId = _accountService.GetUserIDFromUserEmail(model.Email).Result.UserId;
+            viewModel.UserId = _accountService.GetUserIDFromUserEmail(model.Email).Result;
 
             return Ok(viewModel);
         }
 
         [Authorize]
         [HttpGet]
+        [Route("user/get/id/{userEmail}")]
         [ProducesResponseType(typeof(UserEmailIdVM), 200)]
         [ProducesResponseType(typeof(UserEmailVM), 404)]
+        [SwaggerOperation(Summary = "Get user id by email")]
         public async Task<IActionResult> GetUserIdByEmail(string userEmail)
         {
             try
@@ -89,75 +93,83 @@ namespace SP.Identity.API.Controllers
 
         [Authorize]
         [HttpPatch]
+        [Route("user/email/{userId}")]
         [ProducesResponseType(typeof(UserEmailIdVM), 200)]
         [ProducesResponseType(typeof(UserEmailIdVM), 400)]
         [ProducesResponseType(typeof(UserIdVM), 404)]
-        public async Task<IActionResult> ChangeUserEmail(UserEmailIdDTO model)
+        [SwaggerOperation(Summary = "Change user email")]
+        public async Task<IActionResult> ChangeUserEmail(string userId, UserNewEmailDTO model)
         {
             try
             {
-                User user = await _accountService.GetUserById(model.UserId);
-                var token = await _userManager.GenerateChangeEmailTokenAsync(user, model.Email);
-                var result = await _userManager.ChangeEmailAsync(user, model.Email, token);
+                User user = await _accountService.GetUserById(userId);
+                var token = await _userManager.GenerateChangeEmailTokenAsync(user, model.NewEmail);
+                var result = await _userManager.ChangeEmailAsync(user, model.NewEmail, token);
 
                 if (!result.Succeeded) return BadRequest(model);
 
-                await _userManager.SetUserNameAsync(user, model.Email);
+                await _userManager.SetUserNameAsync(user, model.NewEmail);
 
-                return Ok(model);
+                return Ok();
             }
             catch (NotFoundException)
             {
-                return NotFound(new UserIdVM(model.UserId));
+                return NotFound();
             }
         }
 
         [HttpPatch]
-        [ProducesResponseType(typeof(UserPasswordIdDTO), 200)]
-        [ProducesResponseType(typeof(UserPasswordIdDTO), 400)]
+        [Route("user/password/{userId}")]
+        [ProducesResponseType(typeof(UserNewPasswordDTO), 200)]
+        [ProducesResponseType(typeof(UserNewPasswordDTO), 400)]
         [ProducesResponseType(typeof(UserIdVM), 404)]
-        public async Task<IActionResult> ChangeUserPassword(UserPasswordIdDTO model)
+        [SwaggerOperation(Summary = "Change user password")]
+        public async Task<IActionResult> ChangeUserPassword(string userId, UserNewPasswordDTO model)
         {
             try
             {
-                User user = await _accountService.GetUserById(model.UserId);
+                User user = await _accountService.GetUserById(userId);
                 var token = await _userManager.GeneratePasswordResetTokenAsync(user);
                 var result = await _userManager.ResetPasswordAsync(user, token, model.NewPassword);
 
-                if (result.Succeeded) return Ok(model);
+                if (result.Succeeded) return Ok();
                 
-                return BadRequest(model);
+                return BadRequest();
             }
             catch (NotFoundException)
             {
-                return NotFound(new UserIdVM(model.UserId));
+                return NotFound();
             }
 
         }
 
         [Authorize]
         [HttpGet]
+        [Route("user/get/{userId}")]
         [ProducesResponseType(typeof(UserEmailIdVM), 200)]
         [ProducesResponseType(typeof(UserIdVM), 404)]
-        public async Task<IActionResult> GetUserById(string id)
+        [SwaggerOperation(Summary = "Get user by Id")]
+        public async Task<IActionResult> GetUserById(string userId)
         {
             try
             {
-                User user = await _accountService.GetUserById(id);
+                User user = await _accountService.GetUserById(userId);
 
                 return Ok(_mapper.Map<UserEmailIdVM>(user));
             }
             catch (NotFoundException)
             {
-                return NotFound(new UserIdVM(id));
+                return NotFound(new UserIdVM(userId));
             }
         }
 
         [Authorize]
         [HttpDelete]
+        [Route("user/delete/{userId}")]
         [ProducesResponseType(200)]
         [ProducesResponseType(typeof(UserIdVM), 400)]
         [ProducesResponseType(typeof(UserIdVM), 404)]
+        [SwaggerOperation(Summary = "Delete user")]
         public async Task<IActionResult> DeleteUser(string userId)
         {
             try

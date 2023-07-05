@@ -1,7 +1,6 @@
 ﻿using AutoMapper;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
-using SP.Identity.API.ViewModels;
 using SP.Identity.BusinessLayer.DTOs;
 using SP.Identity.BusinessLayer.Interfaces;
 using SP.Identity.DataAccessLayer.Models;
@@ -9,29 +8,22 @@ using SP.Identity.BusinessLayer.Exceptions;
 
 namespace SP.Identity.BusinessLayer.Services
 {
-    public class AccountService : IAccountService
+    public class IdentityService : IIdentityService
     {
         private readonly DataAccessLayer.Data.IdentityContext _context;
 
-        public AccountService(DataAccessLayer.Data.IdentityContext context)
+        public IdentityService(DataAccessLayer.Data.IdentityContext context)
         {
             _context = context;
         }
 
-        public async Task<UserEmailIdDTO> GetUserIDFromUserEmail(string userEmail)
+        public async Task<string> GetUserIDFromUserEmail(string userEmail)
         {
-            UserEmailIdDTO userEmailIdDTO = new()
-            {
-                Email = userEmail
-            };
-
             var tempUserEmailToIdDTO = await _context.Users.Where(item => item.Email == userEmail).FirstOrDefaultAsync();
 
             if (tempUserEmailToIdDTO == null) throw new NotFoundException();
-            
-            userEmailIdDTO.UserId = tempUserEmailToIdDTO.Id;
 
-            return userEmailIdDTO;
+            return tempUserEmailToIdDTO.Id;
         }
 
         public async Task<bool> CheckGivenEmailForExistingInDB(string email)

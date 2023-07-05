@@ -17,7 +17,7 @@ namespace SP.Provider.BusinessLayer.Services
             _mapper = mapper;
         }
 
-        public async Task<DataAccessLayer.Models.Provider> CreateProvider(CreateProviderDTO model)
+        public async Task<DataAccessLayer.Models.Provider> CreateProvider(ProviderDTO model)
         {
             var provider = _mapper.Map<DataAccessLayer.Models.Provider>(model);
 
@@ -27,9 +27,9 @@ namespace SP.Provider.BusinessLayer.Services
             return provider;
         }
 
-        public async Task<DataAccessLayer.Models.Provider> UpdateProvider(DataAccessLayer.Models.Provider model)
+        public async Task<ProviderInfoDTO> UpdateProvider(string userId, ProviderInfoDTO model)
         {
-            var provider = await _context.Providers.Where(p => p.ProviderId == model.ProviderId).FirstOrDefaultAsync();
+            var provider = await _context.Providers.Where(p => p.UserId == userId).FirstOrDefaultAsync();
 
             if (provider is not null)
             {
@@ -43,7 +43,7 @@ namespace SP.Provider.BusinessLayer.Services
             }
             else throw new NotFoundException();
 
-            return provider;
+            return _mapper.Map<ProviderInfoDTO>(provider);
         }
     }
 }

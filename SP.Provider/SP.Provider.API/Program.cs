@@ -1,4 +1,5 @@
 using Microsoft.EntityFrameworkCore;
+using Microsoft.OpenApi.Models;
 using SP.Provider.API.MappingProfiles;
 using SP.Provider.BusinessLayer.Interfaces;
 using SP.Provider.BusinessLayer.Services;
@@ -17,6 +18,12 @@ builder.Services.AddDbContext<ProviderContext>(opt =>
 builder.Services.AddAutoMapper(typeof(ProviderMappingProfile));
 
 builder.Services.AddScoped<IProviderService, ProviderService>();
+
+builder.Services.AddSwaggerGen(c =>
+{
+    c.EnableAnnotations();
+    c.SwaggerDoc("v1", new OpenApiInfo { Title = "SP.Provider API", Version = "v1" });
+});
 
 var app = builder.Build();
 

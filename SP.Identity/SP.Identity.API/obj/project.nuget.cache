@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "PGaT8Ue4f7Dr1miczjW+102zOjh14H+rM1BbsWRp8Iup7CMitRzxkkOSQtlfcHhmwQ4C8gyQTT+8knGBYZQ59Q==",
+  "dgSpecHash": "Vq3x8qCWSYtB20SCUx0ZvlJZtGWIdgSpZnDkdZxEh3/Ik3BX/Pa909gddU4YC44AmWxxc6U0EIPhNTHpE5P/oQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\OMyroniuk\\repos\\SP.BE\\SP.Identity\\SP.Identity.API\\SP.Identity.API.csproj",
   "expectedPackageFiles": [
@@ -44,8 +44,9 @@
     "C:\\Users\\OMyroniuk\\.nuget\\packages\\microsoft.win32.registry\\4.7.0\\microsoft.win32.registry.4.7.0.nupkg.sha512",
     "C:\\Users\\OMyroniuk\\.nuget\\packages\\microsoft.win32.systemevents\\4.7.0\\microsoft.win32.systemevents.4.7.0.nupkg.sha512",
     "C:\\Users\\OMyroniuk\\.nuget\\packages\\swashbuckle.aspnetcore\\6.2.3\\swashbuckle.aspnetcore.6.2.3.nupkg.sha512",
-    "C:\\Users\\OMyroniuk\\.nuget\\packages\\swashbuckle.aspnetcore.swagger\\6.2.3\\swashbuckle.aspnetcore.swagger.6.2.3.nupkg.sha512",
-    "C:\\Users\\OMyroniuk\\.nuget\\packages\\swashbuckle.aspnetcore.swaggergen\\6.2.3\\swashbuckle.aspnetcore.swaggergen.6.2.3.nupkg.sha512",
+    "C:\\Users\\OMyroniuk\\.nuget\\packages\\swashbuckle.aspnetcore.annotations\\6.5.0\\swashbuckle.aspnetcore.annotations.6.5.0.nupkg.sha512",
+    "C:\\Users\\OMyroniuk\\.nuget\\packages\\swashbuckle.aspnetcore.swagger\\6.5.0\\swashbuckle.aspnetcore.swagger.6.5.0.nupkg.sha512",
+    "C:\\Users\\OMyroniuk\\.nuget\\packages\\swashbuckle.aspnetcore.swaggergen\\6.5.0\\swashbuckle.aspnetcore.swaggergen.6.5.0.nupkg.sha512",
     "C:\\Users\\OMyroniuk\\.nuget\\packages\\swashbuckle.aspnetcore.swaggerui\\6.2.3\\swashbuckle.aspnetcore.swaggerui.6.2.3.nupkg.sha512",
     "C:\\Users\\OMyroniuk\\.nuget\\packages\\system.collections.immutable\\6.0.0\\system.collections.immutable.6.0.0.nupkg.sha512",
     "C:\\Users\\OMyroniuk\\.nuget\\packages\\system.configuration.configurationmanager\\4.7.0\\system.configuration.configurationmanager.4.7.0.nupkg.sha512",

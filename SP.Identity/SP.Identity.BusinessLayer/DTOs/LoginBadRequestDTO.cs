@@ -1,7 +1,4 @@
-﻿using Microsoft.AspNetCore.Identity;
-using SP.Identity.BusinessLayer.DTOs;
-
-namespace SP.Identity.API.ViewModels
+﻿namespace SP.Identity.BusinessLayer.DTOs
 {
     public class LoginBadRequestDTO
     {

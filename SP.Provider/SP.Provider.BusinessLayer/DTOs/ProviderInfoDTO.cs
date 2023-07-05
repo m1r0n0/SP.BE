@@ -1,19 +1,11 @@
-﻿using Microsoft.EntityFrameworkCore;
-using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel.DataAnnotations;
 
-namespace SP.Provider.DataAccessLayer.Models
+namespace SP.Provider.BusinessLayer.DTOs
 {
-    [Index("UserId")]
-    public class Provider
+    public class ProviderInfoDTO
     {
-        [Key]
-        public int ProviderId { get; set; }
-        public string UserId { get; set; } 
-
         public string FirstName { get; set; }
-
         public string LastName { get; set; }
-
         public string EnterpriseName { get; set; }
 
         [Required]

@@ -7,7 +7,8 @@ namespace SP.Provider.API.MappingProfiles
     {
         public ProviderMappingProfile()
         {
-            CreateMap<DataAccessLayer.Models.Provider, CreateProviderDTO>().ReverseMap();
+            CreateMap<DataAccessLayer.Models.Provider, ProviderDTO>().ReverseMap();
+            CreateMap<DataAccessLayer.Models.Provider, ProviderInfoDTO>().ReverseMap();
         }
     }
 }

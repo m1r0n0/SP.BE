@@ -11,5 +11,11 @@ namespace SP.Provider.DataAccessLayer.Data
         }
 
         public DbSet<Models.Provider> Providers { get; set; } = default!;
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            base.OnModelCreating(modelBuilder);
+            modelBuilder.Entity<DataAccessLayer.Models.Provider>().HasIndex(p => p.UserId );
+        }
     }
 }

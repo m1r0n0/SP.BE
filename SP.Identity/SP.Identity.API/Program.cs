@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.OpenApi.Models;
 using SP.Identity.API.MappingProfiles;
 using SP.Identity.BusinessLayer.Interfaces;
 using SP.Identity.BusinessLayer.Services;
@@ -21,13 +22,19 @@ builder.Services.AddIdentity<User, IdentityRole>(cfg => { cfg.User.RequireUnique
 
 builder.Services.AddAutoMapper(typeof(UserMappingProfile));
 
-builder.Services.AddScoped<IAccountService, AccountService>();
+builder.Services.AddScoped<IIdentityService, IdentityService>();
 
 builder.Services.AddAuthorization();
 builder.Services.AddAuthentication(cfg =>
 {
     cfg.DefaultAuthenticateScheme = IdentityConstants.ApplicationScheme;
     cfg.DefaultChallengeScheme = IdentityConstants.ApplicationScheme;
+});
+
+builder.Services.AddSwaggerGen(c =>
+{
+    c.EnableAnnotations();
+    c.SwaggerDoc("v1", new OpenApiInfo { Title = "SP.Identity API", Version = "v1" });
 });
 
 var app = builder.Build();

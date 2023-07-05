@@ -2,6 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using SP.Provider.DataAccessLayer.Data;
 
@@ -10,9 +11,10 @@ using SP.Provider.DataAccessLayer.Data;
 namespace SP.Provider.DataAccessLayer.Migrations
 {
     [DbContext(typeof(ProviderContext))]
-    partial class ProviderContextModelSnapshot : ModelSnapshot
+    [Migration("20230705091912_AddedUserIdIndex")]
+    partial class AddedUserIdIndex
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

@@ -73,3 +73,4 @@ C:\Users\OMyroniuk\repos\SP.BE\SP.Provider\SP.Provider.API\obj\Debug\net6.0\SP.P
 C:\Users\OMyroniuk\repos\SP.BE\SP.Provider\SP.Provider.API\obj\Debug\net6.0\SP.Provider.API.genruntimeconfig.cache
 C:\Users\OMyroniuk\repos\SP.BE\SP.Provider\SP.Provider.API\obj\Debug\net6.0\ref\SP.Provider.API.dll
 C:\Users\OMyroniuk\repos\SP.BE\SP.Provider\SP.Provider.API\obj\Debug\net6.0\SP.Provider.API.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\OMyroniuk\repos\SP.BE\SP.Provider\SP.Provider.API\bin\Debug\net6.0\Swashbuckle.AspNetCore.Annotations.dll
