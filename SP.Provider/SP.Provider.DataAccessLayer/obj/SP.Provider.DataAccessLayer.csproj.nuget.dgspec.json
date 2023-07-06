@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\OMyroniuk\\repos\\SP.BE\\SP.Provider\\SP.Provider.DataAccessLayer\\SP.Provider.DataAccessLayer.csproj": {}
+    "C:\\Users\\OMyroniuk\\repos\\Service Provider\\SP.BE\\SP.Provider\\SP.Provider.DataAccessLayer\\SP.Provider.DataAccessLayer.csproj": {}
   },
   "projects": {
-    "C:\\Users\\OMyroniuk\\repos\\SP.BE\\SP.Provider\\SP.Provider.DataAccessLayer\\SP.Provider.DataAccessLayer.csproj": {
+    "C:\\Users\\OMyroniuk\\repos\\Service Provider\\SP.BE\\SP.Provider\\SP.Provider.DataAccessLayer\\SP.Provider.DataAccessLayer.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\OMyroniuk\\repos\\SP.BE\\SP.Provider\\SP.Provider.DataAccessLayer\\SP.Provider.DataAccessLayer.csproj",
+        "projectUniqueName": "C:\\Users\\OMyroniuk\\repos\\Service Provider\\SP.BE\\SP.Provider\\SP.Provider.DataAccessLayer\\SP.Provider.DataAccessLayer.csproj",
         "projectName": "SP.Provider.DataAccessLayer",
-        "projectPath": "C:\\Users\\OMyroniuk\\repos\\SP.BE\\SP.Provider\\SP.Provider.DataAccessLayer\\SP.Provider.DataAccessLayer.csproj",
+        "projectPath": "C:\\Users\\OMyroniuk\\repos\\Service Provider\\SP.BE\\SP.Provider\\SP.Provider.DataAccessLayer\\SP.Provider.DataAccessLayer.csproj",
         "packagesPath": "C:\\Users\\OMyroniuk\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\OMyroniuk\\repos\\SP.BE\\SP.Provider\\SP.Provider.DataAccessLayer\\obj\\",
+        "outputPath": "C:\\Users\\OMyroniuk\\repos\\Service Provider\\SP.BE\\SP.Provider\\SP.Provider.DataAccessLayer\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\OMyroniuk\\AppData\\Roaming\\NuGet\\NuGet.Config",

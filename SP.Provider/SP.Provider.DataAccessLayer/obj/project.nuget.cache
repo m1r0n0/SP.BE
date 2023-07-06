@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "V5e8qgKAb1RZnphygulNgHubs/iRIfE3Glaw20dUXB5imEwaAFLLbPXV63Pp/jIzLq5YSuAIrSVLY5rr+ELlbw==",
+  "dgSpecHash": "rL+01pjJBsSdT/GgZLtzyhr+2QvPkfNE8EvLlcQg0nmQTpy4lJBph4e4crzNmxG43ARIzhdC8Of9aQJza9OqOg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\OMyroniuk\\repos\\SP.BE\\SP.Provider\\SP.Provider.DataAccessLayer\\SP.Provider.DataAccessLayer.csproj",
+  "projectFilePath": "C:\\Users\\OMyroniuk\\repos\\Service Provider\\SP.BE\\SP.Provider\\SP.Provider.DataAccessLayer\\SP.Provider.DataAccessLayer.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\OMyroniuk\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\OMyroniuk\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",

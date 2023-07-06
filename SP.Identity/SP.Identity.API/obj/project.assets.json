@@ -2601,11 +2601,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\OMyroniuk\\repos\\SP.BE\\SP.Identity\\SP.Identity.API\\SP.Identity.API.csproj",
+      "projectUniqueName": "C:\\Users\\OMyroniuk\\repos\\Service Provider\\SP.BE\\SP.Identity\\SP.Identity.API\\SP.Identity.API.csproj",
       "projectName": "SP.Identity.API",
-      "projectPath": "C:\\Users\\OMyroniuk\\repos\\SP.BE\\SP.Identity\\SP.Identity.API\\SP.Identity.API.csproj",
+      "projectPath": "C:\\Users\\OMyroniuk\\repos\\Service Provider\\SP.BE\\SP.Identity\\SP.Identity.API\\SP.Identity.API.csproj",
       "packagesPath": "C:\\Users\\OMyroniuk\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\OMyroniuk\\repos\\SP.BE\\SP.Identity\\SP.Identity.API\\obj\\",
+      "outputPath": "C:\\Users\\OMyroniuk\\repos\\Service Provider\\SP.BE\\SP.Identity\\SP.Identity.API\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\OMyroniuk\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -2622,11 +2622,11 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "C:\\Users\\OMyroniuk\\repos\\SP.BE\\SP.Identity\\SP.Identity.BusinessLayer\\SP.Identity.BusinessLayer.csproj": {
-              "projectPath": "C:\\Users\\OMyroniuk\\repos\\SP.BE\\SP.Identity\\SP.Identity.BusinessLayer\\SP.Identity.BusinessLayer.csproj"
+            "C:\\Users\\OMyroniuk\\repos\\Service Provider\\SP.BE\\SP.Identity\\SP.Identity.BusinessLayer\\SP.Identity.BusinessLayer.csproj": {
+              "projectPath": "C:\\Users\\OMyroniuk\\repos\\Service Provider\\SP.BE\\SP.Identity\\SP.Identity.BusinessLayer\\SP.Identity.BusinessLayer.csproj"
             },
-            "C:\\Users\\OMyroniuk\\repos\\SP.BE\\SP.Identity\\SP.Identity.DataAccessLayer\\SP.Identity.DataAccessLayer.csproj": {
-              "projectPath": "C:\\Users\\OMyroniuk\\repos\\SP.BE\\SP.Identity\\SP.Identity.DataAccessLayer\\SP.Identity.DataAccessLayer.csproj"
+            "C:\\Users\\OMyroniuk\\repos\\Service Provider\\SP.BE\\SP.Identity\\SP.Identity.DataAccessLayer\\SP.Identity.DataAccessLayer.csproj": {
+              "projectPath": "C:\\Users\\OMyroniuk\\repos\\Service Provider\\SP.BE\\SP.Identity\\SP.Identity.DataAccessLayer\\SP.Identity.DataAccessLayer.csproj"
             }
           }
         }

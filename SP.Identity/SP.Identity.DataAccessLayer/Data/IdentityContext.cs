@@ -19,12 +19,7 @@ namespace SP.Identity.DataAccessLayer.Data
         {
             base.OnModelCreating(modelBuilder);
 
-            modelBuilder.Entity<IdentityUser>().Property(p => p.Id).HasColumnName("UserId");
             modelBuilder.Entity<User>().Property(p => p.Id).HasColumnName("UserId");
-
-            //modelBuilder.Entity<User>()
-            //    .Property(p => p.Id)
-            //    .HasColumnName("UserId");
         }
     }
 }

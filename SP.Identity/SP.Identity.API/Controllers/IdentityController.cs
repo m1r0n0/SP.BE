@@ -23,9 +23,8 @@ namespace SP.Identity.API.Controllers
         public IdentityController(
             UserManager<User?> userManager,
             SignInManager<User> signInManager,
-            IIdentityService accountService,
-            IMapper mapper
-            )
+            IIdentityService accountService, 
+            IMapper mapper)
         {
             _userManager = userManager;
             _signInManager = signInManager;

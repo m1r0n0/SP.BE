@@ -7,6 +7,7 @@ using SP.Identity.BusinessLayer.Services;
 using SP.Identity.DataAccessLayer.Data;
 using SP.Identity.DataAccessLayer.Models;
 
+var MyAllowSpecificOrigins = "_myAllowSpecificOrigins";
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllers();
@@ -31,6 +32,20 @@ builder.Services.AddAuthentication(cfg =>
     cfg.DefaultChallengeScheme = IdentityConstants.ApplicationScheme;
 });
 
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy(name: MyAllowSpecificOrigins,
+        policy =>
+        {
+            policy
+                .WithOrigins("http://localhost:3000")
+                .AllowAnyHeader()
+                .AllowAnyMethod()
+                .AllowCredentials();
+
+        });
+});
+
 builder.Services.AddSwaggerGen(c =>
 {
     c.EnableAnnotations();
@@ -52,5 +67,7 @@ app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapControllers();
+
+app.UseCors(MyAllowSpecificOrigins);
 
 app.Run();

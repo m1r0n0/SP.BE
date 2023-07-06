@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "xRrnuMNAoVOU9cpMhMLJ5stNUnwKogm6MFTKk9RWxuFE3VSQUsQvgWUbKZjBDHvtaQViEMGuq+WitCXio0daQw==",
+  "dgSpecHash": "VUAag1vV3pMrQ+BDFQK5hkUjbXMh7XNVjCeujGdaZpvw0xDeLYRWiGTrSyOikYQJSUHyxIOWzXoJoPNg+z0ZDw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\OMyroniuk\\repos\\SP.BE\\SP.Provider\\SP.Provider.API\\SP.Provider.API.csproj",
+  "projectFilePath": "C:\\Users\\OMyroniuk\\repos\\Service Provider\\SP.BE\\SP.Provider\\SP.Provider.API\\SP.Provider.API.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\OMyroniuk\\.nuget\\packages\\automapper\\12.0.1\\automapper.12.0.1.nupkg.sha512",
     "C:\\Users\\OMyroniuk\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\12.0.1\\automapper.extensions.microsoft.dependencyinjection.12.0.1.nupkg.sha512",

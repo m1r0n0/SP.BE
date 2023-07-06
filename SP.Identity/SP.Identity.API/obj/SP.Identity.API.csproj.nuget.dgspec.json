@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\OMyroniuk\\repos\\SP.BE\\SP.Identity\\SP.Identity.API\\SP.Identity.API.csproj": {}
+    "C:\\Users\\OMyroniuk\\repos\\Service Provider\\SP.BE\\SP.Identity\\SP.Identity.API\\SP.Identity.API.csproj": {}
   },
   "projects": {
-    "C:\\Users\\OMyroniuk\\repos\\SP.BE\\SP.Identity\\SP.Identity.API\\SP.Identity.API.csproj": {
+    "C:\\Users\\OMyroniuk\\repos\\Service Provider\\SP.BE\\SP.Identity\\SP.Identity.API\\SP.Identity.API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\OMyroniuk\\repos\\SP.BE\\SP.Identity\\SP.Identity.API\\SP.Identity.API.csproj",
+        "projectUniqueName": "C:\\Users\\OMyroniuk\\repos\\Service Provider\\SP.BE\\SP.Identity\\SP.Identity.API\\SP.Identity.API.csproj",
         "projectName": "SP.Identity.API",
-        "projectPath": "C:\\Users\\OMyroniuk\\repos\\SP.BE\\SP.Identity\\SP.Identity.API\\SP.Identity.API.csproj",
+        "projectPath": "C:\\Users\\OMyroniuk\\repos\\Service Provider\\SP.BE\\SP.Identity\\SP.Identity.API\\SP.Identity.API.csproj",
         "packagesPath": "C:\\Users\\OMyroniuk\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\OMyroniuk\\repos\\SP.BE\\SP.Identity\\SP.Identity.API\\obj\\",
+        "outputPath": "C:\\Users\\OMyroniuk\\repos\\Service Provider\\SP.BE\\SP.Identity\\SP.Identity.API\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\OMyroniuk\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -28,11 +28,11 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\OMyroniuk\\repos\\SP.BE\\SP.Identity\\SP.Identity.BusinessLayer\\SP.Identity.BusinessLayer.csproj": {
-                "projectPath": "C:\\Users\\OMyroniuk\\repos\\SP.BE\\SP.Identity\\SP.Identity.BusinessLayer\\SP.Identity.BusinessLayer.csproj"
+              "C:\\Users\\OMyroniuk\\repos\\Service Provider\\SP.BE\\SP.Identity\\SP.Identity.BusinessLayer\\SP.Identity.BusinessLayer.csproj": {
+                "projectPath": "C:\\Users\\OMyroniuk\\repos\\Service Provider\\SP.BE\\SP.Identity\\SP.Identity.BusinessLayer\\SP.Identity.BusinessLayer.csproj"
               },
-              "C:\\Users\\OMyroniuk\\repos\\SP.BE\\SP.Identity\\SP.Identity.DataAccessLayer\\SP.Identity.DataAccessLayer.csproj": {
-                "projectPath": "C:\\Users\\OMyroniuk\\repos\\SP.BE\\SP.Identity\\SP.Identity.DataAccessLayer\\SP.Identity.DataAccessLayer.csproj"
+              "C:\\Users\\OMyroniuk\\repos\\Service Provider\\SP.BE\\SP.Identity\\SP.Identity.DataAccessLayer\\SP.Identity.DataAccessLayer.csproj": {
+                "projectPath": "C:\\Users\\OMyroniuk\\repos\\Service Provider\\SP.BE\\SP.Identity\\SP.Identity.DataAccessLayer\\SP.Identity.DataAccessLayer.csproj"
               }
             }
           }
@@ -101,14 +101,14 @@
         }
       }
     },
-    "C:\\Users\\OMyroniuk\\repos\\SP.BE\\SP.Identity\\SP.Identity.BusinessLayer\\SP.Identity.BusinessLayer.csproj": {
+    "C:\\Users\\OMyroniuk\\repos\\Service Provider\\SP.BE\\SP.Identity\\SP.Identity.BusinessLayer\\SP.Identity.BusinessLayer.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\OMyroniuk\\repos\\SP.BE\\SP.Identity\\SP.Identity.BusinessLayer\\SP.Identity.BusinessLayer.csproj",
+        "projectUniqueName": "C:\\Users\\OMyroniuk\\repos\\Service Provider\\SP.BE\\SP.Identity\\SP.Identity.BusinessLayer\\SP.Identity.BusinessLayer.csproj",
         "projectName": "SP.Identity.BusinessLayer",
-        "projectPath": "C:\\Users\\OMyroniuk\\repos\\SP.BE\\SP.Identity\\SP.Identity.BusinessLayer\\SP.Identity.BusinessLayer.csproj",
+        "projectPath": "C:\\Users\\OMyroniuk\\repos\\Service Provider\\SP.BE\\SP.Identity\\SP.Identity.BusinessLayer\\SP.Identity.BusinessLayer.csproj",
         "packagesPath": "C:\\Users\\OMyroniuk\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\OMyroniuk\\repos\\SP.BE\\SP.Identity\\SP.Identity.BusinessLayer\\obj\\",
+        "outputPath": "C:\\Users\\OMyroniuk\\repos\\Service Provider\\SP.BE\\SP.Identity\\SP.Identity.BusinessLayer\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\OMyroniuk\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -125,8 +125,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\OMyroniuk\\repos\\SP.BE\\SP.Identity\\SP.Identity.DataAccessLayer\\SP.Identity.DataAccessLayer.csproj": {
-                "projectPath": "C:\\Users\\OMyroniuk\\repos\\SP.BE\\SP.Identity\\SP.Identity.DataAccessLayer\\SP.Identity.DataAccessLayer.csproj"
+              "C:\\Users\\OMyroniuk\\repos\\Service Provider\\SP.BE\\SP.Identity\\SP.Identity.DataAccessLayer\\SP.Identity.DataAccessLayer.csproj": {
+                "projectPath": "C:\\Users\\OMyroniuk\\repos\\Service Provider\\SP.BE\\SP.Identity\\SP.Identity.DataAccessLayer\\SP.Identity.DataAccessLayer.csproj"
               }
             }
           }
@@ -172,14 +172,14 @@
         }
       }
     },
-    "C:\\Users\\OMyroniuk\\repos\\SP.BE\\SP.Identity\\SP.Identity.DataAccessLayer\\SP.Identity.DataAccessLayer.csproj": {
+    "C:\\Users\\OMyroniuk\\repos\\Service Provider\\SP.BE\\SP.Identity\\SP.Identity.DataAccessLayer\\SP.Identity.DataAccessLayer.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\OMyroniuk\\repos\\SP.BE\\SP.Identity\\SP.Identity.DataAccessLayer\\SP.Identity.DataAccessLayer.csproj",
+        "projectUniqueName": "C:\\Users\\OMyroniuk\\repos\\Service Provider\\SP.BE\\SP.Identity\\SP.Identity.DataAccessLayer\\SP.Identity.DataAccessLayer.csproj",
         "projectName": "SP.Identity.DataAccessLayer",
-        "projectPath": "C:\\Users\\OMyroniuk\\repos\\SP.BE\\SP.Identity\\SP.Identity.DataAccessLayer\\SP.Identity.DataAccessLayer.csproj",
+        "projectPath": "C:\\Users\\OMyroniuk\\repos\\Service Provider\\SP.BE\\SP.Identity\\SP.Identity.DataAccessLayer\\SP.Identity.DataAccessLayer.csproj",
         "packagesPath": "C:\\Users\\OMyroniuk\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\OMyroniuk\\repos\\SP.BE\\SP.Identity\\SP.Identity.DataAccessLayer\\obj\\",
+        "outputPath": "C:\\Users\\OMyroniuk\\repos\\Service Provider\\SP.BE\\SP.Identity\\SP.Identity.DataAccessLayer\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\OMyroniuk\\AppData\\Roaming\\NuGet\\NuGet.Config",

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "aIh+sT14iThINohX7RAdqNYqSY1YKoKlEQS6EDegc7avCaBpkGTCvFgY6y8hdvC5tMbbuLiKCmNwtNv/pD54SA==",
+  "dgSpecHash": "DzCCXI49G8idZF5/t7H8oDV4SUt23ID638TP4jiygO2DTJlzJ8dqiVVSxtV0HYLHwDOXJf93TWefleiD0UCrUQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\OMyroniuk\\repos\\SP.BE\\SP.Provider\\SP.Provider.BusinessLayer\\SP.Provider.BusinessLayer.csproj",
+  "projectFilePath": "C:\\Users\\OMyroniuk\\repos\\Service Provider\\SP.BE\\SP.Provider\\SP.Provider.BusinessLayer\\SP.Provider.BusinessLayer.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\OMyroniuk\\.nuget\\packages\\automapper\\12.0.1\\automapper.12.0.1.nupkg.sha512",
     "C:\\Users\\OMyroniuk\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
