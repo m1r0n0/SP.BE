@@ -74,6 +74,26 @@ namespace SP.Identity.API.Controllers
 
         [Authorize]
         [HttpGet]
+        [Route("user/get/{userId}")]
+        [ProducesResponseType(typeof(UserEmailIdVM), 200)]
+        [ProducesResponseType(typeof(UserIdVM), 404)]
+        [SwaggerOperation(Summary = "Get user by Id")]
+        public async Task<IActionResult> GetUserById(string userId)
+        {
+            try
+            {
+                User user = await _accountService.GetUserById(userId);
+
+                return Ok(_mapper.Map<UserEmailIdVM>(user));
+            }
+            catch (NotFoundException)
+            {
+                return NotFound(new UserIdVM(userId));
+            }
+        }
+
+        [Authorize]
+        [HttpGet]
         [Route("user/get/id/{userEmail}")]
         [ProducesResponseType(typeof(UserEmailIdVM), 200)]
         [ProducesResponseType(typeof(UserEmailVM), 404)]
@@ -93,9 +113,9 @@ namespace SP.Identity.API.Controllers
         [Authorize]
         [HttpPatch]
         [Route("user/email/{userId}")]
-        [ProducesResponseType(typeof(UserEmailIdVM), 200)]
-        [ProducesResponseType(typeof(UserEmailIdVM), 400)]
-        [ProducesResponseType(typeof(UserIdVM), 404)]
+        [ProducesResponseType( 200)]
+        [ProducesResponseType(typeof(UserNewEmailDTO), 400)]
+        [ProducesResponseType( 404)]
         [SwaggerOperation(Summary = "Change user email")]
         public async Task<IActionResult> ChangeUserEmail(string userId, UserNewEmailDTO model)
         {
@@ -117,11 +137,12 @@ namespace SP.Identity.API.Controllers
             }
         }
 
+        [Authorize]
         [HttpPatch]
         [Route("user/password/{userId}")]
-        [ProducesResponseType(typeof(UserNewPasswordDTO), 200)]
-        [ProducesResponseType(typeof(UserNewPasswordDTO), 400)]
-        [ProducesResponseType(typeof(UserIdVM), 404)]
+        [ProducesResponseType(200)]
+        [ProducesResponseType(400)]
+        [ProducesResponseType(404)]
         [SwaggerOperation(Summary = "Change user password")]
         public async Task<IActionResult> ChangeUserPassword(string userId, UserNewPasswordDTO model)
         {
@@ -140,26 +161,6 @@ namespace SP.Identity.API.Controllers
                 return NotFound();
             }
 
-        }
-
-        [Authorize]
-        [HttpGet]
-        [Route("user/get/{userId}")]
-        [ProducesResponseType(typeof(UserEmailIdVM), 200)]
-        [ProducesResponseType(typeof(UserIdVM), 404)]
-        [SwaggerOperation(Summary = "Get user by Id")]
-        public async Task<IActionResult> GetUserById(string userId)
-        {
-            try
-            {
-                User user = await _accountService.GetUserById(userId);
-
-                return Ok(_mapper.Map<UserEmailIdVM>(user));
-            }
-            catch (NotFoundException)
-            {
-                return NotFound(new UserIdVM(userId));
-            }
         }
 
         [Authorize]
