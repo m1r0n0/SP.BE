@@ -1,11 +1,14 @@
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 using SP.Identity.API.MappingProfiles;
 using SP.Identity.BusinessLayer.Interfaces;
 using SP.Identity.BusinessLayer.Services;
 using SP.Identity.DataAccessLayer.Data;
 using SP.Identity.DataAccessLayer.Models;
+using System.Text;
 
 var MyAllowSpecificOrigins = "_myAllowSpecificOrigins";
 var builder = WebApplication.CreateBuilder(args);
@@ -26,11 +29,26 @@ builder.Services.AddAutoMapper(typeof(UserMappingProfile));
 builder.Services.AddScoped<IIdentityService, IdentityService>();
 
 builder.Services.AddAuthorization();
-builder.Services.AddAuthentication(cfg =>
+builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJwtBearer(options =>
+{
+    options.RequireHttpsMetadata = false;
+    options.SaveToken = true;
+    options.TokenValidationParameters = new TokenValidationParameters()
+    {
+        ValidateIssuer = true,
+        ValidateAudience = true,
+        ValidAudience = builder.Configuration["Jwt:Audience"],
+        ValidIssuer = builder.Configuration["Jwt:Issuer"],
+        IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(builder.Configuration["Jwt:Key"]))
+    };
+});
+
+
+/*(cfg =>
 {
     cfg.DefaultAuthenticateScheme = IdentityConstants.ApplicationScheme;
     cfg.DefaultChallengeScheme = IdentityConstants.ApplicationScheme;
-});
+});*/
 
 builder.Services.AddCors(options =>
 {
