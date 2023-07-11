@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
@@ -48,7 +49,8 @@ namespace SP.Identity.API.Controllers
             var viewModel = new UserAuthenticationVM(
                 model.Email!, 
                 _accountService.GetUserIDFromUserEmail(model.Email!).Result,
-                true);
+                true,
+                _accountService.CreateToken(user));
 
             return Ok(viewModel);
         }
@@ -68,6 +70,7 @@ namespace SP.Identity.API.Controllers
 
             var viewModel = _mapper.Map<UserAuthenticationVM>(model);
             viewModel.UserId = _accountService.GetUserIDFromUserEmail(model.Email).Result;
+            viewModel.Token = _accountService.CreateToken(await _accountService.GetUserById(viewModel.UserId));
 
             return Ok(viewModel);
         }
