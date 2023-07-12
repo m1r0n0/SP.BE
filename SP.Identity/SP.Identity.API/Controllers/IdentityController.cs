@@ -69,7 +69,7 @@ namespace SP.Identity.API.Controllers
             if (!result.Succeeded) return BadRequest(_accountService.AssembleLoginBadRequestVM(model));
 
             var viewModel = _mapper.Map<UserAuthenticationVM>(model);
-            viewModel.UserId = _accountService.GetUserIDFromUserEmail(model.Email).Result;
+            viewModel.UserId = await _accountService.GetUserIDFromUserEmail(model.Email);
             viewModel.Token = _accountService.CreateToken(await _accountService.GetUserById(viewModel.UserId));
 
             return Ok(viewModel);
@@ -96,28 +96,10 @@ namespace SP.Identity.API.Controllers
         }
 
         [Authorize]
-        [HttpGet]
-        [Route("user/get/id/{userEmail}")]
-        [ProducesResponseType(typeof(UserEmailIdVM), 200)]
-        [ProducesResponseType(typeof(UserEmailVM), 404)]
-        [SwaggerOperation(Summary = "Get user id by email")]
-        public async Task<IActionResult> GetUserIdByEmail(string userEmail)
-        {
-            try
-            {
-                return Ok(await _accountService.GetUserIDFromUserEmail(userEmail));
-            }
-            catch (NotFoundException)
-            {
-                return NotFound(new UserEmailVM( userEmail ));
-            }
-        }
-
-        [Authorize]
         [HttpPatch]
         [Route("user/email/{userId}")]
-        [ProducesResponseType( 200)]
-        [ProducesResponseType(typeof(UserNewEmailDTO), 400)]
+        [ProducesResponseType( typeof(UserNewEmailDTO),200)]
+        [ProducesResponseType(typeof(IdentityResult), 400)]
         [ProducesResponseType( 404)]
         [SwaggerOperation(Summary = "Change user email")]
         public async Task<IActionResult> ChangeUserEmail(string userId, UserNewEmailDTO model)
@@ -128,11 +110,11 @@ namespace SP.Identity.API.Controllers
                 var token = await _userManager.GenerateChangeEmailTokenAsync(user, model.NewEmail);
                 var result = await _userManager.ChangeEmailAsync(user, model.NewEmail, token);
 
-                if (!result.Succeeded) return BadRequest(model);
+                if (!result.Succeeded) return BadRequest(result);
 
                 await _userManager.SetUserNameAsync(user, model.NewEmail);
 
-                return Ok();
+                return Ok(model);
             }
             catch (NotFoundException)
             {
@@ -144,7 +126,7 @@ namespace SP.Identity.API.Controllers
         [HttpPatch]
         [Route("user/password/{userId}")]
         [ProducesResponseType(200)]
-        [ProducesResponseType(400)]
+        [ProducesResponseType(typeof(IdentityResult), 400)]
         [ProducesResponseType(404)]
         [SwaggerOperation(Summary = "Change user password")]
         public async Task<IActionResult> ChangeUserPassword(string userId, UserNewPasswordDTO model)
@@ -157,7 +139,7 @@ namespace SP.Identity.API.Controllers
 
                 if (result.Succeeded) return Ok();
                 
-                return BadRequest();
+                return BadRequest(result);
             }
             catch (NotFoundException)
             {
