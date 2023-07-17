@@ -98,7 +98,7 @@ namespace SP.Identity.API.Controllers
         [Authorize]
         [HttpPatch]
         [Route("user/email/{userId}")]
-        [ProducesResponseType( typeof(UserNewEmailDTO),200)]
+        [ProducesResponseType(typeof(UserNewEmailDTO),200)]
         [ProducesResponseType(typeof(IdentityResult), 400)]
         [ProducesResponseType( 404)]
         [SwaggerOperation(Summary = "Change user email")]

@@ -33,6 +33,26 @@ namespace SP.Provider.API.Controllers
             return Ok(provider);
         }
 
+        [HttpGet]
+        [Route("{userId}")]
+        [ProducesResponseType(typeof(ProviderInfoDTO), 200)]
+        [SwaggerOperation(Summary = "Get the provider")]
+        public async Task<IActionResult> GetProvider(string userId)
+        {
+            try
+            {
+                var provider = await _providerService.GetProvider(userId);
+
+                return Ok(provider);
+            }
+            catch (NotFoundException)
+            {
+                return NotFound();
+            }
+            
+        }
+
+
         [HttpPut]
         [Route("{userId}")]
         [SwaggerOperation(Summary = "Edit the provider")]

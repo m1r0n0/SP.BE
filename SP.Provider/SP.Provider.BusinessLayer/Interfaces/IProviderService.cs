@@ -10,6 +10,7 @@ namespace SP.Provider.BusinessLayer.Interfaces
     public interface IProviderService
     {
         Task<DataAccessLayer.Models.Provider> CreateProvider(ProviderDTO model);
+        Task<ProviderInfoDTO> GetProvider(string userId);
         Task<ProviderInfoDTO> UpdateProvider(string userId, ProviderInfoDTO model);
     }
 }

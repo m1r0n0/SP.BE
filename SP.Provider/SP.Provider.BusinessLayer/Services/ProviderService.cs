@@ -27,6 +27,15 @@ namespace SP.Provider.BusinessLayer.Services
             return provider;
         }
 
+        public async Task<ProviderInfoDTO> GetProvider(string userId)
+        {
+            var provider = await _context.Providers.FirstOrDefaultAsync(p => p.UserId == userId);
+
+            if (provider == null) throw new NotFoundException();
+
+            return _mapper.Map<ProviderInfoDTO>(provider);
+        }
+
         public async Task<ProviderInfoDTO> UpdateProvider(string userId, ProviderInfoDTO model)
         {
             var provider = await _context.Providers.Where(p => p.UserId == userId).FirstOrDefaultAsync();

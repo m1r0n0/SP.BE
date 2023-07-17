@@ -40,7 +40,7 @@ namespace SP.Identity.BusinessLayer.Services
                 _configuration["Jwt:Issuer"],
                 _configuration["Jwt:Audience"],
                 claims,
-                expires: DateTime.UtcNow.AddMinutes(6),
+                expires: DateTime.UtcNow.AddMinutes(1440),
                 signingCredentials: signIn);
 
             return new JwtSecurityTokenHandler().WriteToken(token); 
