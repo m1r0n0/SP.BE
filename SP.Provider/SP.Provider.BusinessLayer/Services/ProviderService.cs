@@ -17,9 +17,10 @@ namespace SP.Provider.BusinessLayer.Services
             _mapper = mapper;
         }
 
-        public async Task<DataAccessLayer.Models.Provider> CreateProvider(ProviderDTO model)
+        public async Task<DataAccessLayer.Models.Provider> CreateProvider(string userId, ProviderInfoDTO model)
         {
             var provider = _mapper.Map<DataAccessLayer.Models.Provider>(model);
+            provider.UserId = userId;
 
             await _context.Providers.AddAsync(provider);
             await _context.SaveChangesAsync();

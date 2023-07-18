@@ -22,13 +22,13 @@ namespace SP.Provider.API.Controllers
         }
 
         [HttpPost]
-        [Route("new")]
+        [Route("new/{userId}")]
         [ProducesResponseType(typeof(DataAccessLayer.Models.Provider), 200)]
         [ProducesResponseType(typeof(ModelErrorVM), 400)]
         [SwaggerOperation(Summary = "Register the provider")]
-        public async Task<IActionResult> RegisterProvider(ProviderDTO model)
+        public async Task<IActionResult> RegisterProvider(string userId ,ProviderInfoDTO model)
         {
-            var provider = await _providerService.CreateProvider(model);
+            var provider = await _providerService.CreateProvider(userId, model);
 
             return Ok(provider);
         }
