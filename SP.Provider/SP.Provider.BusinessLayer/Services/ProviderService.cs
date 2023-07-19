@@ -19,6 +19,10 @@ namespace SP.Provider.BusinessLayer.Services
 
         public async Task<DataAccessLayer.Models.Provider> CreateProvider(string userId, ProviderInfoDTO model)
         {
+            var isAlreadyExist = await _context.Providers.AnyAsync(p => p.UserId == userId);
+
+            if (isAlreadyExist) throw new ConflictException();
+
             var provider = _mapper.Map<DataAccessLayer.Models.Provider>(model);
             provider.UserId = userId;
 

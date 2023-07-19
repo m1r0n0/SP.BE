@@ -28,9 +28,18 @@ namespace SP.Provider.API.Controllers
         [SwaggerOperation(Summary = "Register the provider")]
         public async Task<IActionResult> RegisterProvider(string userId ,ProviderInfoDTO model)
         {
-            var provider = await _providerService.CreateProvider(userId, model);
+            try
+            {
+                var provider = await _providerService.CreateProvider(userId, model);
 
-            return Ok(provider);
+                return Ok(provider);
+            }
+            catch (ConflictException)
+            {
+                return Conflict(model);
+            }
+
+            
         }
 
         [HttpGet]
