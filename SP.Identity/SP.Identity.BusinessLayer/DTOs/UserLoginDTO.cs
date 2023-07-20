@@ -1,4 +1,6 @@
-﻿namespace SP.Identity.BusinessLayer.DTOs
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace SP.Identity.BusinessLayer.DTOs
 {
     public class UserLoginDTO : UserRegisterDTO
     {

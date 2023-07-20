@@ -158,7 +158,8 @@ namespace SP.Identity.DataAccessLayer.Migrations
             modelBuilder.Entity("SP.Identity.DataAccessLayer.Models.User", b =>
                 {
                     b.Property<string>("Id")
-                        .HasColumnType("nvarchar(450)");
+                        .HasColumnType("nvarchar(450)")
+                        .HasColumnName("UserId");
 
                     b.Property<int>("AccessFailedCount")
                         .HasColumnType("int");

@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using SP.Identity.DataAccessLayer.Models;
 
@@ -12,6 +13,13 @@ namespace SP.Identity.DataAccessLayer.Data
             Database.EnsureCreated();
         }
 
-        public DbSet<User> UserList { get; set; } = default!;
+        public new DbSet<User> Users { get; set; } = default!;
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            base.OnModelCreating(modelBuilder);
+
+            modelBuilder.Entity<User>().Property(p => p.Id).HasColumnName("UserId");
+        }
     }
 }

@@ -12,3 +12,17 @@ C:\Users\OMyroniuk\repos\SP.BE\SP.Identity\SP.Identity.DataAccessLayer\obj\Debug
 C:\Users\OMyroniuk\repos\SP.BE\SP.Identity\SP.Identity.DataAccessLayer\obj\Debug\net6.0\ref\SP.Identity.DataAccessLayer.dll
 C:\Users\OMyroniuk\repos\SP.BE\SP.Identity\SP.Identity.DataAccessLayer\bin\Debug\net6.0\SP.Identity.DataAccessLayer.runtimeconfig.json
 C:\Users\OMyroniuk\repos\SP.BE\SP.Identity\SP.Identity.DataAccessLayer\obj\Debug\net6.0\SP.Identity.DataAccessLayer.genruntimeconfig.cache
+C:\Users\OMyroniuk\repos\Service Provider\SP.BE\SP.Identity\SP.Identity.DataAccessLayer\bin\Debug\net6.0\SP.Identity.DataAccessLayer.deps.json
+C:\Users\OMyroniuk\repos\Service Provider\SP.BE\SP.Identity\SP.Identity.DataAccessLayer\bin\Debug\net6.0\SP.Identity.DataAccessLayer.runtimeconfig.json
+C:\Users\OMyroniuk\repos\Service Provider\SP.BE\SP.Identity\SP.Identity.DataAccessLayer\bin\Debug\net6.0\SP.Identity.DataAccessLayer.dll
+C:\Users\OMyroniuk\repos\Service Provider\SP.BE\SP.Identity\SP.Identity.DataAccessLayer\bin\Debug\net6.0\SP.Identity.DataAccessLayer.pdb
+C:\Users\OMyroniuk\repos\Service Provider\SP.BE\SP.Identity\SP.Identity.DataAccessLayer\obj\Debug\net6.0\SP.Identity.DataAccessLayer.csproj.AssemblyReference.cache
+C:\Users\OMyroniuk\repos\Service Provider\SP.BE\SP.Identity\SP.Identity.DataAccessLayer\obj\Debug\net6.0\SP.Identity.DataAccessLayer.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\OMyroniuk\repos\Service Provider\SP.BE\SP.Identity\SP.Identity.DataAccessLayer\obj\Debug\net6.0\SP.Identity.DataAccessLayer.AssemblyInfoInputs.cache
+C:\Users\OMyroniuk\repos\Service Provider\SP.BE\SP.Identity\SP.Identity.DataAccessLayer\obj\Debug\net6.0\SP.Identity.DataAccessLayer.AssemblyInfo.cs
+C:\Users\OMyroniuk\repos\Service Provider\SP.BE\SP.Identity\SP.Identity.DataAccessLayer\obj\Debug\net6.0\SP.Identity.DataAccessLayer.csproj.CoreCompileInputs.cache
+C:\Users\OMyroniuk\repos\Service Provider\SP.BE\SP.Identity\SP.Identity.DataAccessLayer\obj\Debug\net6.0\SP.Identity.DataAccessLayer.dll
+C:\Users\OMyroniuk\repos\Service Provider\SP.BE\SP.Identity\SP.Identity.DataAccessLayer\obj\Debug\net6.0\refint\SP.Identity.DataAccessLayer.dll
+C:\Users\OMyroniuk\repos\Service Provider\SP.BE\SP.Identity\SP.Identity.DataAccessLayer\obj\Debug\net6.0\SP.Identity.DataAccessLayer.pdb
+C:\Users\OMyroniuk\repos\Service Provider\SP.BE\SP.Identity\SP.Identity.DataAccessLayer\obj\Debug\net6.0\SP.Identity.DataAccessLayer.genruntimeconfig.cache
+C:\Users\OMyroniuk\repos\Service Provider\SP.BE\SP.Identity\SP.Identity.DataAccessLayer\obj\Debug\net6.0\ref\SP.Identity.DataAccessLayer.dll

@@ -1,0 +1,28 @@
+C:\Users\OMyroniuk\repos\SP.BE\SP.Provider\SP.Provider.DataAccessLayer\bin\Debug\net6.0\SP.Provider.DataAccessLayer.deps.json
+C:\Users\OMyroniuk\repos\SP.BE\SP.Provider\SP.Provider.DataAccessLayer\bin\Debug\net6.0\SP.Provider.DataAccessLayer.runtimeconfig.json
+C:\Users\OMyroniuk\repos\SP.BE\SP.Provider\SP.Provider.DataAccessLayer\bin\Debug\net6.0\SP.Provider.DataAccessLayer.dll
+C:\Users\OMyroniuk\repos\SP.BE\SP.Provider\SP.Provider.DataAccessLayer\bin\Debug\net6.0\SP.Provider.DataAccessLayer.pdb
+C:\Users\OMyroniuk\repos\SP.BE\SP.Provider\SP.Provider.DataAccessLayer\obj\Debug\net6.0\SP.Provider.DataAccessLayer.csproj.AssemblyReference.cache
+C:\Users\OMyroniuk\repos\SP.BE\SP.Provider\SP.Provider.DataAccessLayer\obj\Debug\net6.0\SP.Provider.DataAccessLayer.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\OMyroniuk\repos\SP.BE\SP.Provider\SP.Provider.DataAccessLayer\obj\Debug\net6.0\SP.Provider.DataAccessLayer.AssemblyInfoInputs.cache
+C:\Users\OMyroniuk\repos\SP.BE\SP.Provider\SP.Provider.DataAccessLayer\obj\Debug\net6.0\SP.Provider.DataAccessLayer.AssemblyInfo.cs
+C:\Users\OMyroniuk\repos\SP.BE\SP.Provider\SP.Provider.DataAccessLayer\obj\Debug\net6.0\SP.Provider.DataAccessLayer.csproj.CoreCompileInputs.cache
+C:\Users\OMyroniuk\repos\SP.BE\SP.Provider\SP.Provider.DataAccessLayer\obj\Debug\net6.0\SP.Provider.DataAccessLayer.dll
+C:\Users\OMyroniuk\repos\SP.BE\SP.Provider\SP.Provider.DataAccessLayer\obj\Debug\net6.0\refint\SP.Provider.DataAccessLayer.dll
+C:\Users\OMyroniuk\repos\SP.BE\SP.Provider\SP.Provider.DataAccessLayer\obj\Debug\net6.0\SP.Provider.DataAccessLayer.pdb
+C:\Users\OMyroniuk\repos\SP.BE\SP.Provider\SP.Provider.DataAccessLayer\obj\Debug\net6.0\SP.Provider.DataAccessLayer.genruntimeconfig.cache
+C:\Users\OMyroniuk\repos\SP.BE\SP.Provider\SP.Provider.DataAccessLayer\obj\Debug\net6.0\ref\SP.Provider.DataAccessLayer.dll
+C:\Users\OMyroniuk\repos\Service Provider\SP.BE\SP.Provider\SP.Provider.DataAccessLayer\bin\Debug\net6.0\SP.Provider.DataAccessLayer.deps.json
+C:\Users\OMyroniuk\repos\Service Provider\SP.BE\SP.Provider\SP.Provider.DataAccessLayer\bin\Debug\net6.0\SP.Provider.DataAccessLayer.runtimeconfig.json
+C:\Users\OMyroniuk\repos\Service Provider\SP.BE\SP.Provider\SP.Provider.DataAccessLayer\bin\Debug\net6.0\SP.Provider.DataAccessLayer.dll
+C:\Users\OMyroniuk\repos\Service Provider\SP.BE\SP.Provider\SP.Provider.DataAccessLayer\bin\Debug\net6.0\SP.Provider.DataAccessLayer.pdb
+C:\Users\OMyroniuk\repos\Service Provider\SP.BE\SP.Provider\SP.Provider.DataAccessLayer\obj\Debug\net6.0\SP.Provider.DataAccessLayer.csproj.AssemblyReference.cache
+C:\Users\OMyroniuk\repos\Service Provider\SP.BE\SP.Provider\SP.Provider.DataAccessLayer\obj\Debug\net6.0\SP.Provider.DataAccessLayer.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\OMyroniuk\repos\Service Provider\SP.BE\SP.Provider\SP.Provider.DataAccessLayer\obj\Debug\net6.0\SP.Provider.DataAccessLayer.AssemblyInfoInputs.cache
+C:\Users\OMyroniuk\repos\Service Provider\SP.BE\SP.Provider\SP.Provider.DataAccessLayer\obj\Debug\net6.0\SP.Provider.DataAccessLayer.AssemblyInfo.cs
+C:\Users\OMyroniuk\repos\Service Provider\SP.BE\SP.Provider\SP.Provider.DataAccessLayer\obj\Debug\net6.0\SP.Provider.DataAccessLayer.csproj.CoreCompileInputs.cache
+C:\Users\OMyroniuk\repos\Service Provider\SP.BE\SP.Provider\SP.Provider.DataAccessLayer\obj\Debug\net6.0\SP.Provider.DataAccessLayer.dll
+C:\Users\OMyroniuk\repos\Service Provider\SP.BE\SP.Provider\SP.Provider.DataAccessLayer\obj\Debug\net6.0\refint\SP.Provider.DataAccessLayer.dll
+C:\Users\OMyroniuk\repos\Service Provider\SP.BE\SP.Provider\SP.Provider.DataAccessLayer\obj\Debug\net6.0\SP.Provider.DataAccessLayer.pdb
+C:\Users\OMyroniuk\repos\Service Provider\SP.BE\SP.Provider\SP.Provider.DataAccessLayer\obj\Debug\net6.0\SP.Provider.DataAccessLayer.genruntimeconfig.cache
+C:\Users\OMyroniuk\repos\Service Provider\SP.BE\SP.Provider\SP.Provider.DataAccessLayer\obj\Debug\net6.0\ref\SP.Provider.DataAccessLayer.dll
