@@ -82,5 +82,23 @@ namespace SP.Provider.API.Controllers
             }
         }
 
+        [HttpDelete]
+        [Route("{userId}")]
+        [SwaggerOperation(Summary = "Delete the provider")]
+        [ProducesResponseType(200)]
+        public async Task<IActionResult> DeleteProvider(string userId)
+        {
+            try
+            {
+                await _providerService.DeleteProvider(userId);
+
+                return Ok();
+            }
+            catch (NotFoundException)
+            {
+                return NotFound();
+            }
+        }
+
     }
 }

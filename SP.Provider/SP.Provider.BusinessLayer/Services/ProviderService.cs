@@ -59,5 +59,16 @@ namespace SP.Provider.BusinessLayer.Services
 
             return _mapper.Map<ProviderInfoDTO>(provider);
         }
+
+        public async Task DeleteProvider(string userId)
+        {
+            var provider = await _context.Providers.FirstOrDefaultAsync(p => p.UserId == userId);
+
+            if (provider is null) throw new NotFoundException();
+
+            _context.Entry(provider).State = EntityState.Deleted;
+
+            await _context.SaveChangesAsync();
+        }
     }
 }
