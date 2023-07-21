@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.ModelBinding;
 using Microsoft.Data.SqlClient;
 using SP.Provider.API.ViewModels;
@@ -10,6 +11,7 @@ using Swashbuckle.AspNetCore.Annotations;
 
 namespace SP.Provider.API.Controllers
 {
+    [Authorize]
     [ApiController]
     [Route("api/v1/provider/")]
     public class ProviderController : ControllerBase
