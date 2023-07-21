@@ -47,8 +47,8 @@ namespace SP.Identity.API.Controllers
             await _signInManager.SignInAsync(user, false);
 
             var viewModel = new UserAuthenticationVM(
-                model.Email!, 
                 _accountService.GetUserIDFromUserEmail(model.Email!).Result,
+                model.Email!,
                 true,
                 _accountService.CreateToken(user));
 

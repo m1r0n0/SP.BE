@@ -65,7 +65,7 @@ builder.Services.AddCors(options =>
 builder.Services.AddSwaggerGen(c =>
 {
     c.EnableAnnotations();
-    c.SwaggerDoc("v1", new OpenApiInfo { Title = "SP.Identity API", Version = "v1" });
+    c.SwaggerDoc("provider_v1", new OpenApiInfo { Title = "SP.Provider API", Version = "v1" });
     c.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme()
     {
         Name = "Authorization",
