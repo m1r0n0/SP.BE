@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "3FJeY5Gg/1AQ6gcO36zxbQ90fJjlzggSzLlWABxikTO82ZI75FilJYMaTn4OCmTB/KmsYfSWMfiDUjRciSOBEg==",
+  "dgSpecHash": "3mmumap15F3+G7vqCL+yUlRuRUcUpuu7Dtp8Ze36YUoF6FAIup7BUyOVWvj1n97zescNUhoPBqT88Geiqy8CuA==",
   "success": true,
   "projectFilePath": "C:\\Users\\OMyroniuk\\repos\\Service Provider\\SP.BE\\SP.Identity\\SP.Identity.API\\SP.Identity.API.csproj",
   "expectedPackageFiles": [
@@ -41,6 +41,7 @@
     "C:\\Users\\OMyroniuk\\.nuget\\packages\\microsoft.identitymodel.tokens\\6.10.0\\microsoft.identitymodel.tokens.6.10.0.nupkg.sha512",
     "C:\\Users\\OMyroniuk\\.nuget\\packages\\microsoft.netcore.platforms\\3.1.0\\microsoft.netcore.platforms.3.1.0.nupkg.sha512",
     "C:\\Users\\OMyroniuk\\.nuget\\packages\\microsoft.openapi\\1.2.3\\microsoft.openapi.1.2.3.nupkg.sha512",
+    "C:\\Users\\OMyroniuk\\.nuget\\packages\\microsoft.visualstudio.azure.containers.tools.targets\\1.18.1\\microsoft.visualstudio.azure.containers.tools.targets.1.18.1.nupkg.sha512",
     "C:\\Users\\OMyroniuk\\.nuget\\packages\\microsoft.win32.registry\\4.7.0\\microsoft.win32.registry.4.7.0.nupkg.sha512",
     "C:\\Users\\OMyroniuk\\.nuget\\packages\\microsoft.win32.systemevents\\4.7.0\\microsoft.win32.systemevents.4.7.0.nupkg.sha512",
     "C:\\Users\\OMyroniuk\\.nuget\\packages\\swashbuckle.aspnetcore\\6.2.3\\swashbuckle.aspnetcore.6.2.3.nupkg.sha512",

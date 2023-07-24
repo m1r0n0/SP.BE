@@ -65,7 +65,7 @@ builder.Services.AddCors(options =>
 builder.Services.AddSwaggerGen(c =>
 {
     c.EnableAnnotations();
-    c.SwaggerDoc("provider_v1", new OpenApiInfo { Title = "SP.Provider API", Version = "v1" });
+    c.SwaggerDoc("identity_v1", new OpenApiInfo { Title = "SP.Provider API", Version = "v1" });
     c.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme()
     {
         Name = "Authorization",
@@ -97,7 +97,7 @@ var app = builder.Build();
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
-    app.UseSwaggerUI();
+    app.UseSwaggerUI(x => x.SwaggerEndpoint("/swagger/identity_v1/swagger.json", "Identity Api"));
 }
 
 app.UseHttpsRedirection();
