@@ -1,3 +1,5 @@
+using System.Reflection;
+using System.Security.Cryptography.X509Certificates;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
@@ -9,6 +11,7 @@ using SP.Identity.BusinessLayer.Services;
 using SP.Identity.DataAccessLayer.Data;
 using SP.Identity.DataAccessLayer.Models;
 using System.Text;
+using Microsoft.AspNetCore.DataProtection;
 
 var MyAllowSpecificOrigins = "_myAllowSpecificOrigins";
 var builder = WebApplication.CreateBuilder(args);
@@ -65,7 +68,7 @@ builder.Services.AddCors(options =>
 builder.Services.AddSwaggerGen(c =>
 {
     c.EnableAnnotations();
-    c.SwaggerDoc("identity_v1", new OpenApiInfo { Title = "SP.Provider API", Version = "v1" });
+    c.SwaggerDoc("identity_v1", new OpenApiInfo { Title = "SP.Identity API", Version = "v1" });
     c.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme()
     {
         Name = "Authorization",
@@ -90,6 +93,29 @@ builder.Services.AddSwaggerGen(c =>
         }
     });
 });
+
+/*
+builder.Services.AddDataProtection()
+    .PersistKeysToFileSystem(new DirectoryInfo(@".\AppData"))
+    .ProtectKeysWithCertificate(GetCertificate());
+
+X509Certificate2 GetCertificate()
+{
+    var assembly = typeof(Program).GetTypeInfo().Assembly;
+
+    var resource = assembly.GetManifestResourceNames()
+        .First(x => x.EndsWith("MyCertificate.pfx"));
+
+    using (var stream = assembly.GetManifestResourceStream(resource))
+    {
+        if (stream == null)
+            throw new ArgumentNullException(nameof(stream));
+
+        var bytes = new byte[stream.Length];
+        stream.Read(bytes, 0, bytes.Length);
+        return new X509Certificate2(bytes);
+    }
+}*/
 
 var app = builder.Build();
 
