@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "w2nLQTwuYZNS0J38HBKEK5B0XpFi1s7sYh50Bcd/KcIJsfI2iAjL8Qm+iQjjEzXfK8ByLSBBibGbsmTLHJ7aHg==",
+  "dgSpecHash": "LeX5mSknbA+W9ZXOl7T6GhqKUSrVgU7S6ksOseRru47smto8jNW+5CyMKXHqlUlVXJF3CDWhuafV1ua2H5GhuA==",
   "success": true,
   "projectFilePath": "C:\\Users\\OMyroniuk\\repos\\Service Provider\\SP.BE\\SP.Provider\\SP.Provider.DataAccessLayer\\SP.Provider.DataAccessLayer.csproj",
   "expectedPackageFiles": [
@@ -13,7 +13,7 @@
     "C:\\Users\\OMyroniuk\\.nuget\\packages\\microsoft.entityframeworkcore.analyzers\\6.0.20\\microsoft.entityframeworkcore.analyzers.6.0.20.nupkg.sha512",
     "C:\\Users\\OMyroniuk\\.nuget\\packages\\microsoft.entityframeworkcore.design\\6.0.20\\microsoft.entityframeworkcore.design.6.0.20.nupkg.sha512",
     "C:\\Users\\OMyroniuk\\.nuget\\packages\\microsoft.entityframeworkcore.relational\\6.0.20\\microsoft.entityframeworkcore.relational.6.0.20.nupkg.sha512",
-    "C:\\Users\\OMyroniuk\\.nuget\\packages\\microsoft.entityframeworkcore.sqlserver\\6.0.19\\microsoft.entityframeworkcore.sqlserver.6.0.19.nupkg.sha512",
+    "C:\\Users\\OMyroniuk\\.nuget\\packages\\microsoft.entityframeworkcore.sqlserver\\6.0.20\\microsoft.entityframeworkcore.sqlserver.6.0.20.nupkg.sha512",
     "C:\\Users\\OMyroniuk\\.nuget\\packages\\microsoft.entityframeworkcore.tools\\6.0.20\\microsoft.entityframeworkcore.tools.6.0.20.nupkg.sha512",
     "C:\\Users\\OMyroniuk\\.nuget\\packages\\microsoft.extensions.caching.abstractions\\6.0.0\\microsoft.extensions.caching.abstractions.6.0.0.nupkg.sha512",
     "C:\\Users\\OMyroniuk\\.nuget\\packages\\microsoft.extensions.caching.memory\\6.0.1\\microsoft.extensions.caching.memory.6.0.1.nupkg.sha512",

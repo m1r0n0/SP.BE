@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "dTTVzBdiKhFeZ07S57g6TuXHaT3B+Lev09xRFOAvyDm5/dw2VQ3boa/OAhPEYsQdz3HiG6cFc0IP+J3RVihBdg==",
+  "dgSpecHash": "n3Z3eyHryVoOB9YLoZ13wi911R7teLNeR+7ZxDa3TBFke/hCU2hGiqHnKWF1/2JBW79RfNSBlObogA96HDC2Vg==",
   "success": true,
   "projectFilePath": "C:\\Users\\OMyroniuk\\repos\\Service Provider\\SP.BE\\SP.Identity\\SP.Identity.API\\SP.Identity.API.csproj",
   "expectedPackageFiles": [
@@ -19,7 +19,7 @@
     "C:\\Users\\OMyroniuk\\.nuget\\packages\\microsoft.entityframeworkcore.analyzers\\6.0.20\\microsoft.entityframeworkcore.analyzers.6.0.20.nupkg.sha512",
     "C:\\Users\\OMyroniuk\\.nuget\\packages\\microsoft.entityframeworkcore.design\\6.0.20\\microsoft.entityframeworkcore.design.6.0.20.nupkg.sha512",
     "C:\\Users\\OMyroniuk\\.nuget\\packages\\microsoft.entityframeworkcore.relational\\6.0.20\\microsoft.entityframeworkcore.relational.6.0.20.nupkg.sha512",
-    "C:\\Users\\OMyroniuk\\.nuget\\packages\\microsoft.entityframeworkcore.sqlserver\\6.0.19\\microsoft.entityframeworkcore.sqlserver.6.0.19.nupkg.sha512",
+    "C:\\Users\\OMyroniuk\\.nuget\\packages\\microsoft.entityframeworkcore.sqlserver\\6.0.20\\microsoft.entityframeworkcore.sqlserver.6.0.20.nupkg.sha512",
     "C:\\Users\\OMyroniuk\\.nuget\\packages\\microsoft.entityframeworkcore.tools\\6.0.20\\microsoft.entityframeworkcore.tools.6.0.20.nupkg.sha512",
     "C:\\Users\\OMyroniuk\\.nuget\\packages\\microsoft.extensions.apidescription.server\\3.0.0\\microsoft.extensions.apidescription.server.3.0.0.nupkg.sha512",
     "C:\\Users\\OMyroniuk\\.nuget\\packages\\microsoft.extensions.caching.abstractions\\6.0.0\\microsoft.extensions.caching.abstractions.6.0.0.nupkg.sha512",
