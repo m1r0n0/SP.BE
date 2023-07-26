@@ -12,6 +12,9 @@ using SP.Identity.DataAccessLayer.Data;
 using SP.Identity.DataAccessLayer.Models;
 using System.Text;
 using Microsoft.AspNetCore.DataProtection;
+using NLog.Config;
+using NLog.Targets;
+using NLog;
 
 var MyAllowSpecificOrigins = "_myAllowSpecificOrigins";
 var builder = WebApplication.CreateBuilder(args);
@@ -94,6 +97,23 @@ builder.Services.AddSwaggerGen(c =>
     });
 });
 
+var config = new LoggingConfiguration();
+/*var consoleTarget = new ConsoleTarget
+{
+    Name = "console",
+    Layout = "${longdate}|${level:uppercase=true}|${logger}|${message}",
+};*/
+var fileTarget = new FileTarget
+{
+    Name = "log_file",
+    Layout = "${longdate}|${level:uppercase=true}|${logger}|${message}",
+    FileName = "${specialfolder:folder=commonapplicationdata}/company gmbh/${appname}/logs/${appname}.log",
+    /*FileName = "C:/logs/${appname}.log",*/
+    KeepFileOpen = false
+};
+config.AddRule(NLog.LogLevel.Debug, NLog.LogLevel.Fatal, fileTarget, "*");
+LogManager.Configuration = config;
+
 /*
 builder.Services.AddDataProtection()
     .PersistKeysToFileSystem(new DirectoryInfo(@".\AppData"))
@@ -120,19 +140,19 @@ X509Certificate2 GetCertificate()
 var app = builder.Build();
 
 
-if (app.Environment.IsDevelopment())
-{
+//if (app.Environment.IsDevelopment())
+//{
     app.UseSwagger();
     app.UseSwaggerUI(x => x.SwaggerEndpoint("/swagger/identity_v1/swagger.json", "Identity Api"));
-}
+//}
 
-app.UseHttpsRedirection();
+//app.UseHttpsRedirection();
 
 app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapControllers();
 
-app.UseCors(MyAllowSpecificOrigins);
+//app.UseCors(MyAllowSpecificOrigins);
 
 app.Run();
