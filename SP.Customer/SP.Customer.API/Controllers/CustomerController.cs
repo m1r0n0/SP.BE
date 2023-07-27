@@ -1,34 +1,37 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using SP.Customer.API.ViewModels;
+using SP.Customer.BusinessLayer.DTOs;
 using SP.Customer.BusinessLayer.Exceptions;
+using SP.Customer.BusinessLayer.Interfaces;
 using Swashbuckle.AspNetCore.Annotations;
 
 namespace SP.Customer.API.Controllers
 {
     [Authorize]
     [ApiController]
-    [Route("api/v1/provider/")]
-    public class ProviderController : ControllerBase
+    [Route("api/v1/customer/")]
+    public class CustomerController : ControllerBase
     {
-        private readonly IProviderService _providerService;
+        private readonly ICustomerService _customerService;
 
-        public ProviderController(IProviderService providerService)
+        public CustomerController(ICustomerService customerService)
         {
-            _providerService = providerService;
+            _customerService = customerService;
         }
 
         [HttpPost]
         [Route("new/{userId}")]
-        [ProducesResponseType(typeof(DataAccessLayer.Models.Provider), 200)]
+        [ProducesResponseType(typeof(CustomerDTO), 200)]
         [ProducesResponseType(typeof(ModelErrorVM), 400)]
-        [SwaggerOperation(Summary = "Register the provider")]
-        public async Task<IActionResult> RegisterProvider(string userId, ProviderInfoDTO model)
+        [SwaggerOperation(Summary = "Register the Customer")]
+        public async Task<IActionResult> RegisterCustomer(string userId, CustomerInfoDTO model)
         {
             try
             {
-                var provider = await _providerService.CreateProvider(userId, model);
+                var customer = await _customerService.CreateCustomer(userId, model);
 
-                return Ok(provider);
+                return Ok(customer);
             }
             catch (ConflictException)
             {
@@ -40,15 +43,15 @@ namespace SP.Customer.API.Controllers
 
         [HttpGet]
         [Route("{userId}")]
-        [ProducesResponseType(typeof(ProviderInfoDTO), 200)]
-        [SwaggerOperation(Summary = "Get the provider")]
-        public async Task<IActionResult> GetProvider(string userId)
+        [ProducesResponseType(typeof(CustomerInfoDTO), 200)]
+        [SwaggerOperation(Summary = "Get the Customer")]
+        public async Task<IActionResult> GetCustomer(string userId)
         {
             try
             {
-                var provider = await _providerService.GetProvider(userId);
+                var Customer = await _customerService.GetCustomer(userId);
 
-                return Ok(provider);
+                return Ok(Customer);
             }
             catch (NotFoundException)
             {
@@ -60,17 +63,17 @@ namespace SP.Customer.API.Controllers
 
         [HttpPut]
         [Route("{userId}")]
-        [SwaggerOperation(Summary = "Edit the provider")]
-        [ProducesResponseType(typeof(ProviderInfoDTO), 200)]
+        [SwaggerOperation(Summary = "Edit the Customer")]
+        [ProducesResponseType(typeof(CustomerInfoDTO), 200)]
         [ProducesResponseType(typeof(ModelErrorVM), 400)]
         [ProducesResponseType(404)]
-        public async Task<IActionResult> EditProvider(string userId, ProviderInfoDTO model)
+        public async Task<IActionResult> EditCustomer(string userId, CustomerInfoDTO model)
         {
             try
             {
-                var provider = await _providerService.UpdateProvider(userId, model);
+                var customer = await _customerService.UpdateCustomer(userId, model);
 
-                return Ok(provider);
+                return Ok(customer);
             }
             catch (NotFoundException)
             {
@@ -80,13 +83,13 @@ namespace SP.Customer.API.Controllers
 
         [HttpDelete]
         [Route("{userId}")]
-        [SwaggerOperation(Summary = "Delete the provider")]
+        [SwaggerOperation(Summary = "Delete the Customer")]
         [ProducesResponseType(200)]
-        public async Task<IActionResult> DeleteProvider(string userId)
+        public async Task<IActionResult> DeleteCustomer(string userId)
         {
             try
             {
-                await _providerService.DeleteProvider(userId);
+                await _customerService.DeleteCustomer(userId);
 
                 return Ok();
             }

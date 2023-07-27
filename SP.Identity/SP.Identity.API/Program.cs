@@ -146,13 +146,13 @@ var app = builder.Build();
     app.UseSwaggerUI(x => x.SwaggerEndpoint("/swagger/identity_v1/swagger.json", "Identity Api"));
 //}
 
-//app.UseHttpsRedirection();
+app.UseHttpsRedirection();
 
 app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapControllers();
 
-//app.UseCors(MyAllowSpecificOrigins);
+app.UseCors(MyAllowSpecificOrigins);
 
 app.Run();
