@@ -21,11 +21,19 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SP.Provider.DataAccessLayer
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SP.Customer", "SP.Customer", "{12CD7AA1-C65E-467C-AFA5-D2DFF2A056A5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SP.Customer.API", "SP.Customer\SP.Customer.API\SP.Customer.API.csproj", "{63493202-4598-4275-9142-0281095943CD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SP.Customer.API", "SP.Customer\SP.Customer.API\SP.Customer.API.csproj", "{63493202-4598-4275-9142-0281095943CD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SP.Customer.BusinessLayer", "SP.Customer\SP.Customer.BusinessLayer\SP.Customer.BusinessLayer.csproj", "{D665BF9E-729F-468E-85E9-95B7DF659A18}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SP.Customer.BusinessLayer", "SP.Customer\SP.Customer.BusinessLayer\SP.Customer.BusinessLayer.csproj", "{D665BF9E-729F-468E-85E9-95B7DF659A18}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SP.Customer.DataAccessLayer", "SP.Customer\SP.Customer.DataAccessLayer\SP.Customer.DataAccessLayer.csproj", "{165C0C61-31C7-49B9-9AE2-17D617AF8C5C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SP.Customer.DataAccessLayer", "SP.Customer\SP.Customer.DataAccessLayer\SP.Customer.DataAccessLayer.csproj", "{165C0C61-31C7-49B9-9AE2-17D617AF8C5C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SP.Service", "SP.Service", "{7BBEEEF0-229A-449C-A41B-87857A06CECC}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SP.Service.API", "SP.Service\SP.Service.API\SP.Service.API.csproj", "{D4FE7C24-DE92-495C-B3C9-76BFF02976CD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SP.Service.BusinessLayer", "SP.Service\SP.Service.BusinessLayer\SP.Service.BusinessLayer.csproj", "{BB68DAE3-52D9-417E-B1DE-ADE24F64EE0B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SP.Service.DataAccessLayer", "SP.Service\SP.Service.DataAccessLayer\SP.Service.DataAccessLayer.csproj", "{E1A8269E-6421-4039-B2A0-6A91BB04EECA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -69,6 +77,18 @@ Global
 		{165C0C61-31C7-49B9-9AE2-17D617AF8C5C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{165C0C61-31C7-49B9-9AE2-17D617AF8C5C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{165C0C61-31C7-49B9-9AE2-17D617AF8C5C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D4FE7C24-DE92-495C-B3C9-76BFF02976CD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D4FE7C24-DE92-495C-B3C9-76BFF02976CD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D4FE7C24-DE92-495C-B3C9-76BFF02976CD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D4FE7C24-DE92-495C-B3C9-76BFF02976CD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BB68DAE3-52D9-417E-B1DE-ADE24F64EE0B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BB68DAE3-52D9-417E-B1DE-ADE24F64EE0B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BB68DAE3-52D9-417E-B1DE-ADE24F64EE0B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BB68DAE3-52D9-417E-B1DE-ADE24F64EE0B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E1A8269E-6421-4039-B2A0-6A91BB04EECA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E1A8269E-6421-4039-B2A0-6A91BB04EECA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E1A8269E-6421-4039-B2A0-6A91BB04EECA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E1A8269E-6421-4039-B2A0-6A91BB04EECA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -83,6 +103,9 @@ Global
 		{63493202-4598-4275-9142-0281095943CD} = {12CD7AA1-C65E-467C-AFA5-D2DFF2A056A5}
 		{D665BF9E-729F-468E-85E9-95B7DF659A18} = {12CD7AA1-C65E-467C-AFA5-D2DFF2A056A5}
 		{165C0C61-31C7-49B9-9AE2-17D617AF8C5C} = {12CD7AA1-C65E-467C-AFA5-D2DFF2A056A5}
+		{D4FE7C24-DE92-495C-B3C9-76BFF02976CD} = {7BBEEEF0-229A-449C-A41B-87857A06CECC}
+		{BB68DAE3-52D9-417E-B1DE-ADE24F64EE0B} = {7BBEEEF0-229A-449C-A41B-87857A06CECC}
+		{E1A8269E-6421-4039-B2A0-6A91BB04EECA} = {7BBEEEF0-229A-449C-A41B-87857A06CECC}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {18362331-BCBC-45B1-98ED-013EA00FDBD4}
