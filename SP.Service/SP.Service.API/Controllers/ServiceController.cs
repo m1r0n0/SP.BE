@@ -1,37 +1,37 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using SP.Customer.API.ViewModels;
-using SP.Customer.BusinessLayer.DTOs;
-using SP.Customer.BusinessLayer.Exceptions;
-using SP.Customer.BusinessLayer.Interfaces;
+using SP.Service.API.ViewModels;
+using SP.Service.BusinessLayer.DTOs;
+using SP.Service.BusinessLayer.Exceptions;
+using SP.Service.BusinessLayer.Interfaces;
 using Swashbuckle.AspNetCore.Annotations;
 
-namespace SP.Customer.API.Controllers
+namespace SP.Service.API.Controllers
 {
     [Authorize]
     [ApiController]
-    [Route("api/v1/customer/")]
+    [Route("api/v1/service/")]
     public class ServiceController : ControllerBase
     {
-        private readonly ICustomerService _customerService;
+        private readonly IServiceService _serviceService;
 
-        public ServiceController(ICustomerService customerService)
+        public ServiceController(IServiceService serviceService)
         {
-            _customerService = customerService;
+            _serviceService = serviceService;
         }
 
         [HttpPost]
-        [Route("new/{userId}")]
-        [ProducesResponseType(typeof(CustomerDTO), 200)]
+        [Route("new/")]
+        [ProducesResponseType(typeof(ServiceDTO), 200)]
         [ProducesResponseType(typeof(ModelErrorVM), 400)]
-        [SwaggerOperation(Summary = "Register the Customer")]
-        public async Task<IActionResult> RegisterCustomer(string userId, CustomerInfoDTO model)
+        [SwaggerOperation(Summary = "Create the Service")]
+        public async Task<IActionResult> CreateService(ServiceInfoDTO model)
         {
             try
             {
-                var customer = await _customerService.CreateCustomer(userId, model);
+                var service = await _serviceService.CreateService(model);
 
-                return Ok(customer);
+                return Ok(service);
             }
             catch (ConflictException)
             {
@@ -42,16 +42,16 @@ namespace SP.Customer.API.Controllers
         }
 
         [HttpGet]
-        [Route("{userId}")]
-        [ProducesResponseType(typeof(CustomerInfoDTO), 200)]
-        [SwaggerOperation(Summary = "Get the Customer")]
-        public async Task<IActionResult> GetCustomer(string userId)
+        [Route("{serviceId}")]
+        [ProducesResponseType(typeof(ServiceInfoDTO), 200)]
+        [SwaggerOperation(Summary = "Get the Service")]
+        public async Task<IActionResult> GetService(int serviceId)
         {
             try
             {
-                var Customer = await _customerService.GetCustomer(userId);
+                var Service = await _serviceService.GetService(serviceId);
 
-                return Ok(Customer);
+                return Ok(Service);
             }
             catch (NotFoundException)
             {
@@ -62,34 +62,36 @@ namespace SP.Customer.API.Controllers
 
 
         [HttpPut]
-        [Route("{userId}")]
-        [SwaggerOperation(Summary = "Edit the Customer")]
-        [ProducesResponseType(typeof(CustomerInfoDTO), 200)]
+        [Route("{serviceId}/price/{price}")]
+        [SwaggerOperation(Summary = "Change the price of the Service")]
+        [ProducesResponseType(typeof(ServiceInfoDTO), 200)]
         [ProducesResponseType(typeof(ModelErrorVM), 400)]
         [ProducesResponseType(404)]
-        public async Task<IActionResult> EditCustomer(string userId, CustomerInfoDTO model)
+        public async Task<IActionResult> ChangeServicePrice(int serviceId, int price)
         {
             try
             {
-                var customer = await _customerService.UpdateCustomer(userId, model);
+                var service = await _serviceService.ChangePrice(serviceId, price);
 
-                return Ok(customer);
+                return Ok(service);
             }
             catch (NotFoundException)
             {
                 return NotFound();
             }
         }
+        
+        public async Task<IActionResult> AddEvent(){}
 
         [HttpDelete]
-        [Route("{userId}")]
-        [SwaggerOperation(Summary = "Delete the Customer")]
+        [Route("{serviceId}")]
+        [SwaggerOperation(Summary = "Delete the Service")]
         [ProducesResponseType(200)]
-        public async Task<IActionResult> DeleteCustomer(string userId)
+        public async Task<IActionResult> DeleteService(int serviceId)
         {
             try
             {
-                await _customerService.DeleteCustomer(userId);
+                await _serviceService.DeleteService(serviceId);
 
                 return Ok();
             }

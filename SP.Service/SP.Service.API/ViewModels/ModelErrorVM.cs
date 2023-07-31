@@ -1,4 +1,4 @@
-﻿namespace SP.Customer.API.ViewModels
+﻿namespace SP.Service.API.ViewModels
 {
     public class ModelErrorVM
     {
