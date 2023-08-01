@@ -17,7 +17,7 @@ namespace SP.Service.DataAccessLayer.Data
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
-            modelBuilder.Entity<DataAccessLayer.Models.Service>().HasIndex(p => p.ProviderId );
+            modelBuilder.Entity<DataAccessLayer.Models.Service>().HasIndex(p => p.ProviderUserId );
         }
     }
 }

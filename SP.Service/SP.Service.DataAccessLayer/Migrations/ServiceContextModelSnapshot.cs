@@ -29,7 +29,7 @@ namespace SP.Service.DataAccessLayer.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("EventId"), 1L, 1);
 
-                    b.Property<string>("CustomerId")
+                    b.Property<string>("CustomerUserId")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
@@ -59,16 +59,20 @@ namespace SP.Service.DataAccessLayer.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ServiceId"), 1L, 1);
 
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<int>("Price")
                         .HasColumnType("int");
 
-                    b.Property<string>("ProviderId")
+                    b.Property<string>("ProviderUserId")
                         .IsRequired()
                         .HasColumnType("nvarchar(450)");
 
                     b.HasKey("ServiceId");
 
-                    b.HasIndex("ProviderId");
+                    b.HasIndex("ProviderUserId");
 
                     b.ToTable("Services");
                 });
