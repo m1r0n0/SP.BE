@@ -62,37 +62,6 @@ namespace SP.Service.BusinessLayer.Services
             await _context.SaveChangesAsync();
         }
 
-        public async Task<DataAccessLayer.Models.Service> AddEvent(int serviceId, EventInfoDTO model)
-        {
-            var service = await _context.Services.FirstOrDefaultAsync(s => s.ServiceId == serviceId);
-            
-            if (service is null) throw new NotFoundException();
-            
-            var events = await _context.Events.Where(e => e.ServiceId == serviceId).ToListAsync();
-            events.Add(_mapper.Map<Event>(model));
-            service.Events = events;
-            
-            await _context.SaveChangesAsync();
-
-            return (service);
-        }
-
-        public async Task<List<Event>> GetEventsForProvider(string providerUserId)
-        {
-            var providerServices = await _context.Services.Where(s => s.ProviderUserId == providerUserId).ToListAsync();
-            var events = new List<Event>();
-            
-            foreach (var service in providerServices)
-            {
-                var serviceEvents = await _context.Events.Where(e => e.ServiceId == service.ServiceId).ToListAsync();
-                events.AddRange(serviceEvents);
-            }
-
-            if (events.Count == 0) throw new NotFoundException();
-            
-            return events;
-        }
-        
         public async Task<List<DataAccessLayer.Models.Service>> GetServicesForProvider(string providerUserId)
         {
             var services = await _context.Services.Where(e => e.ProviderUserId == providerUserId).ToListAsync();
@@ -101,14 +70,10 @@ namespace SP.Service.BusinessLayer.Services
             
             return services;
         }
-        
-        public async Task<List<Event>> GetEventsForCustomer(string customerUserId)
-        {
-            var events = await _context.Events.Where(e => e.CustomerUserId == customerUserId).ToListAsync();
 
-            if (events.Count == 0) throw new NotFoundException();
-            
-            return events;
+        public async Task<List<DataAccessLayer.Models.Service>> GetServices()
+        {
+            return await _context.Services.ToListAsync();
         }
     }
 }

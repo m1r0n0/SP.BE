@@ -13,7 +13,6 @@ namespace SP.Service.API.MappingProfiles
             CreateMap<Service.DataAccessLayer.Models.Service, ServiceInfoDTO>().ReverseMap();
             CreateMap<EventInfoDTO, Event>().ReverseMap();
             CreateMap<DataAccessLayer.Models.Service, ServiceDataVM>().ReverseMap();
-            CreateMap<List<DataAccessLayer.Models.Service>,List<ServiceDataVM>>().ReverseMap();
         }
     }
 }

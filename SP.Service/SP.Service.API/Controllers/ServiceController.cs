@@ -26,7 +26,7 @@ namespace SP.Service.API.Controllers
 
         [HttpPost]
         [Route("new")]
-        [ProducesResponseType(typeof(ServiceDTO), 200)]
+        [ProducesResponseType(typeof(ServiceDataVM), 200)]
         [ProducesResponseType(typeof(ModelErrorVM), 400)]
         [SwaggerOperation(Summary = "Create the Service")]
         public async Task<IActionResult> CreateService(ServiceInfoDTO model)
@@ -62,24 +62,7 @@ namespace SP.Service.API.Controllers
                 return NotFound();
             }
         }
-        
-        [HttpGet]
-        [Route("events/provider/{providerUserId}")]
-        [ProducesResponseType(typeof(ServiceInfoDTO), 200)]
-        [SwaggerOperation(Summary = "Get events for provider")]
-        public async Task<IActionResult> GetEventsForProvider(string providerUserId)
-        {
-            try
-            {
-                var events = await _serviceService.GetEventsForProvider(providerUserId);
-                return Ok(events);
-            }
-            catch (NotFoundException)
-            {
-                return NotFound(new List<Event>());
-            }
-        }
-        
+
         [HttpGet]
         [Route("provider/{providerUserId}")]
         [ProducesResponseType(typeof(ServiceInfoDTO), 200)]
@@ -89,24 +72,7 @@ namespace SP.Service.API.Controllers
             try
             {
                 var services = await _serviceService.GetServicesForProvider(providerUserId);
-                return Ok(_mapper.Map<ServiceDataVM>(services));
-            }
-            catch (NotFoundException)
-            {
-                return NotFound(new List<Event>());
-            }
-        }
-        
-        [HttpGet]
-        [Route("events/customer/{customerUserId}")]
-        [ProducesResponseType(typeof(ServiceInfoDTO), 200)]
-        [SwaggerOperation(Summary = "Get events for customer")]
-        public async Task<IActionResult> GetEventsForCustomer(string customerUserId)
-        {
-            try 
-            {
-                var events = await _serviceService.GetEventsForCustomer(customerUserId);
-                return Ok(events);
+                return Ok(_mapper.Map<List<ServiceDataVM>>(services));
             }
             catch (NotFoundException)
             {
@@ -127,25 +93,7 @@ namespace SP.Service.API.Controllers
             {
                 var service = await _serviceService.EditService(serviceId, model);
 
-                return Ok(_mapper.Map<List<ServiceDataVM>>(service));
-            }
-            catch (NotFoundException)
-            {
-                return NotFound();
-            }
-        }
-
-        [HttpPut]
-        [Route("{serviceId}/new/event")]
-        [SwaggerOperation(Summary = "Add event to the Service")]
-        [ProducesResponseType(typeof(ServiceDTO), 200)]
-        public async Task<IActionResult> AddEvent(int serviceId, EventInfoDTO model)
-        {
-            try
-            {
-                var service = await _serviceService.AddEvent(serviceId, model);
-                
-                return Ok(service);
+                return Ok(_mapper.Map<ServiceDataVM>(service));
             }
             catch (NotFoundException)
             {
@@ -169,6 +117,16 @@ namespace SP.Service.API.Controllers
             {
                 return NotFound();
             }
+        }
+
+        [HttpGet]
+        [SwaggerOperation(Summary = "Get all services")]
+        [ProducesResponseType(typeof(List<ServiceDataVM>), 200)]
+        public async Task<IActionResult> GetServices()
+        {
+            var services = await _serviceService.GetServices();
+
+            return Ok(_mapper.Map<List<ServiceDataVM>>(services));
         }
 
     }

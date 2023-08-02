@@ -22,6 +22,7 @@ builder.Services.AddDbContext<ServiceContext>(opt =>
 builder.Services.AddAutoMapper(typeof(ServiceMappingProfile));
 
 builder.Services.AddScoped<IServiceService, ServiceService>();
+builder.Services.AddScoped<IEventService, EventService>();
 
 builder.Services.AddAuthorization();
 builder.Services.AddAuthentication(options =>
