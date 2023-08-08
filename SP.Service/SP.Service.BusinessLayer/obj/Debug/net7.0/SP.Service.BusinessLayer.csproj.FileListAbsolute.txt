@@ -1,0 +1,17 @@
+C:\Users\OMyroniuk\repos\Service Provider\SP.BE\SP.Service\SP.Service.BusinessLayer\bin\Debug\net7.0\SP.Service.BusinessLayer.deps.json
+C:\Users\OMyroniuk\repos\Service Provider\SP.BE\SP.Service\SP.Service.BusinessLayer\bin\Debug\net7.0\SP.Service.BusinessLayer.runtimeconfig.json
+C:\Users\OMyroniuk\repos\Service Provider\SP.BE\SP.Service\SP.Service.BusinessLayer\bin\Debug\net7.0\SP.Service.BusinessLayer.dll
+C:\Users\OMyroniuk\repos\Service Provider\SP.BE\SP.Service\SP.Service.BusinessLayer\bin\Debug\net7.0\SP.Service.BusinessLayer.pdb
+C:\Users\OMyroniuk\repos\Service Provider\SP.BE\SP.Service\SP.Service.BusinessLayer\bin\Debug\net7.0\SP.Service.DataAccessLayer.dll
+C:\Users\OMyroniuk\repos\Service Provider\SP.BE\SP.Service\SP.Service.BusinessLayer\bin\Debug\net7.0\SP.Service.DataAccessLayer.pdb
+C:\Users\OMyroniuk\repos\Service Provider\SP.BE\SP.Service\SP.Service.BusinessLayer\obj\Debug\net7.0\SP.Service.BusinessLayer.csproj.AssemblyReference.cache
+C:\Users\OMyroniuk\repos\Service Provider\SP.BE\SP.Service\SP.Service.BusinessLayer\obj\Debug\net7.0\SP.Service.BusinessLayer.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\OMyroniuk\repos\Service Provider\SP.BE\SP.Service\SP.Service.BusinessLayer\obj\Debug\net7.0\SP.Service.BusinessLayer.AssemblyInfoInputs.cache
+C:\Users\OMyroniuk\repos\Service Provider\SP.BE\SP.Service\SP.Service.BusinessLayer\obj\Debug\net7.0\SP.Service.BusinessLayer.AssemblyInfo.cs
+C:\Users\OMyroniuk\repos\Service Provider\SP.BE\SP.Service\SP.Service.BusinessLayer\obj\Debug\net7.0\SP.Service.BusinessLayer.csproj.CoreCompileInputs.cache
+C:\Users\OMyroniuk\repos\Service Provider\SP.BE\SP.Service\SP.Service.BusinessLayer\obj\Debug\net7.0\SP.Service.BusinessLayer.csproj.CopyComplete
+C:\Users\OMyroniuk\repos\Service Provider\SP.BE\SP.Service\SP.Service.BusinessLayer\obj\Debug\net7.0\SP.Service.BusinessLayer.dll
+C:\Users\OMyroniuk\repos\Service Provider\SP.BE\SP.Service\SP.Service.BusinessLayer\obj\Debug\net7.0\refint\SP.Service.BusinessLayer.dll
+C:\Users\OMyroniuk\repos\Service Provider\SP.BE\SP.Service\SP.Service.BusinessLayer\obj\Debug\net7.0\SP.Service.BusinessLayer.pdb
+C:\Users\OMyroniuk\repos\Service Provider\SP.BE\SP.Service\SP.Service.BusinessLayer\obj\Debug\net7.0\SP.Service.BusinessLayer.genruntimeconfig.cache
+C:\Users\OMyroniuk\repos\Service Provider\SP.BE\SP.Service\SP.Service.BusinessLayer\obj\Debug\net7.0\ref\SP.Service.BusinessLayer.dll

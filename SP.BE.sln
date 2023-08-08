@@ -41,6 +41,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SP.GraphQL.API", "SP.GraphQ
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SP.GraphQL.DataAccessLayer", "SP.GraphQL\SP.GraphQL.DataAccessLayer\SP.GraphQL.DataAccessLayer.csproj", "{B7B6AE30-CB70-4878-A37B-B98C76B9B164}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SP.GraphQL.BusinessLayer", "SP.GraphQL\SP.GraphQL.BusinessLayer\SP.GraphQL.BusinessLayer\SP.GraphQL.BusinessLayer.csproj", "{3635CDA9-4240-4C5F-9B43-B6C913478821}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -103,6 +105,10 @@ Global
 		{B7B6AE30-CB70-4878-A37B-B98C76B9B164}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B7B6AE30-CB70-4878-A37B-B98C76B9B164}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B7B6AE30-CB70-4878-A37B-B98C76B9B164}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3635CDA9-4240-4C5F-9B43-B6C913478821}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3635CDA9-4240-4C5F-9B43-B6C913478821}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3635CDA9-4240-4C5F-9B43-B6C913478821}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3635CDA9-4240-4C5F-9B43-B6C913478821}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -122,6 +128,7 @@ Global
 		{E1A8269E-6421-4039-B2A0-6A91BB04EECA} = {7BBEEEF0-229A-449C-A41B-87857A06CECC}
 		{7B506B2E-07C6-454F-9793-FCED7633CB7A} = {2E92FC40-27AB-4DA0-900C-17EB66FA99C5}
 		{B7B6AE30-CB70-4878-A37B-B98C76B9B164} = {2E92FC40-27AB-4DA0-900C-17EB66FA99C5}
+		{3635CDA9-4240-4C5F-9B43-B6C913478821} = {2E92FC40-27AB-4DA0-900C-17EB66FA99C5}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {18362331-BCBC-45B1-98ED-013EA00FDBD4}

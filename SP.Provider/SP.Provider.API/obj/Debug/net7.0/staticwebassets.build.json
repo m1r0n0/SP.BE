@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "hAbmff7iq9TSlbZ0MMy2ml2GDiMsWDcsaS3HVNQ3pbg=",
+  "Source": "SP.Provider.API",
+  "BasePath": "_content/SP.Provider.API",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}

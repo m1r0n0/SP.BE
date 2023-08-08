@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "5GbivW/qagKAJ0hM0wrOCKjLCKxEVk/d4VyODeiXWfU=",
+  "Source": "SP.Identity.API",
+  "BasePath": "_content/SP.Identity.API",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}
