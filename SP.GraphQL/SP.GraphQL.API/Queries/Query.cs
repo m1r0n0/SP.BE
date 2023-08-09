@@ -1,20 +1,18 @@
-﻿using SP.GraphQL.DataAccessLayer.Models;
+﻿using SP.GraphQL.BusinessLayer.DTOs;
+using SP.GraphQL.BusinessLayer.Interfaces;
+using SP.GraphQL.DataAccessLayer.Models;
 
 namespace SP.GraphQL.API.Queries;
 
 public class Query
 {
-    public Service GetService() 
+    private readonly IGraphQLService _graphQLService;
+    Query(IGraphQLService graphQLService)
     {
-        var service = new Service
-        {
-            Events = new List<Event>(),
-            Name = "foo",
-            Price = 100,
-            ProviderUserId = "provider",
-            ServiceId = 1
-        };
-        return service;
+        _graphQLService = graphQLService;
     }
-    
+    public async Task<List<ServiceWithProvider>> GetServices()
+    {
+        return await _graphQLService.GetServicesWithProvidersInfo() ;
+    }
 }

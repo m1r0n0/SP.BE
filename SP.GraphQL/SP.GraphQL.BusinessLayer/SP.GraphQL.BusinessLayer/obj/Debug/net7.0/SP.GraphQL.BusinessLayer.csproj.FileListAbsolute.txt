@@ -1,0 +1,17 @@
+C:\Users\OMyroniuk\repos\Service Provider\SP.BE\SP.GraphQL\SP.GraphQL.BusinessLayer\SP.GraphQL.BusinessLayer\bin\Debug\net7.0\SP.GraphQL.BusinessLayer.deps.json
+C:\Users\OMyroniuk\repos\Service Provider\SP.BE\SP.GraphQL\SP.GraphQL.BusinessLayer\SP.GraphQL.BusinessLayer\bin\Debug\net7.0\SP.GraphQL.BusinessLayer.runtimeconfig.json
+C:\Users\OMyroniuk\repos\Service Provider\SP.BE\SP.GraphQL\SP.GraphQL.BusinessLayer\SP.GraphQL.BusinessLayer\bin\Debug\net7.0\SP.GraphQL.BusinessLayer.dll
+C:\Users\OMyroniuk\repos\Service Provider\SP.BE\SP.GraphQL\SP.GraphQL.BusinessLayer\SP.GraphQL.BusinessLayer\bin\Debug\net7.0\SP.GraphQL.BusinessLayer.pdb
+C:\Users\OMyroniuk\repos\Service Provider\SP.BE\SP.GraphQL\SP.GraphQL.BusinessLayer\SP.GraphQL.BusinessLayer\bin\Debug\net7.0\SP.GraphQL.DataAccessLayer.dll
+C:\Users\OMyroniuk\repos\Service Provider\SP.BE\SP.GraphQL\SP.GraphQL.BusinessLayer\SP.GraphQL.BusinessLayer\bin\Debug\net7.0\SP.GraphQL.DataAccessLayer.pdb
+C:\Users\OMyroniuk\repos\Service Provider\SP.BE\SP.GraphQL\SP.GraphQL.BusinessLayer\SP.GraphQL.BusinessLayer\obj\Debug\net7.0\SP.GraphQL.BusinessLayer.csproj.AssemblyReference.cache
+C:\Users\OMyroniuk\repos\Service Provider\SP.BE\SP.GraphQL\SP.GraphQL.BusinessLayer\SP.GraphQL.BusinessLayer\obj\Debug\net7.0\SP.GraphQL.BusinessLayer.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\OMyroniuk\repos\Service Provider\SP.BE\SP.GraphQL\SP.GraphQL.BusinessLayer\SP.GraphQL.BusinessLayer\obj\Debug\net7.0\SP.GraphQL.BusinessLayer.AssemblyInfoInputs.cache
+C:\Users\OMyroniuk\repos\Service Provider\SP.BE\SP.GraphQL\SP.GraphQL.BusinessLayer\SP.GraphQL.BusinessLayer\obj\Debug\net7.0\SP.GraphQL.BusinessLayer.AssemblyInfo.cs
+C:\Users\OMyroniuk\repos\Service Provider\SP.BE\SP.GraphQL\SP.GraphQL.BusinessLayer\SP.GraphQL.BusinessLayer\obj\Debug\net7.0\SP.GraphQL.BusinessLayer.csproj.CoreCompileInputs.cache
+C:\Users\OMyroniuk\repos\Service Provider\SP.BE\SP.GraphQL\SP.GraphQL.BusinessLayer\SP.GraphQL.BusinessLayer\obj\Debug\net7.0\SP.GraphQL.BusinessLayer.csproj.CopyComplete
+C:\Users\OMyroniuk\repos\Service Provider\SP.BE\SP.GraphQL\SP.GraphQL.BusinessLayer\SP.GraphQL.BusinessLayer\obj\Debug\net7.0\SP.GraphQL.BusinessLayer.dll
+C:\Users\OMyroniuk\repos\Service Provider\SP.BE\SP.GraphQL\SP.GraphQL.BusinessLayer\SP.GraphQL.BusinessLayer\obj\Debug\net7.0\refint\SP.GraphQL.BusinessLayer.dll
+C:\Users\OMyroniuk\repos\Service Provider\SP.BE\SP.GraphQL\SP.GraphQL.BusinessLayer\SP.GraphQL.BusinessLayer\obj\Debug\net7.0\SP.GraphQL.BusinessLayer.pdb
+C:\Users\OMyroniuk\repos\Service Provider\SP.BE\SP.GraphQL\SP.GraphQL.BusinessLayer\SP.GraphQL.BusinessLayer\obj\Debug\net7.0\SP.GraphQL.BusinessLayer.genruntimeconfig.cache
+C:\Users\OMyroniuk\repos\Service Provider\SP.BE\SP.GraphQL\SP.GraphQL.BusinessLayer\SP.GraphQL.BusinessLayer\obj\Debug\net7.0\ref\SP.GraphQL.BusinessLayer.dll
