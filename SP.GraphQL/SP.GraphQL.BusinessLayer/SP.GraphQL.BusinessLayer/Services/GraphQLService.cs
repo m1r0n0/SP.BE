@@ -24,8 +24,8 @@ public class GraphQLService : IGraphQLService
 
         foreach (var service in services)
         {
-            var serviceWithProvider = _mapper.Map<ServiceWithProvider>(service);
-
+            ServiceWithProvider serviceWithProvider = new ServiceWithProvider();
+            serviceWithProvider.Service = service;
             serviceWithProvider.Provider = await
                 _context.Providers.Where(p => p.UserId == service.ProviderUserId).FirstOrDefaultAsync();
             
