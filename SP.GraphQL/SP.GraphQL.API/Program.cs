@@ -45,6 +45,7 @@ builder.Services.AddAuthentication(options =>
         IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(builder.Configuration["Jwt:Key"]))
     };
 });
+*/
 
 builder.Services.AddCors(options =>
 {
@@ -58,7 +59,7 @@ builder.Services.AddCors(options =>
                 .AllowCredentials();
 
         });
-});*/
+});
 
 /*builder.Services.AddSwaggerGen(c =>
 {
@@ -93,5 +94,6 @@ builder.Services.AddCors(options =>
 var app = builder.Build();
 
 app.MapGraphQL();
+app.UseCors(MyAllowSpecificOrigins);
 
 app.Run();
