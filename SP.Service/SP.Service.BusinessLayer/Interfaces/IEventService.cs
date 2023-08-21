@@ -8,5 +8,6 @@ namespace SP.Service.BusinessLayer.Interfaces
         Task<Event> AddEvent(int serviceId, EventInfoDTO model);
         Task<List<Event>> GetEventsForProvider(string providerUserId);
         Task<List<Event>> GetEventsForCustomer(string customerUserId);
+        Task GetUnavailableHours(int serviceId);
     }
 }

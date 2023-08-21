@@ -58,5 +58,19 @@ namespace SP.Service.BusinessLayer.Services
             
             return events;
         }
+
+        public async Task GetUnavailableHours(int serviceId)
+        {
+            var serviceEvents = await _context.Events.Where(e => e.ServiceId == serviceId).ToListAsync();
+            var availabilitySchedules = new List<AvailabilityScheduleDTO>();
+
+            foreach (var serviceEvent in serviceEvents)
+            {
+                var schedule = new AvailabilityScheduleDTO();
+                var date = serviceEvent.DateOfStart;
+                DateTime a = new DateTime();
+                
+            }
+        }
     }
 }
