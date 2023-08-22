@@ -57,6 +57,23 @@ namespace SP.Service.API.Controllers
                 return NotFound(new List<Event>());
             }
         }
+        
+        [HttpGet]
+        [Route("events/provider/{providerUserId}/unavailableHours")]
+        [ProducesResponseType(typeof(AvailabilityScheduleDTO), 200)]
+        [SwaggerOperation(Summary = "Get unavailable hours for provider")]
+        public async Task<IActionResult> GetUnavailableHoursForProvider(string providerUserId)
+        {
+            try
+            {
+                var schedules = await _eventService.GetUnavailableHours(providerUserId);
+                return Ok(schedules);
+            }
+            catch (NotFoundException)
+            {
+                return NotFound(new List<Event>());
+            }
+        }
 
         [HttpPost]
         [Route("{serviceId}/new/event")]
