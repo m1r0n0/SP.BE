@@ -85,7 +85,7 @@ namespace SP.Service.BusinessLayer.Services
                             if (startDate.Month == endDate.Month)
                             {
                                 unavailabilitySchedules.Add(SetUnavailableHoursForDay(startDate, startDate.Hour, 24));
-                                unavailabilitySchedules.AddRange(MakeUnavailableRangeOfDays(startDate.AddDays(1), DateTime.DaysInMonth(startDate.Year, startDate.Month)));
+                                unavailabilitySchedules.AddRange(MakeUnavailableRangeOfDays(startDate.AddDays(1), endDate.Day - 1));
                                 unavailabilitySchedules.Add(SetUnavailableHoursForDay(endDate, 0, endDate.Hour));
                             }
                             else
@@ -113,7 +113,11 @@ namespace SP.Service.BusinessLayer.Services
                         {
                             //Make rest of start month unavailable
                             unavailabilitySchedules.Add(SetUnavailableHoursForDay(startDate, startDate.Hour, 24));
-                            unavailabilitySchedules.AddRange(MakeUnavailableRangeOfDays(startDate.AddDays(1), endDate.Day - startDate.Day - 1));
+                            unavailabilitySchedules.AddRange(
+                                MakeUnavailableRangeOfDays(
+                                    startDate.AddDays(1), DateTime.DaysInMonth(startDate.Year, startDate.Month)
+                                )
+                            );
                                 
                             //Make months between start & end unavailable
                             int passedMonthAmount = (12 - startDate.Month) +
@@ -158,12 +162,12 @@ namespace SP.Service.BusinessLayer.Services
             return schedule;
         }
 
-        private static List<AvailabilityScheduleDTO> MakeUnavailableRangeOfDays(DateTime startDate, int daysAmount)
+        private static List<AvailabilityScheduleDTO> MakeUnavailableRangeOfDays(DateTime startDate, int endOfRangeMonthDay)
         {
             var schedules = new List<AvailabilityScheduleDTO>();
            
 
-            for (int i = startDate.Day; i <= daysAmount; i++)
+            for (int i = startDate.Day; i <= endOfRangeMonthDay; i++)
             {
                 AvailabilityScheduleDTO currentDateSchedule = new AvailabilityScheduleDTO();
                 currentDateSchedule.Date = new DateTime(startDate.Year, startDate.Month, i);
