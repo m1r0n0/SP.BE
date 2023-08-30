@@ -34,4 +34,43 @@ public class GraphQLService : IGraphQLService
 
         return servicesWithProviders;
     }
+
+    public async Task<List<EventForCustomer>> GetCustomerEvents(string customerUserId)
+    {
+        var events = await _context.Events.Where(e => e.CustomerUserId == customerUserId).ToListAsync();
+        var customerEvents = new List<EventForCustomer>();
+
+        foreach (var @event in events)
+        {
+            var service = await _context.Services.FirstOrDefaultAsync(s => s.ServiceId == @event.ServiceId);
+            var eventWithServiceName = _mapper.Map<EventForCustomer>(@event);
+            eventWithServiceName.ServiceName = service.Name;
+            
+            customerEvents.Add(eventWithServiceName);
+        }
+        return customerEvents;
+    }
+    
+    public async Task<List<EventForProvider>> GetProviderEvents(string providerUserId)
+    {
+        var customerEvents = new List<EventForProvider>();
+        var providerServices = await _context.Services.Where(s => s.ProviderUserId == providerUserId).ToListAsync();
+
+        foreach (var service in providerServices)
+        {
+            var events = await _context.Events.Where(e => e.ServiceId == service.ServiceId).ToListAsync();
+            foreach (var @event in events)
+            {
+                var eventForProvider = _mapper.Map<EventForProvider>(@event);
+                eventForProvider.ServiceName = service.Name;
+                
+                var customer = await _context.Customers.FirstOrDefaultAsync(c => c.UserId == @event.CustomerUserId);
+                eventForProvider.CustomerName = string.Format("{0} {1}", customer.FirstName, customer.LastName);
+                
+                customerEvents.Add(eventForProvider);
+            }
+        }
+        
+        return customerEvents;
+    }
 }

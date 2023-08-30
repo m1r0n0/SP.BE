@@ -1,6 +1,6 @@
 ﻿namespace SP.GraphQL.BusinessLayer.DTOs;
 
-public class EventWithServiceName
+public class EventForCustomer
 {
     public string ServiceName { get; set; }
     public int ServiceId { get; set; }

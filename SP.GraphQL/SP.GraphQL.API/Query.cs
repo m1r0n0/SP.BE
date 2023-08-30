@@ -10,4 +10,16 @@ public class Query
     {
         return await _graphQLService.GetServicesWithProvidersInfo();
     }
+
+    public async Task<List<EventForCustomer>> GetCustomerEvents(IGraphQLService _graphQlService,
+        string customerUserId)
+    {
+        return await _graphQlService.GetCustomerEvents(customerUserId);
+    }
+    
+    public async Task<List<EventForProvider>> GetProviderEvents(IGraphQLService _graphQlService,
+        string providerUserId)
+    {
+        return await _graphQlService.GetProviderEvents(providerUserId);
+    }
 }
