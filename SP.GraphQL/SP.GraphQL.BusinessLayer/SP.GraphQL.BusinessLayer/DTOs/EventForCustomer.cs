@@ -6,4 +6,6 @@ public class EventForCustomer
     public int ServiceId { get; set; }
     public string DateOfStart { get; set; }
     public string DateOfEnd { get; set; }
+    public string ProviderName { get; set; }
+    public string ProviderEnterpriseName { get; set; }
 }

@@ -43,10 +43,14 @@ public class GraphQLService : IGraphQLService
         foreach (var @event in events)
         {
             var service = await _context.Services.FirstOrDefaultAsync(s => s.ServiceId == @event.ServiceId);
-            var eventWithServiceName = _mapper.Map<EventForCustomer>(@event);
-            eventWithServiceName.ServiceName = service.Name;
+            var eventForCustomer = _mapper.Map<EventForCustomer>(@event);
+            eventForCustomer.ServiceName = service.Name;
+
+            var provider = await _context.Providers.FirstOrDefaultAsync(p => p.UserId == service.ProviderUserId);
+            eventForCustomer.ProviderName = $"{provider.FirstName} {provider.LastName}";
+            eventForCustomer.ProviderEnterpriseName = provider.EnterpriseName;
             
-            customerEvents.Add(eventWithServiceName);
+            customerEvents.Add(eventForCustomer);
         }
         return customerEvents;
     }
