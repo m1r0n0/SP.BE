@@ -76,7 +76,8 @@ namespace SP.Service.BusinessLayer.Services
                 {
                     if (DateTime.Compare(startDate.Date, endDate.Date) == 0)
                     {
-                        unavailabilitySchedules.Add(SetUnavailableHoursForDay(startDate, startDate.Hour, endDate.Hour)); 
+                        unavailabilitySchedules = AddUnavailableHoursToDay(unavailabilitySchedules, startDate, startDate.Hour, endDate.Hour);
+                        //unavailabilitySchedules.Add(CreateDayWithUnavailableHours(startDate, startDate.Hour, endDate.Hour)); 
                     }
                     else
                     {
@@ -84,14 +85,20 @@ namespace SP.Service.BusinessLayer.Services
                         {
                             if (startDate.Month == endDate.Month)
                             {
-                                unavailabilitySchedules.Add(SetUnavailableHoursForDay(startDate, startDate.Hour, 24));
+                                AddUnavailableHoursToDay(unavailabilitySchedules, startDate, startDate.Hour, 24);
+                                //unavailabilitySchedules.Add(CreateDayWithUnavailableHours(startDate, startDate.Hour, 24));
+                                
                                 unavailabilitySchedules.AddRange(MakeUnavailableRangeOfDays(startDate.AddDays(1), endDate.Day - 1));
-                                unavailabilitySchedules.Add(SetUnavailableHoursForDay(endDate, 0, endDate.Hour));
+                                
+                                AddUnavailableHoursToDay(unavailabilitySchedules, endDate, 0, endDate.Hour);
+                                //unavailabilitySchedules.Add(CreateDayWithUnavailableHours(endDate, 0, endDate.Hour));
                             }
                             else
                             {
                                 //Make rest of start month unavailable
-                                unavailabilitySchedules.Add(SetUnavailableHoursForDay(startDate, startDate.Hour, 24));
+                                AddUnavailableHoursToDay(unavailabilitySchedules, startDate, startDate.Hour, 24);
+                               // unavailabilitySchedules.Add(CreateDayWithUnavailableHours(startDate, startDate.Hour, 24));
+                                
                                 unavailabilitySchedules.AddRange(
                                     MakeUnavailableRangeOfDays(
                                         startDate.AddDays(1), DateTime.DaysInMonth(startDate.Year, startDate.Month)
@@ -106,13 +113,17 @@ namespace SP.Service.BusinessLayer.Services
                                 
                                 //Make end month part unavailable till end date
                                 unavailabilitySchedules.AddRange(MakeUnavailableRangeOfDays(new DateTime(endDate.Year, endDate.Month, 1), endDate.Day -1 ));
-                                unavailabilitySchedules.Add(SetUnavailableHoursForDay(endDate, 0, endDate.Hour));
+                                
+                                AddUnavailableHoursToDay(unavailabilitySchedules, endDate, 0, endDate.Hour);
+                                //unavailabilitySchedules.Add(CreateDayWithUnavailableHours(endDate, 0, endDate.Hour));
                             }
                         }
                         else
                         {
                             //Make rest of start month unavailable
-                            unavailabilitySchedules.Add(SetUnavailableHoursForDay(startDate, startDate.Hour, 24));
+                            AddUnavailableHoursToDay(unavailabilitySchedules, startDate, startDate.Hour, 24);
+                            //unavailabilitySchedules.Add(CreateDayWithUnavailableHours(startDate, startDate.Hour, 24));
+                            
                             unavailabilitySchedules.AddRange(
                                 MakeUnavailableRangeOfDays(
                                     startDate.AddDays(1), DateTime.DaysInMonth(startDate.Year, startDate.Month)
@@ -141,7 +152,8 @@ namespace SP.Service.BusinessLayer.Services
                                 
                             //Make end month part unavailable till end date
                             unavailabilitySchedules.AddRange(MakeUnavailableRangeOfDays(new DateTime(endDate.Year, endDate.Month, 1), endDate.Day -1 ));
-                            unavailabilitySchedules.Add(SetUnavailableHoursForDay(endDate, 0, endDate.Hour));
+                            AddUnavailableHoursToDay(unavailabilitySchedules, endDate, 0, endDate.Hour);
+                            //unavailabilitySchedules.Add(CreateDayWithUnavailableHours(endDate, 0, endDate.Hour));
                         }
                     }
                 }
@@ -150,16 +162,37 @@ namespace SP.Service.BusinessLayer.Services
             return unavailabilitySchedules;
         }
 
-        private static AvailabilityScheduleDTO SetUnavailableHoursForDay(DateTime startDate, int startHour, int endHour)
+        private static AvailabilityScheduleDTO CreateDayWithUnavailableHours(DateTime startDate, int startHour, int endHour)
         {
             var schedule = new AvailabilityScheduleDTO(startDate);
+            return ExpandSchedule(schedule, startHour, endHour);
+        }
 
+        private static AvailabilityScheduleDTO ExpandSchedule(AvailabilityScheduleDTO schedule, int startHour, int endHour)
+        {
             for (int i = startHour; i < endHour; i++)
             {
                 schedule.UnavailableHours.Add(i);
             }
 
             return schedule;
+        }
+
+        private static List<AvailabilityScheduleDTO> AddUnavailableHoursToDay(List<AvailabilityScheduleDTO> schedules,
+            DateTime date, int startHour, int endHour)
+        {
+            if (schedules.Any(d => DateTime.Compare(d.Date.Date, date.Date) == 0))
+            {
+                var schedule = schedules.First(d => DateTime.Compare(d.Date.Date, date.Date) == 0);
+                schedule = ExpandSchedule(schedule, startHour, endHour);
+            }
+            else
+            {
+                var schedule = CreateDayWithUnavailableHours(date, startHour, endHour);
+                schedules.Add(schedule);
+            }
+
+            return schedules;
         }
 
         private static List<AvailabilityScheduleDTO> MakeUnavailableRangeOfDays(DateTime startDate, int endOfRangeMonthDay)
@@ -171,7 +204,7 @@ namespace SP.Service.BusinessLayer.Services
             {
                 AvailabilityScheduleDTO currentDateSchedule = new AvailabilityScheduleDTO();
                 currentDateSchedule.Date = new DateTime(startDate.Year, startDate.Month, i);
-                currentDateSchedule = SetUnavailableHoursForDay(currentDateSchedule.Date, 0, 24);
+                currentDateSchedule = CreateDayWithUnavailableHours(currentDateSchedule.Date, 0, 24);
                 schedules.Add(currentDateSchedule);
             }
 
