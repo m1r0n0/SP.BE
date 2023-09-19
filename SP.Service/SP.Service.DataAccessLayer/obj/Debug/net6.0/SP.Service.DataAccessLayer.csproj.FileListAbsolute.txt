@@ -1,0 +1,14 @@
+C:\Users\OMyroniuk\repos\Service Provider\SP.BE\SP.Service\SP.Service.DataAccessLayer\bin\Debug\net6.0\SP.Service.DataAccessLayer.deps.json
+C:\Users\OMyroniuk\repos\Service Provider\SP.BE\SP.Service\SP.Service.DataAccessLayer\bin\Debug\net6.0\SP.Service.DataAccessLayer.runtimeconfig.json
+C:\Users\OMyroniuk\repos\Service Provider\SP.BE\SP.Service\SP.Service.DataAccessLayer\bin\Debug\net6.0\SP.Service.DataAccessLayer.dll
+C:\Users\OMyroniuk\repos\Service Provider\SP.BE\SP.Service\SP.Service.DataAccessLayer\bin\Debug\net6.0\SP.Service.DataAccessLayer.pdb
+C:\Users\OMyroniuk\repos\Service Provider\SP.BE\SP.Service\SP.Service.DataAccessLayer\obj\Debug\net6.0\SP.Service.DataAccessLayer.csproj.AssemblyReference.cache
+C:\Users\OMyroniuk\repos\Service Provider\SP.BE\SP.Service\SP.Service.DataAccessLayer\obj\Debug\net6.0\SP.Service.DataAccessLayer.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\OMyroniuk\repos\Service Provider\SP.BE\SP.Service\SP.Service.DataAccessLayer\obj\Debug\net6.0\SP.Service.DataAccessLayer.AssemblyInfoInputs.cache
+C:\Users\OMyroniuk\repos\Service Provider\SP.BE\SP.Service\SP.Service.DataAccessLayer\obj\Debug\net6.0\SP.Service.DataAccessLayer.AssemblyInfo.cs
+C:\Users\OMyroniuk\repos\Service Provider\SP.BE\SP.Service\SP.Service.DataAccessLayer\obj\Debug\net6.0\SP.Service.DataAccessLayer.csproj.CoreCompileInputs.cache
+C:\Users\OMyroniuk\repos\Service Provider\SP.BE\SP.Service\SP.Service.DataAccessLayer\obj\Debug\net6.0\SP.Service.DataAccessLayer.dll
+C:\Users\OMyroniuk\repos\Service Provider\SP.BE\SP.Service\SP.Service.DataAccessLayer\obj\Debug\net6.0\refint\SP.Service.DataAccessLayer.dll
+C:\Users\OMyroniuk\repos\Service Provider\SP.BE\SP.Service\SP.Service.DataAccessLayer\obj\Debug\net6.0\SP.Service.DataAccessLayer.pdb
+C:\Users\OMyroniuk\repos\Service Provider\SP.BE\SP.Service\SP.Service.DataAccessLayer\obj\Debug\net6.0\SP.Service.DataAccessLayer.genruntimeconfig.cache
+C:\Users\OMyroniuk\repos\Service Provider\SP.BE\SP.Service\SP.Service.DataAccessLayer\obj\Debug\net6.0\ref\SP.Service.DataAccessLayer.dll

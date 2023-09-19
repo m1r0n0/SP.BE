@@ -1,0 +1,14 @@
+C:\Users\OMyroniuk\repos\Service Provider\SP.BE\SP.Customer\SP.Customer.DataAccessLayer\bin\Debug\net7.0\SP.Customer.DataAccessLayer.deps.json
+C:\Users\OMyroniuk\repos\Service Provider\SP.BE\SP.Customer\SP.Customer.DataAccessLayer\bin\Debug\net7.0\SP.Customer.DataAccessLayer.runtimeconfig.json
+C:\Users\OMyroniuk\repos\Service Provider\SP.BE\SP.Customer\SP.Customer.DataAccessLayer\bin\Debug\net7.0\SP.Customer.DataAccessLayer.dll
+C:\Users\OMyroniuk\repos\Service Provider\SP.BE\SP.Customer\SP.Customer.DataAccessLayer\bin\Debug\net7.0\SP.Customer.DataAccessLayer.pdb
+C:\Users\OMyroniuk\repos\Service Provider\SP.BE\SP.Customer\SP.Customer.DataAccessLayer\obj\Debug\net7.0\SP.Customer.DataAccessLayer.csproj.AssemblyReference.cache
+C:\Users\OMyroniuk\repos\Service Provider\SP.BE\SP.Customer\SP.Customer.DataAccessLayer\obj\Debug\net7.0\SP.Customer.DataAccessLayer.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\OMyroniuk\repos\Service Provider\SP.BE\SP.Customer\SP.Customer.DataAccessLayer\obj\Debug\net7.0\SP.Customer.DataAccessLayer.AssemblyInfoInputs.cache
+C:\Users\OMyroniuk\repos\Service Provider\SP.BE\SP.Customer\SP.Customer.DataAccessLayer\obj\Debug\net7.0\SP.Customer.DataAccessLayer.AssemblyInfo.cs
+C:\Users\OMyroniuk\repos\Service Provider\SP.BE\SP.Customer\SP.Customer.DataAccessLayer\obj\Debug\net7.0\SP.Customer.DataAccessLayer.csproj.CoreCompileInputs.cache
+C:\Users\OMyroniuk\repos\Service Provider\SP.BE\SP.Customer\SP.Customer.DataAccessLayer\obj\Debug\net7.0\SP.Customer.DataAccessLayer.dll
+C:\Users\OMyroniuk\repos\Service Provider\SP.BE\SP.Customer\SP.Customer.DataAccessLayer\obj\Debug\net7.0\refint\SP.Customer.DataAccessLayer.dll
+C:\Users\OMyroniuk\repos\Service Provider\SP.BE\SP.Customer\SP.Customer.DataAccessLayer\obj\Debug\net7.0\SP.Customer.DataAccessLayer.pdb
+C:\Users\OMyroniuk\repos\Service Provider\SP.BE\SP.Customer\SP.Customer.DataAccessLayer\obj\Debug\net7.0\SP.Customer.DataAccessLayer.genruntimeconfig.cache
+C:\Users\OMyroniuk\repos\Service Provider\SP.BE\SP.Customer\SP.Customer.DataAccessLayer\obj\Debug\net7.0\ref\SP.Customer.DataAccessLayer.dll

@@ -160,3 +160,6 @@ C:\Users\OMyroniuk\repos\Service Provider\SP.BE\SP.Identity\SP.Identity.API\obj\
 C:\Users\OMyroniuk\repos\Service Provider\SP.BE\SP.Identity\SP.Identity.API\obj\Debug\net6.0\SP.Identity.API.pdb
 C:\Users\OMyroniuk\repos\Service Provider\SP.BE\SP.Identity\SP.Identity.API\obj\Debug\net6.0\SP.Identity.API.genruntimeconfig.cache
 C:\Users\OMyroniuk\repos\Service Provider\SP.BE\SP.Identity\SP.Identity.API\obj\Debug\net6.0\ref\SP.Identity.API.dll
+C:\Users\OMyroniuk\repos\Service Provider\SP.BE\SP.Identity\SP.Identity.API\bin\Debug\net6.0\NLog.dll
+C:\Users\OMyroniuk\repos\Service Provider\SP.BE\SP.Identity\SP.Identity.API\bin\Debug\net6.0\NLog.Extensions.Logging.dll
+C:\Users\OMyroniuk\repos\Service Provider\SP.BE\SP.Identity\SP.Identity.API\bin\Debug\net6.0\NLog.Web.AspNetCore.dll

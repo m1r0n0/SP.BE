@@ -22,12 +22,6 @@ builder.Services.AddAutoMapper(typeof(ProviderMappingProfile));
 
 builder.Services.AddScoped<IProviderService, ProviderService>();
 
-builder.Services.AddSwaggerGen(c =>
-{
-    c.EnableAnnotations();
-    c.SwaggerDoc("v1", new OpenApiInfo { Title = "SP.Provider API", Version = "v1" });
-});
-
 builder.Services.AddAuthorization();
 builder.Services.AddAuthentication(options =>
 {
@@ -55,6 +49,7 @@ builder.Services.AddCors(options =>
         {
             policy
                 .WithOrigins("http://localhost:3000")
+                .WithOrigins("https://localhost:3000")
                 .AllowAnyHeader()
                 .AllowAnyMethod()
                 .AllowCredentials();
@@ -65,7 +60,7 @@ builder.Services.AddCors(options =>
 builder.Services.AddSwaggerGen(c =>
 {
     c.EnableAnnotations();
-    c.SwaggerDoc("identity_v1", new OpenApiInfo { Title = "SP.Identity API", Version = "v1" });
+    c.SwaggerDoc("v1", new OpenApiInfo { Title = "SP.Provider API", Version = "v1" });
     c.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme()
     {
         Name = "Authorization",
@@ -101,11 +96,12 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+app.UseCors(MyAllowSpecificOrigins);
 
 app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapControllers();
-app.UseCors(MyAllowSpecificOrigins);
+
 
 app.Run();

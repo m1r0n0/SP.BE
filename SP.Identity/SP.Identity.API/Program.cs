@@ -1,3 +1,5 @@
+using System.Reflection;
+using System.Security.Cryptography.X509Certificates;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
@@ -9,6 +11,10 @@ using SP.Identity.BusinessLayer.Services;
 using SP.Identity.DataAccessLayer.Data;
 using SP.Identity.DataAccessLayer.Models;
 using System.Text;
+using Microsoft.AspNetCore.DataProtection;
+using NLog.Config;
+using NLog.Targets;
+using NLog;
 
 var MyAllowSpecificOrigins = "_myAllowSpecificOrigins";
 var builder = WebApplication.CreateBuilder(args);
@@ -55,6 +61,7 @@ builder.Services.AddCors(options =>
         {
             policy
                 .WithOrigins("http://localhost:3000")
+                .WithOrigins("https://localhost:3000")
                 .AllowAnyHeader()
                 .AllowAnyMethod()
                 .AllowCredentials();
@@ -65,7 +72,7 @@ builder.Services.AddCors(options =>
 builder.Services.AddSwaggerGen(c =>
 {
     c.EnableAnnotations();
-    c.SwaggerDoc("provider_v1", new OpenApiInfo { Title = "SP.Provider API", Version = "v1" });
+    c.SwaggerDoc("identity_v1", new OpenApiInfo { Title = "SP.Identity API", Version = "v1" });
     c.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme()
     {
         Name = "Authorization",
@@ -91,22 +98,63 @@ builder.Services.AddSwaggerGen(c =>
     });
 });
 
+var config = new LoggingConfiguration();
+/*var consoleTarget = new ConsoleTarget
+{
+    Name = "console",
+    Layout = "${longdate}|${level:uppercase=true}|${logger}|${message}",
+};*/
+var fileTarget = new FileTarget
+{
+    Name = "log_file",
+    Layout = "${longdate}|${level:uppercase=true}|${logger}|${message}",
+    FileName = "${specialfolder:folder=commonapplicationdata}/company gmbh/${appname}/logs/${appname}.log",
+    /*FileName = "C:/logs/${appname}.log",*/
+    KeepFileOpen = false
+};
+config.AddRule(NLog.LogLevel.Debug, NLog.LogLevel.Fatal, fileTarget, "*");
+LogManager.Configuration = config;
+
+/*
+builder.Services.AddDataProtection()
+    .PersistKeysToFileSystem(new DirectoryInfo(@".\AppData"))
+    .ProtectKeysWithCertificate(GetCertificate());
+
+X509Certificate2 GetCertificate()
+{
+    var assembly = typeof(Program).GetTypeInfo().Assembly;
+
+    var resource = assembly.GetManifestResourceNames()
+        .First(x => x.EndsWith("MyCertificate.pfx"));
+
+    using (var stream = assembly.GetManifestResourceStream(resource))
+    {
+        if (stream == null)
+            throw new ArgumentNullException(nameof(stream));
+
+        var bytes = new byte[stream.Length];
+        stream.Read(bytes, 0, bytes.Length);
+        return new X509Certificate2(bytes);
+    }
+}*/
+
 var app = builder.Build();
 
 
-if (app.Environment.IsDevelopment())
-{
+//if (app.Environment.IsDevelopment())
+//{
     app.UseSwagger();
-    app.UseSwaggerUI();
-}
+    app.UseSwaggerUI(x => x.SwaggerEndpoint("/swagger/identity_v1/swagger.json", "Identity Api"));
+//}
 
 app.UseHttpsRedirection();
+app.UseCors(MyAllowSpecificOrigins);
 
 app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapControllers();
 
-app.UseCors(MyAllowSpecificOrigins);
+
 
 app.Run();

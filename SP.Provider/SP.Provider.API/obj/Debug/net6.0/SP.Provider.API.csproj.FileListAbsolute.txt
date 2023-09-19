@@ -150,3 +150,6 @@ C:\Users\OMyroniuk\repos\Service Provider\SP.BE\SP.Provider\SP.Provider.API\obj\
 C:\Users\OMyroniuk\repos\Service Provider\SP.BE\SP.Provider\SP.Provider.API\obj\Debug\net6.0\SP.Provider.API.pdb
 C:\Users\OMyroniuk\repos\Service Provider\SP.BE\SP.Provider\SP.Provider.API\obj\Debug\net6.0\SP.Provider.API.genruntimeconfig.cache
 C:\Users\OMyroniuk\repos\Service Provider\SP.BE\SP.Provider\SP.Provider.API\obj\Debug\net6.0\ref\SP.Provider.API.dll
+C:\Users\OMyroniuk\repos\Service Provider\SP.BE\SP.Provider\SP.Provider.API\bin\Debug\net6.0\NLog.dll
+C:\Users\OMyroniuk\repos\Service Provider\SP.BE\SP.Provider\SP.Provider.API\bin\Debug\net6.0\NLog.Extensions.Logging.dll
+C:\Users\OMyroniuk\repos\Service Provider\SP.BE\SP.Provider\SP.Provider.API\bin\Debug\net6.0\NLog.Web.AspNetCore.dll
