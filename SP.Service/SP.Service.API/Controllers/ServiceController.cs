@@ -129,5 +129,12 @@ namespace SP.Service.API.Controllers
             return Ok(_mapper.Map<List<ServiceDataVM>>(services));
         }
 
+        [HttpDelete]
+        [SwaggerOperation(Summary = "Delete all user-related info")]
+        public async Task<IActionResult> DeleteUserInfo(string userId)
+        {
+            await _serviceService.DeleteUserInfo(userId);
+            return Ok();
+        }
     }
 }

@@ -75,5 +75,13 @@ namespace SP.Service.BusinessLayer.Services
         {
             return await _context.Services.ToListAsync();
         }
+
+        public async Task DeleteUserInfo(string userId)
+        {
+            _context.Events.RemoveRange(_context.Events.Where(e => e.CustomerUserId == userId));
+            _context.Services.RemoveRange(_context.Services.Where(s => s.ProviderUserId == userId));
+            
+            await _context.SaveChangesAsync();
+        }
     }
 }

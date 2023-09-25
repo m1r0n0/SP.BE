@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using Microsoft.EntityFrameworkCore;
 
 namespace SP.Service.DataAccessLayer.Models
@@ -11,6 +12,6 @@ namespace SP.Service.DataAccessLayer.Models
         public string Name { get; set; }
         public int Price { get; set; }
         public string ProviderUserId { get; set; }
-        public IList<Event> Events { get; set; } = new List<Event>();
+        public List<Event> Events { get; set; } = new List<Event>();
     }
 }
