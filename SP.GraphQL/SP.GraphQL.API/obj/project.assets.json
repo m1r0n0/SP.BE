@@ -4166,19 +4166,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Олександр\\.nuget\\packages\\": {}
+    "C:\\Users\\OMyroniuk\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Олександр\\source\\repos\\SP.BE\\SP.GraphQL\\SP.GraphQL.API\\SP.GraphQL.API.csproj",
+      "projectUniqueName": "C:\\Users\\OMyroniuk\\repos\\Service Provider\\SP.BE\\SP.GraphQL\\SP.GraphQL.API\\SP.GraphQL.API.csproj",
       "projectName": "SP.GraphQL.API",
-      "projectPath": "C:\\Users\\Олександр\\source\\repos\\SP.BE\\SP.GraphQL\\SP.GraphQL.API\\SP.GraphQL.API.csproj",
-      "packagesPath": "C:\\Users\\Олександр\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Олександр\\source\\repos\\SP.BE\\SP.GraphQL\\SP.GraphQL.API\\obj\\",
+      "projectPath": "C:\\Users\\OMyroniuk\\repos\\Service Provider\\SP.BE\\SP.GraphQL\\SP.GraphQL.API\\SP.GraphQL.API.csproj",
+      "packagesPath": "C:\\Users\\OMyroniuk\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\OMyroniuk\\repos\\Service Provider\\SP.BE\\SP.GraphQL\\SP.GraphQL.API\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Олександр\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\OMyroniuk\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -4186,17 +4186,18 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "C:\\Program Files\\dotnet\\sdk\\7.0.306\\Sdks\\Microsoft.NET.Sdk.Web\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "net7.0": {
           "targetAlias": "net7.0",
           "projectReferences": {
-            "C:\\Users\\Олександр\\source\\repos\\SP.BE\\SP.GraphQL\\SP.GraphQL.BusinessLayer\\SP.GraphQL.BusinessLayer\\SP.GraphQL.BusinessLayer.csproj": {
-              "projectPath": "C:\\Users\\Олександр\\source\\repos\\SP.BE\\SP.GraphQL\\SP.GraphQL.BusinessLayer\\SP.GraphQL.BusinessLayer\\SP.GraphQL.BusinessLayer.csproj"
+            "C:\\Users\\OMyroniuk\\repos\\Service Provider\\SP.BE\\SP.GraphQL\\SP.GraphQL.BusinessLayer\\SP.GraphQL.BusinessLayer\\SP.GraphQL.BusinessLayer.csproj": {
+              "projectPath": "C:\\Users\\OMyroniuk\\repos\\Service Provider\\SP.BE\\SP.GraphQL\\SP.GraphQL.BusinessLayer\\SP.GraphQL.BusinessLayer\\SP.GraphQL.BusinessLayer.csproj"
             },
-            "C:\\Users\\Олександр\\source\\repos\\SP.BE\\SP.GraphQL\\SP.GraphQL.DataAccessLayer\\SP.GraphQL.DataAccessLayer.csproj": {
-              "projectPath": "C:\\Users\\Олександр\\source\\repos\\SP.BE\\SP.GraphQL\\SP.GraphQL.DataAccessLayer\\SP.GraphQL.DataAccessLayer.csproj"
+            "C:\\Users\\OMyroniuk\\repos\\Service Provider\\SP.BE\\SP.GraphQL\\SP.GraphQL.DataAccessLayer\\SP.GraphQL.DataAccessLayer.csproj": {
+              "projectPath": "C:\\Users\\OMyroniuk\\repos\\Service Provider\\SP.BE\\SP.GraphQL\\SP.GraphQL.DataAccessLayer\\SP.GraphQL.DataAccessLayer.csproj"
             }
           }
         }
@@ -4271,7 +4272,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.400\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.306\\RuntimeIdentifierGraph.json"
       }
     }
   }
