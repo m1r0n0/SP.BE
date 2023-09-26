@@ -15,3 +15,20 @@ C:\Users\OMyroniuk\repos\Service Provider\SP.BE\SP.Customer\SP.Customer.Business
 C:\Users\OMyroniuk\repos\Service Provider\SP.BE\SP.Customer\SP.Customer.BusinessLayer\obj\Debug\net7.0\SP.Customer.BusinessLayer.pdb
 C:\Users\OMyroniuk\repos\Service Provider\SP.BE\SP.Customer\SP.Customer.BusinessLayer\obj\Debug\net7.0\SP.Customer.BusinessLayer.genruntimeconfig.cache
 C:\Users\OMyroniuk\repos\Service Provider\SP.BE\SP.Customer\SP.Customer.BusinessLayer\obj\Debug\net7.0\ref\SP.Customer.BusinessLayer.dll
+C:\Users\Олександр\source\repos\SP.BE\SP.Customer\SP.Customer.BusinessLayer\bin\Debug\net7.0\SP.Customer.BusinessLayer.deps.json
+C:\Users\Олександр\source\repos\SP.BE\SP.Customer\SP.Customer.BusinessLayer\bin\Debug\net7.0\SP.Customer.BusinessLayer.runtimeconfig.json
+C:\Users\Олександр\source\repos\SP.BE\SP.Customer\SP.Customer.BusinessLayer\bin\Debug\net7.0\SP.Customer.BusinessLayer.dll
+C:\Users\Олександр\source\repos\SP.BE\SP.Customer\SP.Customer.BusinessLayer\bin\Debug\net7.0\SP.Customer.BusinessLayer.pdb
+C:\Users\Олександр\source\repos\SP.BE\SP.Customer\SP.Customer.BusinessLayer\bin\Debug\net7.0\SP.Customer.DataAccessLayer.dll
+C:\Users\Олександр\source\repos\SP.BE\SP.Customer\SP.Customer.BusinessLayer\bin\Debug\net7.0\SP.Customer.DataAccessLayer.pdb
+C:\Users\Олександр\source\repos\SP.BE\SP.Customer\SP.Customer.BusinessLayer\obj\Debug\net7.0\SP.Customer.BusinessLayer.csproj.AssemblyReference.cache
+C:\Users\Олександр\source\repos\SP.BE\SP.Customer\SP.Customer.BusinessLayer\obj\Debug\net7.0\SP.Customer.BusinessLayer.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Олександр\source\repos\SP.BE\SP.Customer\SP.Customer.BusinessLayer\obj\Debug\net7.0\SP.Customer.BusinessLayer.AssemblyInfoInputs.cache
+C:\Users\Олександр\source\repos\SP.BE\SP.Customer\SP.Customer.BusinessLayer\obj\Debug\net7.0\SP.Customer.BusinessLayer.AssemblyInfo.cs
+C:\Users\Олександр\source\repos\SP.BE\SP.Customer\SP.Customer.BusinessLayer\obj\Debug\net7.0\SP.Customer.BusinessLayer.csproj.CoreCompileInputs.cache
+C:\Users\Олександр\source\repos\SP.BE\SP.Customer\SP.Customer.BusinessLayer\obj\Debug\net7.0\SP.Customer.BusinessLayer.csproj.CopyComplete
+C:\Users\Олександр\source\repos\SP.BE\SP.Customer\SP.Customer.BusinessLayer\obj\Debug\net7.0\SP.Customer.BusinessLayer.dll
+C:\Users\Олександр\source\repos\SP.BE\SP.Customer\SP.Customer.BusinessLayer\obj\Debug\net7.0\refint\SP.Customer.BusinessLayer.dll
+C:\Users\Олександр\source\repos\SP.BE\SP.Customer\SP.Customer.BusinessLayer\obj\Debug\net7.0\SP.Customer.BusinessLayer.pdb
+C:\Users\Олександр\source\repos\SP.BE\SP.Customer\SP.Customer.BusinessLayer\obj\Debug\net7.0\SP.Customer.BusinessLayer.genruntimeconfig.cache
+C:\Users\Олександр\source\repos\SP.BE\SP.Customer\SP.Customer.BusinessLayer\obj\Debug\net7.0\ref\SP.Customer.BusinessLayer.dll

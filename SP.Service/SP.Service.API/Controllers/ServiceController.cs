@@ -130,6 +130,7 @@ namespace SP.Service.API.Controllers
         }
 
         [HttpDelete]
+        [Route("user/delete/{userId}")]
         [SwaggerOperation(Summary = "Delete all user-related info")]
         public async Task<IActionResult> DeleteUserInfo(string userId)
         {
