@@ -11,5 +11,6 @@ namespace SP.Service.BusinessLayer.Interfaces
         Task DeleteService(int serviceId);
         Task<List<DataAccessLayer.Models.Service>> GetServicesForProvider(string providerUserId);
         Task<List<DataAccessLayer.Models.Service>> GetServices();
+        Task DeleteUserInfo(string userId);
     }
 }

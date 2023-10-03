@@ -10,5 +10,4 @@ public class Event
     public string CustomerUserId { get; set; }
     public string DateOfStart { get; set; }
     public string DateOfEnd { get; set; }
-    
 }
