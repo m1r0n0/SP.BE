@@ -1,17 +1,3 @@
-C:\Users\OMyroniuk\repos\Service Provider\SP.BE\SP.GraphQL\SP.GraphQL.DataAccessLayer\bin\Debug\net7.0\SP.GraphQL.DataAccessLayer.deps.json
-C:\Users\OMyroniuk\repos\Service Provider\SP.BE\SP.GraphQL\SP.GraphQL.DataAccessLayer\bin\Debug\net7.0\SP.GraphQL.DataAccessLayer.dll
-C:\Users\OMyroniuk\repos\Service Provider\SP.BE\SP.GraphQL\SP.GraphQL.DataAccessLayer\bin\Debug\net7.0\SP.GraphQL.DataAccessLayer.pdb
-C:\Users\OMyroniuk\repos\Service Provider\SP.BE\SP.GraphQL\SP.GraphQL.DataAccessLayer\obj\Debug\net7.0\SP.GraphQL.DataAccessLayer.csproj.AssemblyReference.cache
-C:\Users\OMyroniuk\repos\Service Provider\SP.BE\SP.GraphQL\SP.GraphQL.DataAccessLayer\obj\Debug\net7.0\SP.GraphQL.DataAccessLayer.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\OMyroniuk\repos\Service Provider\SP.BE\SP.GraphQL\SP.GraphQL.DataAccessLayer\obj\Debug\net7.0\SP.GraphQL.DataAccessLayer.AssemblyInfoInputs.cache
-C:\Users\OMyroniuk\repos\Service Provider\SP.BE\SP.GraphQL\SP.GraphQL.DataAccessLayer\obj\Debug\net7.0\SP.GraphQL.DataAccessLayer.AssemblyInfo.cs
-C:\Users\OMyroniuk\repos\Service Provider\SP.BE\SP.GraphQL\SP.GraphQL.DataAccessLayer\obj\Debug\net7.0\SP.GraphQL.DataAccessLayer.csproj.CoreCompileInputs.cache
-C:\Users\OMyroniuk\repos\Service Provider\SP.BE\SP.GraphQL\SP.GraphQL.DataAccessLayer\obj\Debug\net7.0\SP.GraphQL.DataAccessLayer.dll
-C:\Users\OMyroniuk\repos\Service Provider\SP.BE\SP.GraphQL\SP.GraphQL.DataAccessLayer\obj\Debug\net7.0\refint\SP.GraphQL.DataAccessLayer.dll
-C:\Users\OMyroniuk\repos\Service Provider\SP.BE\SP.GraphQL\SP.GraphQL.DataAccessLayer\obj\Debug\net7.0\SP.GraphQL.DataAccessLayer.pdb
-C:\Users\OMyroniuk\repos\Service Provider\SP.BE\SP.GraphQL\SP.GraphQL.DataAccessLayer\obj\Debug\net7.0\ref\SP.GraphQL.DataAccessLayer.dll
-C:\Users\OMyroniuk\repos\Service Provider\SP.BE\SP.GraphQL\SP.GraphQL.DataAccessLayer\bin\Debug\net7.0\SP.GraphQL.DataAccessLayer.runtimeconfig.json
-C:\Users\OMyroniuk\repos\Service Provider\SP.BE\SP.GraphQL\SP.GraphQL.DataAccessLayer\obj\Debug\net7.0\SP.GraphQL.DataAccessLayer.genruntimeconfig.cache
 C:\Users\Олександр\source\repos\SP.BE\SP.GraphQL\SP.GraphQL.DataAccessLayer\bin\Debug\net7.0\SP.GraphQL.DataAccessLayer.deps.json
 C:\Users\Олександр\source\repos\SP.BE\SP.GraphQL\SP.GraphQL.DataAccessLayer\bin\Debug\net7.0\SP.GraphQL.DataAccessLayer.runtimeconfig.json
 C:\Users\Олександр\source\repos\SP.BE\SP.GraphQL\SP.GraphQL.DataAccessLayer\bin\Debug\net7.0\SP.GraphQL.DataAccessLayer.dll

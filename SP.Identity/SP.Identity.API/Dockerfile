@@ -4,9 +4,6 @@ FROM mcr.microsoft.com/dotnet/aspnet:7.0 AS base
 WORKDIR /app
 EXPOSE 80
 EXPOSE 443
-ENV ASPNETCORE_URLS=https://+:443
-#;http://+:80
-ENV ASPNETCORE_HTTPS_PORT=443
 
 FROM mcr.microsoft.com/dotnet/sdk:7.0 AS build
 WORKDIR /src
@@ -24,5 +21,4 @@ RUN dotnet publish "SP.Identity.API.csproj" -c Release -o /app/publish /p:UseApp
 FROM base AS final
 WORKDIR /app
 COPY --from=publish /app/publish .
-
 ENTRYPOINT ["dotnet", "SP.Identity.API.dll"]
