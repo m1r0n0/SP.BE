@@ -1314,7 +1314,7 @@
         "dependencies": {
           "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "7.0.11",
           "Microsoft.EntityFrameworkCore": "7.0.11",
-          "Microsoft.EntityFrameworkCore.SqlServer": "6.0.20"
+          "Microsoft.EntityFrameworkCore.SqlServer": "7.0.11"
         },
         "compile": {
           "bin/placeholder/SP.Identity.DataAccessLayer.dll": {}
