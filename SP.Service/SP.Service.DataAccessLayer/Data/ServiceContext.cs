@@ -19,7 +19,6 @@ namespace SP.Service.DataAccessLayer.Data
             base.OnModelCreating(modelBuilder);
             modelBuilder.Entity<DataAccessLayer.Models.Service>().HasIndex(p => p.ProviderUserId);
             modelBuilder.Entity<DataAccessLayer.Models.Service>().HasMany(e => e.Events).WithOne().OnDelete(DeleteBehavior.Cascade);
-            modelBuilder.Entity<DataAccessLayer.Models.Service>().ToTable(tb => tb.HasTrigger("dbo.Events_updateGraphqlOnChange"));
         }
     }
 }
