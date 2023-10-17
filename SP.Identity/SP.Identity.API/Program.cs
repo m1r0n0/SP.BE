@@ -12,6 +12,7 @@ using SP.Identity.DataAccessLayer.Data;
 using SP.Identity.DataAccessLayer.Models;
 using System.Text;
 using Microsoft.AspNetCore.DataProtection;
+using Microsoft.Extensions.Hosting;
 
 var MyAllowSpecificOrigins = "_myAllowSpecificOrigins";
 var builder = WebApplication.CreateBuilder(args);
@@ -121,11 +122,27 @@ X509Certificate2 GetCertificate()
 var app = builder.Build();
 
 
-//if (app.Environment.IsDevelopment())
-//{
+if (app.Environment.IsDevelopment())
+{
     app.UseSwagger();
     app.UseSwaggerUI(x => x.SwaggerEndpoint("/swagger/identity_v1/swagger.json", "Identity Api"));
-//}
+}
+
+using (var scope = app.Services.CreateScope())
+{
+    var db = scope.ServiceProvider.GetRequiredService<IdentityContext>();
+
+    try
+    {
+       var i = db.Users.Count(u => u.Id != null);
+
+    }
+    catch (Exception)
+    {
+        db.Database.Migrate();
+    }
+    
+}
 
 app.UseHttpsRedirection();
 app.UseCors(MyAllowSpecificOrigins);

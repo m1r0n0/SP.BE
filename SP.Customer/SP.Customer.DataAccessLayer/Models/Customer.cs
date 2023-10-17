@@ -9,9 +9,7 @@ namespace SP.Customer.DataAccessLayer.Models
         [Key]
         public int CustomerId { get; set; }
         public string UserId { get; set; } 
-
         public string FirstName { get; set; }
-
         public string LastName { get; set; }
     }
 }

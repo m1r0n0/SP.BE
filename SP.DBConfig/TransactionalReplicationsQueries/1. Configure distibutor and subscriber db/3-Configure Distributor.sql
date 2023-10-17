@@ -6,8 +6,7 @@ DECLARE @distributorlogin AS SYSNAME;
 DECLARE @distributorpassword AS SYSNAME;
 DECLARE @Server SYSNAME;
   
---SELECT @Server = @@servername;
-SET @Server = N'SP.DBServer'
+SELECT @Server = @@servername;
   
 SET @distributor = @Server;
 SET @distributorlogin = N'sa';

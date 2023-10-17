@@ -11,17 +11,18 @@ using SP.Customer.DataAccessLayer.Data;
 namespace SP.Customer.DataAccessLayer.Migrations
 {
     [DbContext(typeof(CustomerContext))]
-    [Migration("20230727075339_Initial")]
-    partial class Initial
+    [Migration("20231017103955_initial")]
+    partial class initial
     {
+        /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "6.0.20")
+                .HasAnnotation("ProductVersion", "7.0.11")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
-            SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder, 1L, 1);
+            SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
             modelBuilder.Entity("SP.Customer.DataAccessLayer.Models.Customer", b =>
                 {
@@ -29,7 +30,7 @@ namespace SP.Customer.DataAccessLayer.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("CustomerId"), 1L, 1);
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("CustomerId"));
 
                     b.Property<string>("FirstName")
                         .IsRequired()
