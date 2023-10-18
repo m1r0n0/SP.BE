@@ -95,6 +95,22 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
+using (var scope = app.Services.CreateScope())
+{
+    var db = scope.ServiceProvider.GetRequiredService<ServiceContext>();
+
+    try
+    {
+        var i = db.Services.Count(u => u.ServiceId != null);
+
+    }
+    catch (Exception)
+    {
+        db.Database.Migrate();
+    }
+
+}
+
 app.UseHttpsRedirection();
 app.UseCors(MyAllowSpecificOrigins);
 
