@@ -8,18 +8,22 @@ services:
   sp.dbserver:
     container_name: SP.DBServer
     #image: "mcr.microsoft.com/mssql/server:2022-latest"
-    build: 
-      dockerfile: "/SP.DBConfig/TransactionalReplicationsQueries/dockerfile"
+    build:
+      context: SP.DBConfig/
+      dockerfile: Dockerfile
     ports:
       - "1551:1433"
     environment:
       SA_PASSWORD: "S3cur3P@ssW0rd!"
       ACCEPT_EULA: "Y"
       MSSQL_AGENT_ENABLED: true
+      #MSSQL_PID: "Express"
     volumes:
       - ${USERPROFILE}\.aspnet\https:/root/.aspnet/https
     networks:
       - dbnetwork
+    #command: sh -c "usr/scripts/distributor_init.sh"
+    command: sh -c "/usr/src/app/entrypoint.sh"
 
   sp.replica.dbserver:
     container_name: SP.Replica.DBServer

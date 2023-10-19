@@ -1,16 +1,21 @@
+# Use the base image you want to copy
 FROM mcr.microsoft.com/mssql/server:2022-latest AS base
-WORKDIR /app
-EXPOSE 80
-EXPOSE 443
 
-FROM mcr.microsoft.com/mssql/server:2022-latest AS build
-WORKDIR /src
-COPY . .
+# Create app directory
+WORKDIR /usr/src/app
 
-#FROM build AS publish
-#RUN dotnet publish "SP.GraphQL.API.csproj" -c Release -o /app/publish /p:UseAppHost=false
+# Copy initialization scripts
+COPY . /usr/src/app
 
-#FROM base AS final
-#WORKDIR /app
-#COPY --from=publish /app/publish .
-#ENTRYPOINT ["dotnet", "SP.GraphQL.API.dll"]
+# Expose port 1433 in case accessing from other container
+# Expose port externally from docker-compose.yml
+EXPOSE 1433
+
+# Run Microsoft SQL Server and initialization script (at the same time)
+# CMD /bin/bash ./entrypoint.sh
+
+
+# WORKDIR /
+# COPY distributor_init.sh /usr/scripts/
+# COPY subscriber_init.sh /usr/scripts/
+# ENTRYPOINT []
