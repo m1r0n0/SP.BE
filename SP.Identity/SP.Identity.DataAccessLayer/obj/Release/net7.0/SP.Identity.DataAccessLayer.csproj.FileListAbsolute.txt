@@ -1,0 +1,14 @@
+C:\app\build\SP.Identity.DataAccessLayer.deps.json
+C:\app\build\SP.Identity.DataAccessLayer.runtimeconfig.json
+C:\app\build\SP.Identity.DataAccessLayer.dll
+C:\app\build\SP.Identity.DataAccessLayer.pdb
+C:\Users\OMyroniuk\repos\Service Provider\SP.BE\SP.Identity\SP.Identity.DataAccessLayer\obj\Release\net7.0\SP.Identity.DataAccessLayer.csproj.AssemblyReference.cache
+C:\Users\OMyroniuk\repos\Service Provider\SP.BE\SP.Identity\SP.Identity.DataAccessLayer\obj\Release\net7.0\SP.Identity.DataAccessLayer.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\OMyroniuk\repos\Service Provider\SP.BE\SP.Identity\SP.Identity.DataAccessLayer\obj\Release\net7.0\SP.Identity.DataAccessLayer.AssemblyInfoInputs.cache
+C:\Users\OMyroniuk\repos\Service Provider\SP.BE\SP.Identity\SP.Identity.DataAccessLayer\obj\Release\net7.0\SP.Identity.DataAccessLayer.AssemblyInfo.cs
+C:\Users\OMyroniuk\repos\Service Provider\SP.BE\SP.Identity\SP.Identity.DataAccessLayer\obj\Release\net7.0\SP.Identity.DataAccessLayer.csproj.CoreCompileInputs.cache
+C:\Users\OMyroniuk\repos\Service Provider\SP.BE\SP.Identity\SP.Identity.DataAccessLayer\obj\Release\net7.0\SP.Identity.DataAccessLayer.dll
+C:\Users\OMyroniuk\repos\Service Provider\SP.BE\SP.Identity\SP.Identity.DataAccessLayer\obj\Release\net7.0\refint\SP.Identity.DataAccessLayer.dll
+C:\Users\OMyroniuk\repos\Service Provider\SP.BE\SP.Identity\SP.Identity.DataAccessLayer\obj\Release\net7.0\SP.Identity.DataAccessLayer.pdb
+C:\Users\OMyroniuk\repos\Service Provider\SP.BE\SP.Identity\SP.Identity.DataAccessLayer\obj\Release\net7.0\SP.Identity.DataAccessLayer.genruntimeconfig.cache
+C:\Users\OMyroniuk\repos\Service Provider\SP.BE\SP.Identity\SP.Identity.DataAccessLayer\obj\Release\net7.0\ref\SP.Identity.DataAccessLayer.dll

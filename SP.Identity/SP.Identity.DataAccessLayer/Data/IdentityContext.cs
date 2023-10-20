@@ -10,7 +10,7 @@ namespace SP.Identity.DataAccessLayer.Data
         public IdentityContext(DbContextOptions<IdentityContext> options)
                     : base(options)
         {
-            Database.EnsureCreated();
+            //Database.EnsureCreated();
         }
 
         public new DbSet<User> Users { get; set; } = default!;

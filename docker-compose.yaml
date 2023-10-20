@@ -1,0 +1,174 @@
+version: '3.8'
+name: serviceprovider
+networks:
+  dbnetwork:
+    external: true
+
+services:
+  sp.dbserver:
+    container_name: SP.DBServer
+    #image: "mcr.microsoft.com/mssql/server:2022-latest"
+    build:
+      context: SP.DBConfig
+      dockerfile: Dockerfile
+    ports:
+      - "1551:1433"
+    environment:
+      SA_PASSWORD: "S3cur3P@ssW0rd!"
+      ACCEPT_EULA: "Y"
+      MSSQL_AGENT_ENABLED: true
+      #MSSQL_PID: "Express"
+    volumes:
+      - ${USERPROFILE}\.aspnet\https:/root/.aspnet/https
+    networks:
+      - dbnetwork
+    command: sh -c "/usr/src/app/distributor_init.sh & /opt/mssql/bin/sqlservr"
+
+  sp.replica.dbserver:
+    container_name: SP.Replica.DBServer
+    #image: "mcr.microsoft.com/mssql/server:2022-latest"
+    build:
+      context: SP.DBConfig
+      dockerfile: Dockerfile
+    ports:
+      - "1552:1433"
+    depends_on:
+      - sp.dbserver
+    environment:
+      SA_PASSWORD: "S3cur3P@ssW0rd!"
+      ACCEPT_EULA: "Y"
+      MSSQL_AGENT_ENABLED: true
+    volumes:
+      - ${USERPROFILE}\.aspnet\https:/root/.aspnet/https
+    networks:
+      - dbnetwork
+    command: sh -c "/usr/src/app/subscriber_init.sh & /opt/mssql/bin/sqlservr"
+
+  sp.be.identity:
+    image: spidentityapi
+    # build: ./SP.BE/SP.Identity/SP.Identity.API
+    container_name: SP.Identity
+    ports:
+      - '5000:80'
+      - '5001:443'
+    stdin_open: true
+    tty: true
+    depends_on:
+      - sp.dbserver
+      - sp.replica.dbserver
+    environment:
+      ASPNETCORE_HTTPS_PORT: 5001
+      ASPNETCORE_URLS: https://+:443;http://+:80
+      ASPNETCORE_ENVIRONMENT: Development
+      ASPNETCORE_Kestrel__Certificates__Default__Path: /root/.aspnet/https/aspnetapp.pfx
+      ASPNETCORE_Kestrel__Certificates__Default__Password: PassW0rd!
+    volumes:
+      - ${USERPROFILE}\.aspnet\https:/root/.aspnet/https
+    networks:
+      - dbnetwork
+    #command: sh -c "/usr/local/bin/init.sh" #&& exec dotnet run SP.Identity.API.dll"
+
+  sp.be.provider:
+    image: spproviderapi
+    # build: ./SP.BE/SP.Provider/SP.Provider.API
+    container_name: SP.Provider
+    ports:
+      - '6000:80'
+      - '6001:443'
+    stdin_open: true
+    tty: true
+    depends_on:
+      - sp.dbserver
+      - sp.replica.dbserver
+      - sp.be.identity
+    environment:
+      ASPNETCORE_HTTPS_PORT: 6001
+      ASPNETCORE_URLS: https://+:443;http://+:80
+      ASPNETCORE_ENVIRONMENT: Development
+      ASPNETCORE_Kestrel__Certificates__Default__Path: /root/.aspnet/https/aspnetapp.pfx
+      ASPNETCORE_Kestrel__Certificates__Default__Password: PassW0rd!
+    volumes:
+      - ${USERPROFILE}\.aspnet\https:/root/.aspnet/https
+    networks:
+      - dbnetwork
+
+  sp.be.customer:
+    image: spcustomerapi
+    # build: ./SP.BE/SP.Customer/SP.Customer.API
+    container_name: SP.Customer
+    ports:
+      - '7000:80'
+      - '7001:443'
+    stdin_open: true
+    tty: true
+    depends_on:
+      - sp.dbserver
+      - sp.replica.dbserver
+      - sp.be.identity
+    environment:
+      ASPNETCORE_HTTPS_PORT: 7001
+      ASPNETCORE_URLS: https://+:443;http://+:80
+      ASPNETCORE_ENVIRONMENT: Development
+      ASPNETCORE_Kestrel__Certificates__Default__Path: /root/.aspnet/https/aspnetapp.pfx
+      ASPNETCORE_Kestrel__Certificates__Default__Password: PassW0rd!
+    volumes:
+      - ${USERPROFILE}\.aspnet\https:/root/.aspnet/https
+    networks:
+      - dbnetwork
+  sp.be.service:
+    image: spserviceapi
+    # build: ./SP.BE/SP.Service/SP.Service.API
+    container_name: SP.Service
+    ports:
+      - '8000:80'
+      - '8001:443'
+    stdin_open: true
+    tty: true
+    depends_on:
+      - sp.dbserver
+      - sp.replica.dbserver
+      - sp.be.identity
+    environment:
+      ASPNETCORE_HTTPS_PORT: 8001
+      ASPNETCORE_URLS: https://+:443;http://+:80
+      ASPNETCORE_ENVIRONMENT: Development
+      ASPNETCORE_Kestrel__Certificates__Default__Path: /root/.aspnet/https/aspnetapp.pfx
+      ASPNETCORE_Kestrel__Certificates__Default__Password: PassW0rd!
+    volumes:
+      - ${USERPROFILE}\.aspnet\https:/root/.aspnet/https
+    networks:
+      - dbnetwork
+
+  sp.be.graphql:
+    image: spgraphqlapi
+    # build: ./SP.BE/SP.Service/SP.Service.API
+    container_name: SP.GraphQL
+    ports:
+      - '9000:80'
+      - '9001:443'
+    stdin_open: true
+    tty: true
+    depends_on:
+      - sp.dbserver
+      - sp.replica.dbserver
+      - sp.be.identity
+    environment:
+      ASPNETCORE_HTTPS_PORT: 9001
+      ASPNETCORE_URLS: https://+:443;http://+:80
+      ASPNETCORE_ENVIRONMENT: Development
+      ASPNETCORE_Kestrel__Certificates__Default__Path: /root/.aspnet/https/aspnetapp.pfx
+      ASPNETCORE_Kestrel__Certificates__Default__Password: PassW0rd!
+    volumes:
+      - ${USERPROFILE}\.aspnet\https:/root/.aspnet/https
+    networks:
+      - dbnetwork
+
+  sp.fe:
+    build: ../sp.fe
+    container_name: SP.FE
+    ports:
+      - '3000:3000'
+    stdin_open: true
+    tty: true
+    networks:
+      - dbnetwork

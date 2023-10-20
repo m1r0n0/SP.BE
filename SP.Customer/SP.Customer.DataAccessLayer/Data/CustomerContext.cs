@@ -7,7 +7,7 @@ namespace SP.Customer.DataAccessLayer.Data
         public CustomerContext(DbContextOptions<CustomerContext> options)
                     : base(options)
         {
-            Database.EnsureCreated();
+            //Database.EnsureCreated();
         }
 
         public DbSet<Models.Customer> Customers { get; set; } = default!;
