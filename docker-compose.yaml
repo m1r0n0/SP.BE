@@ -9,7 +9,7 @@ services:
     container_name: SP.DBServer
     #image: "mcr.microsoft.com/mssql/server:2022-latest"
     build:
-      context: SP.DBConfig/
+      context: SP.DBConfig
       dockerfile: Dockerfile
     ports:
       - "1551:1433"
@@ -22,12 +22,14 @@ services:
       - ${USERPROFILE}\.aspnet\https:/root/.aspnet/https
     networks:
       - dbnetwork
-    #command: sh -c "usr/scripts/distributor_init.sh"
-    command: sh -c "/usr/src/app/entrypoint.sh"
+    command: sh -c "/usr/src/app/distributor_init.sh & /opt/mssql/bin/sqlservr"
 
   sp.replica.dbserver:
     container_name: SP.Replica.DBServer
-    image: "mcr.microsoft.com/mssql/server:2022-latest"
+    #image: "mcr.microsoft.com/mssql/server:2022-latest"
+    build:
+      context: SP.DBConfig
+      dockerfile: Dockerfile
     ports:
       - "1552:1433"
     depends_on:
@@ -40,6 +42,7 @@ services:
       - ${USERPROFILE}\.aspnet\https:/root/.aspnet/https
     networks:
       - dbnetwork
+    command: sh -c "/usr/src/app/subscriber_init.sh & /opt/mssql/bin/sqlservr"
 
   sp.be.identity:
     image: spidentityapi
@@ -159,12 +162,13 @@ services:
       - ${USERPROFILE}\.aspnet\https:/root/.aspnet/https
     networks:
       - dbnetwork
-    # sp.fe:
-    #   build: ../sp.fe
-    #   container_name: SP.FE
-    #   ports:
-    #     - '3000:3000'
-    #   stdin_open: true
-    #   tty: true
-    #   networks:
-    #     - dbnetwork
+
+  sp.fe:
+    build: ../sp.fe
+    container_name: SP.FE
+    ports:
+      - '3000:3000'
+    stdin_open: true
+    tty: true
+    networks:
+      - dbnetwork

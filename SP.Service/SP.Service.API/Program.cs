@@ -106,6 +106,7 @@ using (var scope = app.Services.CreateScope())
     }
     catch (Exception)
     {
+        Thread.Sleep(30000);
         db.Database.Migrate();
     }
 

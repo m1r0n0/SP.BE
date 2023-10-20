@@ -45,41 +45,15 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SP.GraphQL.BusinessLayer", 
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SP.DBConfig", "SP.DBConfig", "{EE9EBAC1-25EE-40C9-88EE-C3451DD8F175}"
 	ProjectSection(SolutionItems) = preProject
+		SP.DBConfig\distributor_init.sh = SP.DBConfig\distributor_init.sh
 		SP.DBConfig\Dockerfile = SP.DBConfig\Dockerfile
-	EndProjectSection
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "TransactionalReplicationsQueries", "TransactionalReplicationsQueries", "{A801D4F7-9F21-42FF-8EEE-4A2FF514BE3F}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1. Configure distibutor and subscriber db", "1. Configure distibutor and subscriber db", "{FCF5DB6E-34F7-4987-8ECC-4EA301D8BEB1}"
-	ProjectSection(SolutionItems) = preProject
-		SP.DBConfig\TransactionalReplicationsQueries\1. Configure distibutor and subscriber db\2-CreateGraphQLDB.sql = SP.DBConfig\TransactionalReplicationsQueries\1. Configure distibutor and subscriber db\2-CreateGraphQLDB.sql
-		SP.DBConfig\TransactionalReplicationsQueries\1. Configure distibutor and subscriber db\3-Configure Distributor.sql = SP.DBConfig\TransactionalReplicationsQueries\1. Configure distibutor and subscriber db\3-Configure Distributor.sql
-		SP.DBConfig\TransactionalReplicationsQueries\1. Configure distibutor and subscriber db\4-Configure Publisher.sql = SP.DBConfig\TransactionalReplicationsQueries\1. Configure distibutor and subscriber db\4-Configure Publisher.sql
-		SP.DBConfig\TransactionalReplicationsQueries\1. Configure distibutor and subscriber db\readme.txt = SP.DBConfig\TransactionalReplicationsQueries\1. Configure distibutor and subscriber db\readme.txt
-	EndProjectSection
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SP.Customer.DB.Queries", "SP.Customer.DB.Queries", "{CA6C8C22-4165-41B8-BEF0-FC670188BC1A}"
-	ProjectSection(SolutionItems) = preProject
-		SP.DBConfig\TransactionalReplicationsQueries\SP.Customer.DB.Queries\Customer_1-CreatePublication.sql = SP.DBConfig\TransactionalReplicationsQueries\SP.Customer.DB.Queries\Customer_1-CreatePublication.sql
-		SP.DBConfig\TransactionalReplicationsQueries\SP.Customer.DB.Queries\Customer_2-CreateArticle.sql = SP.DBConfig\TransactionalReplicationsQueries\SP.Customer.DB.Queries\Customer_2-CreateArticle.sql
-		SP.DBConfig\TransactionalReplicationsQueries\SP.Customer.DB.Queries\Customer_3-CreateSubscription.sql = SP.DBConfig\TransactionalReplicationsQueries\SP.Customer.DB.Queries\Customer_3-CreateSubscription.sql
-		SP.DBConfig\TransactionalReplicationsQueries\SP.Customer.DB.Queries\Customer_4-RunInitialSnapshotCreation.sql = SP.DBConfig\TransactionalReplicationsQueries\SP.Customer.DB.Queries\Customer_4-RunInitialSnapshotCreation.sql
-	EndProjectSection
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SP.Provider.DB.Queries", "SP.Provider.DB.Queries", "{0B435C8A-29A8-42DC-8C8B-1653ABAEC295}"
-	ProjectSection(SolutionItems) = preProject
-		SP.DBConfig\TransactionalReplicationsQueries\SP.Provider.DB.Queries\Provider_1-CreatePublication.sql = SP.DBConfig\TransactionalReplicationsQueries\SP.Provider.DB.Queries\Provider_1-CreatePublication.sql
-		SP.DBConfig\TransactionalReplicationsQueries\SP.Provider.DB.Queries\Provider_2-CreateArticle.sql = SP.DBConfig\TransactionalReplicationsQueries\SP.Provider.DB.Queries\Provider_2-CreateArticle.sql
-		SP.DBConfig\TransactionalReplicationsQueries\SP.Provider.DB.Queries\Provider_3-CreateSubscription.sql = SP.DBConfig\TransactionalReplicationsQueries\SP.Provider.DB.Queries\Provider_3-CreateSubscription.sql
-		SP.DBConfig\TransactionalReplicationsQueries\SP.Provider.DB.Queries\Provider_4-RunInitialSnapshotCreation.sql = SP.DBConfig\TransactionalReplicationsQueries\SP.Provider.DB.Queries\Provider_4-RunInitialSnapshotCreation.sql
-	EndProjectSection
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SP.Service.DB.Queries", "SP.Service.DB.Queries", "{E9C9F23F-F7CC-43CC-9E33-42CACDC43570}"
-	ProjectSection(SolutionItems) = preProject
-		SP.DBConfig\TransactionalReplicationsQueries\SP.Service.DB.Queries\Service_1-CreatePublication.sql = SP.DBConfig\TransactionalReplicationsQueries\SP.Service.DB.Queries\Service_1-CreatePublication.sql
-		SP.DBConfig\TransactionalReplicationsQueries\SP.Service.DB.Queries\Service_2-CreateArticle.sql = SP.DBConfig\TransactionalReplicationsQueries\SP.Service.DB.Queries\Service_2-CreateArticle.sql
-		SP.DBConfig\TransactionalReplicationsQueries\SP.Service.DB.Queries\Service_3-CreateSubscription.sql = SP.DBConfig\TransactionalReplicationsQueries\SP.Service.DB.Queries\Service_3-CreateSubscription.sql
-		SP.DBConfig\TransactionalReplicationsQueries\SP.Service.DB.Queries\Service_4-RunInitialSnapshotCreation.sql = SP.DBConfig\TransactionalReplicationsQueries\SP.Service.DB.Queries\Service_4-RunInitialSnapshotCreation.sql
+		SP.DBConfig\readme.txt = SP.DBConfig\readme.txt
+		SP.DBConfig\Serv_ConfigureDistributorAndPublisher.sql = SP.DBConfig\Serv_ConfigureDistributorAndPublisher.sql
+		SP.DBConfig\Serv_Customer_CreateTransactionalReplication.sql = SP.DBConfig\Serv_Customer_CreateTransactionalReplication.sql
+		SP.DBConfig\Serv_Provider_CreateTransactionalReplication.sql = SP.DBConfig\Serv_Provider_CreateTransactionalReplication.sql
+		SP.DBConfig\Serv_Replica_CreateGraphQLDB.sql = SP.DBConfig\Serv_Replica_CreateGraphQLDB.sql
+		SP.DBConfig\Serv_Service_CreateTransactionalReplication.sql = SP.DBConfig\Serv_Service_CreateTransactionalReplication.sql
+		SP.DBConfig\subscriber_init.sh = SP.DBConfig\subscriber_init.sh
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SP.Applications", "SP.Applications", "{7A249807-4EA8-45AA-BF68-F4F683B91024}"
@@ -175,11 +149,6 @@ Global
 		{7B506B2E-07C6-454F-9793-FCED7633CB7A} = {2E92FC40-27AB-4DA0-900C-17EB66FA99C5}
 		{B7B6AE30-CB70-4878-A37B-B98C76B9B164} = {2E92FC40-27AB-4DA0-900C-17EB66FA99C5}
 		{3635CDA9-4240-4C5F-9B43-B6C913478821} = {2E92FC40-27AB-4DA0-900C-17EB66FA99C5}
-		{A801D4F7-9F21-42FF-8EEE-4A2FF514BE3F} = {EE9EBAC1-25EE-40C9-88EE-C3451DD8F175}
-		{FCF5DB6E-34F7-4987-8ECC-4EA301D8BEB1} = {A801D4F7-9F21-42FF-8EEE-4A2FF514BE3F}
-		{CA6C8C22-4165-41B8-BEF0-FC670188BC1A} = {A801D4F7-9F21-42FF-8EEE-4A2FF514BE3F}
-		{0B435C8A-29A8-42DC-8C8B-1653ABAEC295} = {A801D4F7-9F21-42FF-8EEE-4A2FF514BE3F}
-		{E9C9F23F-F7CC-43CC-9E33-42CACDC43570} = {A801D4F7-9F21-42FF-8EEE-4A2FF514BE3F}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {18362331-BCBC-45B1-98ED-013EA00FDBD4}
