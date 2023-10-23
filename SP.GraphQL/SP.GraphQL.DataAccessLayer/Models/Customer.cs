@@ -1,7 +1,9 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using HotChocolate.Authorization;
 
 namespace SP.GraphQL.DataAccessLayer.Models
 {
+    [Authorize]
     public class Customer
     {
         [Key]

@@ -96,29 +96,6 @@ builder.Services.AddSwaggerGen(c =>
     });
 });
 
-/*
-builder.Services.AddDataProtection()
-    .PersistKeysToFileSystem(new DirectoryInfo(@".\AppData"))
-    .ProtectKeysWithCertificate(GetCertificate());
-
-X509Certificate2 GetCertificate()
-{
-    var assembly = typeof(Program).GetTypeInfo().Assembly;
-
-    var resource = assembly.GetManifestResourceNames()
-        .First(x => x.EndsWith("MyCertificate.pfx"));
-
-    using (var stream = assembly.GetManifestResourceStream(resource))
-    {
-        if (stream == null)
-            throw new ArgumentNullException(nameof(stream));
-
-        var bytes = new byte[stream.Length];
-        stream.Read(bytes, 0, bytes.Length);
-        return new X509Certificate2(bytes);
-    }
-}*/
-
 var app = builder.Build();
 
 

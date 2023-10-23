@@ -15,6 +15,7 @@ var MyAllowSpecificOrigins = "_myAllowSpecificOrigins";
 
 builder.Services
     .AddGraphQLServer()
+    .AddAuthorization()
     .RegisterService<IGraphQLService>()
     .AddQueryType<Query>();
 
@@ -26,7 +27,7 @@ builder.Services.AddAutoMapper(typeof(ServiceMappingProfile));
 builder.Services.AddScoped<IGraphQLService, GraphQLService>();
 
 
-/*builder.Services.AddAuthorization();
+builder.Services.AddAuthorization();
 builder.Services.AddAuthentication(options =>
 {
     options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
@@ -45,7 +46,6 @@ builder.Services.AddAuthentication(options =>
         IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(builder.Configuration["Jwt:Key"]))
     };
 });
-*/
 
 builder.Services.AddCors(options =>
 {
@@ -93,7 +93,12 @@ builder.Services.AddCors(options =>
 
 var app = builder.Build();
 
+
+
 app.MapGraphQL();
 app.UseCors(MyAllowSpecificOrigins);
+
+app.UseAuthentication();
+app.UseAuthorization();
 
 app.Run();
