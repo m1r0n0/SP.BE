@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "wVUUjy5FmD5bMyGnh4b/LLSkkU/xJTTtMRcyZ0AVm54Rmh6CcpeUAG9bDpHLAtbm2Ys9hiUiA4yyxhc1WnHPNg==",
+  "dgSpecHash": "udLGgStry//tfMznAzsM47NJrvKlKKOhZ3lAyyBpnxspHcihe0AfhsbZE74NQKeKWG/m1OACd8qQgMo6V2F7ew==",
   "success": true,
   "projectFilePath": "C:\\Users\\OMyroniuk\\repos\\Service Provider\\SP.BE\\SP.Provider\\SP.Provider.API\\SP.Provider.API.csproj",
   "expectedPackageFiles": [
@@ -47,9 +47,6 @@
     "C:\\Users\\OMyroniuk\\.nuget\\packages\\microsoft.visualstudio.azure.containers.tools.targets\\1.18.1\\microsoft.visualstudio.azure.containers.tools.targets.1.18.1.nupkg.sha512",
     "C:\\Users\\OMyroniuk\\.nuget\\packages\\microsoft.win32.systemevents\\6.0.0\\microsoft.win32.systemevents.6.0.0.nupkg.sha512",
     "C:\\Users\\OMyroniuk\\.nuget\\packages\\mono.texttemplating\\2.2.1\\mono.texttemplating.2.2.1.nupkg.sha512",
-    "C:\\Users\\OMyroniuk\\.nuget\\packages\\nlog\\5.2.2\\nlog.5.2.2.nupkg.sha512",
-    "C:\\Users\\OMyroniuk\\.nuget\\packages\\nlog.extensions.logging\\5.3.2\\nlog.extensions.logging.5.3.2.nupkg.sha512",
-    "C:\\Users\\OMyroniuk\\.nuget\\packages\\nlog.web.aspnetcore\\5.3.2\\nlog.web.aspnetcore.5.3.2.nupkg.sha512",
     "C:\\Users\\OMyroniuk\\.nuget\\packages\\swashbuckle.aspnetcore\\6.5.0\\swashbuckle.aspnetcore.6.5.0.nupkg.sha512",
     "C:\\Users\\OMyroniuk\\.nuget\\packages\\swashbuckle.aspnetcore.annotations\\6.5.0\\swashbuckle.aspnetcore.annotations.6.5.0.nupkg.sha512",
     "C:\\Users\\OMyroniuk\\.nuget\\packages\\swashbuckle.aspnetcore.swagger\\6.5.0\\swashbuckle.aspnetcore.swagger.6.5.0.nupkg.sha512",

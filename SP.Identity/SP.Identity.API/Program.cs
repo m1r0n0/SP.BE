@@ -108,17 +108,8 @@ if (app.Environment.IsDevelopment())
 using (var scope = app.Services.CreateScope())
 {
     var db = scope.ServiceProvider.GetRequiredService<IdentityContext>();
-
-    try
-    {
-       var i = db.Users.Count(u => u.Id != null);
-
-    }
-    catch (Exception)
-    {
-        Thread.Sleep(30000);
-        db.Database.Migrate();
-    }
+    Thread.Sleep(30000);
+    db.Database.Migrate();
     
 }
 
