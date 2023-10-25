@@ -6,7 +6,7 @@ namespace SP.Identity.BusinessLayer.Interfaces
 {
     public interface IIdentityService
     {
-        public string CreateToken(User user);
+        public string CreateToken(User user, bool rememberMe);
         Task<string> GetUserIDFromUserEmail(string userEmail);
         Task<bool> CheckGivenEmailForExistingInDB(string email);
         Task<User> GetUserById(string id);

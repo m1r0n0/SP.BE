@@ -50,7 +50,7 @@ namespace SP.Identity.API.Controllers
                 _accountService.GetUserIDFromUserEmail(model.Email!).Result,
                 model.Email!,
                 true,
-                _accountService.CreateToken(user));
+                _accountService.CreateToken(user, false));
 
             return Ok(viewModel);
         }
@@ -70,7 +70,7 @@ namespace SP.Identity.API.Controllers
 
             var viewModel = _mapper.Map<UserAuthenticationVM>(model);
             viewModel.UserId = await _accountService.GetUserIDFromUserEmail(model.Email);
-            viewModel.Token = _accountService.CreateToken(await _accountService.GetUserById(viewModel.UserId));
+            viewModel.Token = _accountService.CreateToken(await _accountService.GetUserById(viewModel.UserId), viewModel.RememberMe);
 
             return Ok(viewModel);
         }

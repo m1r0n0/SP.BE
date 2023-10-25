@@ -8,7 +8,7 @@ namespace SP.Service.DataAccessLayer.Data
         public ServiceContext(DbContextOptions<ServiceContext> options)
                     : base(options)
         {
-            Database.EnsureCreated();
+            //Database.EnsureCreated();
         }
 
         public DbSet<DataAccessLayer.Models.Service> Services { get; set; } = default!;

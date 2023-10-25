@@ -24,7 +24,7 @@ namespace SP.Identity.BusinessLayer.Services
             _configuration = configuration;
         }
 
-        public string CreateToken(User user)
+        public string CreateToken(User user, bool rememberMe)
         {
             //create claims details based on the user information
             var claims = new[] {
@@ -40,7 +40,7 @@ namespace SP.Identity.BusinessLayer.Services
                 _configuration["Jwt:Issuer"],
                 _configuration["Jwt:Audience"],
                 claims,
-                expires: DateTime.UtcNow.AddMinutes(1440),
+                expires: rememberMe ? DateTime.UtcNow.AddMinutes(1440) : DateTime.UtcNow.AddMinutes(20),
                 signingCredentials: signIn);
 
             return new JwtSecurityTokenHandler().WriteToken(token); 
